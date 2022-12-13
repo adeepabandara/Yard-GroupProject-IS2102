@@ -8,6 +8,15 @@ html {
 body {
     margin: 0;
 }
+a{
+    text-decoration: none;
+    color: #ffff;
+}
+
+a:hover {
+    color: #0295A9;
+    }
+    
 
 /* Assign grid instructions to our parent grid container */
 
@@ -74,10 +83,15 @@ body {
 .sidenav__list-item {
     padding: 20px 20px 20px 40px;
     color: #ddd;
+    text-decoration:none;
+    
 }
 
+
+
+
 .sidenav__list-item:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #fff;
     cursor: pointer;
 }
 
@@ -130,8 +144,20 @@ body {
 }
 
 .card:nth-child(3) {
-    height: 265px;
+    height: auto;
 }
+
+.card:nth-child(4) {
+    height: auto;
+}
+.card:nth-child(5) {
+    height: auto;
+}
+
+.card:nth-child(6) {
+    height: 100%;
+}
+
 
 
 
@@ -372,4 +398,22 @@ td {
 
 tr:nth-child(even) {
     background-color: #ffff
+}
+
+
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.8);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
 }

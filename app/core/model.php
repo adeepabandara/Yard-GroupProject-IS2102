@@ -22,4 +22,17 @@ class Model extends Database
         $result = $this->runQuery($sql);
         return $result;
     }
+
+
+    public function insert($table, $data)
+    {
+        $sql = "INSERT INTO $table SET ";
+
+        foreach ($data as $column => $value) {
+            $sql .= "$column = '$value', ";
+        }
+        $sql = substr($sql, 0, -2);
+        $result = $this->runQuery($sql);
+        return $result;
+    }
 }
