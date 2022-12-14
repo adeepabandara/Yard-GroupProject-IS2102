@@ -17,7 +17,7 @@ if (isset($_SESSION['username'])) {
 
 
   <aside class="sidenav">
-    <center><img src="images/b&wlogo.png" alt="logo" width="40%"> </center>
+    <center><img src="<?php echo BASEURL ?>/images/b&wlogo.png" alt="logo" width="40%"> </center>
     <ul class="sidenav__list">
       <li class="sidenav__list-item">Dashboard</li>
       <li class="sidenav__list-item">Warehouse</li>

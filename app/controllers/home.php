@@ -12,7 +12,7 @@ class Home extends Controller
         session_start();
         session_destroy();
         unset($_SESSION['username']);
-        header('Location: '.BASEURL.'/login/employee');
+        header('Location: '.BASEURL.'/login');
     }
     
 
