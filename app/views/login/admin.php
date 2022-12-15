@@ -5,7 +5,7 @@
 
 		<form action="<?php echo BASEURL ?>/login/adminLogin" method="post">
 
-			<img src="images/logo.png" alt="yard logo" class="center"><br>
+			<img src="<?php echo BASEURL ?>/images/logo.png" alt="yard logo" class="center"><br>
 
 			<label>Username</label>
 			<input type="text" id="username" name="username" placeholder="yardsolutions@gmail.com"><br>
