@@ -2,18 +2,10 @@
 
 class welcome extends Controller
 {
-
-
     public function index() 
     {
-        $this->view('admin/dashboard');
-    } 
-
-    public function admin() 
-    {
-        $this->view('admin/dashboard');
-    }   
-
+        $this->view('fleet/dashboard');
+    }  
 
     public function signout()
     {

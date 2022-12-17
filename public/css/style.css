@@ -8,20 +8,6 @@ html {
 body {
     margin: 0;
 }
-a{
-    text-decoration: none;
-    color: #ffff;
-}
-
-a:hover {
-    color: #0295A9;
-    }
-
-.header {
-        grid-area: header;
-        background-color: #0295A9;
-        margin: 0px;
-    }
 
 /* Assign grid instructions to our parent grid container */
 
@@ -40,18 +26,11 @@ a:hover {
 
 
 /* Give every child element its grid name */
-
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 16px;
-    background-color: #fff;
-
-
+    grid-area: header;
+    background-color: #0295A9;
+    margin: 0px;
 }
-
-
 
 .sidenav {
     grid-area: sidenav;
@@ -68,7 +47,15 @@ a:hover {
 
 
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    background-color: #fff;
 
+
+}
 
 .sidenav {
     display: flex;
@@ -87,15 +74,10 @@ a:hover {
 .sidenav__list-item {
     padding: 20px 20px 20px 40px;
     color: #ddd;
-    text-decoration:none;
-    
 }
 
-
-
-
 .sidenav__list-item:hover {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
     cursor: pointer;
 }
 
@@ -148,20 +130,8 @@ a:hover {
 }
 
 .card:nth-child(3) {
-    height: auto;
+    height: 265px;
 }
-
-.card:nth-child(4) {
-    height: auto;
-}
-.card:nth-child(5) {
-    height: auto;
-}
-
-.card:nth-child(6) {
-    height: 100%;
-}
-
 
 
 
@@ -264,50 +234,6 @@ select {
     font-size: 14px;
     font-weight: 400;
 }
-
-.container1 form button,
-.closeBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 45px;
-    max-width: 200px;
-    width: 100%;
-    border: none;
-    outline: none;
-    color: #fff;
-    border-radius: 10px;
-    margin-left: 10px;
-    background-color:#555;
-    transition: all 0.3s linear;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.container1 form button,
-.deleteBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 45px;
-    max-width: 200px;
-    width: 100%;
-    border: none;
-    outline: none;
-    color: #fff;
-    border-radius: 10px;
-    margin-left: 10px;
-    background-color:#DC2626;
-    transition: all 0.3s linear;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-
-
-
 
 
 .container2 form button,
@@ -447,94 +373,16 @@ td {
 tr:nth-child(even) {
     background-color: #ffff
 }
-
-
-
-.overlay {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.8);
-	transition: opacity 500ms;
-	visibility: hidden;
-	opacity: 0;
-}
-.overlay:target {
-	visibility: visible;
-	opacity: 1;
+.form-group {
+    margin-bottom: 20px;
 }
 
-
-
- 
-.popup_card {
-    flex-direction: column;
-    align-items: left;
-    width:50%;
-    background-color:#fff;
-    padding: 24px;
-    box-sizing: border-box;
-    border: #fff;
-    border-radius: 20px;
-    margin-bottom:auto;
-    margin-left: 25%;
-    margin-top: 5%;
-    display: flex;
-
-
+.horizontal-group .left {
+    float: left;
+    width: 49%;
 }
 
-
-.popup_card_fields {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width:fit-content;
-    flex-wrap: wrap;
-}
-
-
-.popup_card_input {
-    display: flex;
-    width: calc(100% / 2 - 15px);
-    flex-direction: column;
-    margin: 4px 0;
-    padding: 5px;
-    border-radius: 12%;
-}
-
-.popup_card_input input,
-select {
-    outline: none;
-    font-size: 14px;
-    font-weight: 400;
-    color: #333;
-    border-radius: 5px;
-    border: 1px solid #aaa;
-    padding: 0 15px;
-    height: 42px;
-    margin: 8px 0;
-}
-
-
-.avatar {
-    vertical-align: middle;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
-
-.clock {
-    position: relative;
-
-    margin-top: 20%;
-    transform: translateX(-50%) translateY(-50%);
-    color:#0295A9;
-    font-size: 20px;
-    letter-spacing: 2px;
-   
-
-
+.horizontal-group .right {
+    float: right;
+    width: 49%;
 }
