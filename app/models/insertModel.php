@@ -18,6 +18,20 @@ class insertModel extends Model
     public function addWarehouse($warehouse_code, $name, $address, $email_address, $fleet_center, $capacity, $username, $password)
     {
         $this->insert('warehouse', [
+            'warehouse_code' => $warehouse_code,
+            'name' => $name,
+            'address' => $address,
+            'email_address' => $email_address,
+            'fleet_center' => $fleet_center,
+            'capacity' => $capacity,
+            'username' => $username,
+            'password' => $password
+        ]);
+
+
+    public function addWarehouse($warehouse_code, $name, $address, $email_address, $fleet_center, $capacity, $username, $password)
+    {
+        $this->insert('warehouse', [
             'warehouse_code' => $warehouse_code, 'name' => $name, 'address' => $address, 'email_address' => $email_address,
             'fleet_center' => $fleet_center, 'capacity' => $capacity, 'username' => $username, 'password' => $password
         ]);
@@ -58,6 +72,25 @@ class insertModel extends Model
    }
 
 
+    }
+    public function addVehicle($reg_no, $model, $chassis_no, $engine_no, $color, $category, $mf_year)
+    {
+        // var_dump($reg_no, $chassis_no, $engine_no, $color, $category);
+        // exit();
+        $this->insert('vehicle', [
+            'registration_no' => $reg_no,
+            'chassie_no' => $chassis_no,
+            'engine_no' => $engine_no,
+            'color' => $color,
+            'vehicle_category' => $category,
+            'name' => $model,
+            'manufactured_year'=>$mf_year,
+
+
+        ]);
+
+    }
+
    public function addFleetcenter( $fleetcenter_code,$name,$longitude,$latitude,$cp_name,$cp_number, $address,$email_address,$username,$password)
    {
      $this->insert('fleetcenter', 
@@ -75,6 +108,18 @@ class insertModel extends Model
        
   }
 
+
+    public function addCategory($vehicle_code, $name,$description)
+    {
+        // var_dump($reg_no, $chassis_no, $engine_no, $color, $category);
+        // exit();
+        $this->insert('vehicle_category', [
+            'description' => $description,
+            'vehicle_category_code' => $vehicle_code,
+            'name' => $name,
+        ]);
+
+    }
 
   public function addCommercial_User($department_code,$job_position,$employee_id,$nic, $cp_name,$cp_number, $address, $email_address, $username, $password)
    {
@@ -97,3 +142,4 @@ class insertModel extends Model
 }
 
 
+}

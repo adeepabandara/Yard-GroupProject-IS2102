@@ -17,7 +17,7 @@ class adminFunctions extends Controller
 
     public function fleetcenter() 
     {
-        $this->view('admin/fleetCenter');
+        $this->view('fleet/dashboard');
     }  
     public function commercial() 
     {

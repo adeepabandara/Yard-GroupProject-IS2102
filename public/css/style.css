@@ -5,8 +5,9 @@ html {
 }
 
 body {
-  margin: 0;
+    margin: 0;
 }
+
 
 
 
@@ -31,21 +32,21 @@ body {
 }
 
 /* Give every child element its grid name */
-
 .header {
 
-  grid-area: header;
-  background-color: #0295a9;
-  margin: 0px;
+    grid-area: header;
+    background-color: #0295A9;
+    margin: 0px;
+
+ 
 
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
     background-color: #fff;
+
 }
-
-
 
 .sidenav {
   grid-area: sidenav;
@@ -68,7 +69,15 @@ body {
   background-color: #fff;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    background-color: #fff;
 
+
+}
 
 .sidenav {
   display: flex;
@@ -89,17 +98,9 @@ body {
     padding: 20px 20px 20px 40px;
     color: #ddd;
     text-decoration:none;
-
 }
 
-
-
-
 .sidenav__list-item:hover {
-
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-
     background-color: #fff;
     cursor: pointer;
 }
@@ -145,9 +146,6 @@ body {
 }
 
 .card:nth-child(3) {
-
-  height: 265px;
-}
 
     height: auto;
 }
@@ -360,8 +358,6 @@ select {
     font-size: 14px;
     font-weight: 400;
 }
-
-
 
 
 
@@ -794,95 +790,86 @@ input[type="file"] {
 tr:nth-child(even) {
     background-color: #ffff
 }
-
-
-
-.overlay {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.8);
-	transition: opacity 500ms;
-	visibility: hidden;
-	opacity: 0;
-}
-.overlay:target {
-	visibility: visible;
-	opacity: 1;
+.form-group {
+    margin-bottom: 20px;
 }
 
-
-
- 
-.popup_card {
-    flex-direction: column;
-    align-items: left;
-    width:50%;
-    background-color:#fff;
-    padding: 24px;
-    box-sizing: border-box;
-    border: #fff;
-    border-radius: 20px;
-    margin-bottom:auto;
-    margin-left: 25%;
-    margin-top: 5%;
-    display: flex;
-
-
+.horizontal-group .left {
+    float: left;
+    width: 49%;
 }
 
-
-.popup_card_fields {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width:fit-content;
-    flex-wrap: wrap;
+.horizontal-group .right {
+    float: right;
+    width: 49%;
+}
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
 }
 
-
-.popup_card_input {
-    display: flex;
-    width: calc(100% / 2 - 15px);
-    flex-direction: column;
-    margin: 4px 0;
-    padding: 5px;
-    border-radius: 12%;
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 25%;
+    height: 30%;
+    font-family: 'Inter';
 }
 
-.popup_card_input input,
-select {
-    outline: none;
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.add-category-title {
+    padding-left: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: bold;
     font-size: 14px;
-    font-weight: 400;
-    color: #333;
-    border-radius: 5px;
-    border: 1px solid #aaa;
-    padding: 0 15px;
-    height: 42px;
-    margin: 8px 0;
+    /* identical to box height */
+
+
+    /* black */
+
+
+    color: #000000;
 }
-
-
-.avatar {
-    vertical-align: middle;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
-
-.clock {
-    position: relative;
-
-    margin-top: 20%;
-    transform: translateX(-50%) translateY(-50%);
-    color:#0295A9;
-    font-size: 20px;
-    letter-spacing: 2px;
-   
-
 
 }
 
@@ -927,4 +914,3 @@ select {
 .input-field input[type="date"]:valid {
     color: #333;
 }
-

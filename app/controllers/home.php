@@ -6,14 +6,13 @@ class Home extends Controller
     {
         $this->view('login/userselection');
     }  
-    
 
     public function signout()
     {
         session_start();
         session_destroy();
         unset($_SESSION['username']);
-        header('Location: '.BASEURL.'/login');
+        header('Location: '.BASEURL.'/login/employee');
     }
     
 

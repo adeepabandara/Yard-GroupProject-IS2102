@@ -1,5 +1,7 @@
 <?php
 session_start();
+// var_dump('test');
+// exit();
 
 if (isset($_SESSION['username'])) {
     header('Location: ' . BASEURL . '/welcome');
@@ -9,7 +11,7 @@ class login extends Controller
 {
     public function index()
     {
-        $this->view('login/admin');
+        $this->view('login/fleet');
     }
 
     public function admin()
@@ -30,18 +32,27 @@ class login extends Controller
         }
     }
 
+    public function fleetLogin()
+
     public function warehouse()
     {
         $this->view('login/warehouse');
     }
 
     public function warehouseLogin()
+
     {
         if (isset($_POST['username'])) {
 
             $username = $_POST['username'];
             $password = $_POST['password'];
 
+
+            $this->login($username, $password, 'fleetcenter');
+        } else {
+            header("Location: " . BASEURL . "/login/admin");
+        }
+    }
             $this->login($username, $password, 'warehouse');
         } else {
             // header("Location: " . BASEURL . "/login/warehouse");
