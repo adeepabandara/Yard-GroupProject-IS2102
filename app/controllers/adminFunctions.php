@@ -15,10 +15,7 @@ class adminFunctions extends Controller
         $this->view('admin/warehouse');
     }  
 
-    public function fleetcenter() 
-    {
-        $this->view('fleet/dashboard');
-    }  
+
     public function commercial() 
     {
         $this->view('admin/commercial');
@@ -34,10 +31,12 @@ class adminFunctions extends Controller
             $name = $_POST['name'];
             $address = $_POST['address'];
             $email_address = $_POST['email_address'];
+
             $longitude = $_POST['longitude'];
             $latitude = $_POST['latitude'];
             $cp_name = $_POST['cp_name'];
             $cp_number = $_POST['cp_number'];
+
             $fleet_center = $_POST['fleet_center'];
             $capacity = $_POST['capacity'];
             $username = $_POST['username'];
@@ -51,6 +50,7 @@ class adminFunctions extends Controller
             header("Location: " . BASEURL . "/welcome/warehouse");
         }
     }
+
 
     public function createFleetcenter()
     {
@@ -113,10 +113,6 @@ class adminFunctions extends Controller
 
 
 
-
-    
-
-
     public function deleteWarehouse($warehouse_code)
     {
         if (isset($warehouse_code)) {
@@ -125,6 +121,7 @@ class adminFunctions extends Controller
 
         }
     }
+
 
     public function viewWarehouse($warehouse_code)
     

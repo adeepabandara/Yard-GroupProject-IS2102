@@ -11,7 +11,8 @@ class login extends Controller
 {
     public function index()
     {
-        $this->view('login/fleet');
+
+        $this->view('login/userselection');
     }
 
     public function admin()
@@ -32,12 +33,12 @@ class login extends Controller
         }
     }
 
-    public function fleetLogin()
 
     public function warehouse()
     {
         $this->view('login/warehouse');
     }
+
 
     public function warehouseLogin()
 
@@ -46,17 +47,12 @@ class login extends Controller
 
             $username = $_POST['username'];
             $password = $_POST['password'];
-
-
-            $this->login($username, $password, 'fleetcenter');
-        } else {
-            header("Location: " . BASEURL . "/login/admin");
-        }
-    }
+ 
             $this->login($username, $password, 'warehouse');
         } else {
             // header("Location: " . BASEURL . "/login/warehouse");
             $this->view('login/warehouse');
+
         }
     }
 

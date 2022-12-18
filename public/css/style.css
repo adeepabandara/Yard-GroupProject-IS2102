@@ -1,11 +1,17 @@
 @import url("https://rsms.me/inter/inter.css");
 
+:root {
+  --PrimaryColor: #0295a9;
+  --BackgroundColor: #efeff3;
+}
+
+
 html {
   font-family: "Inter", sans-serif;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 
@@ -37,14 +43,12 @@ body {
     grid-area: header;
     background-color: #0295A9;
     margin: 0px;
-
- 
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
     background-color: #fff;
+
 
 }
 
@@ -61,22 +65,13 @@ body {
   margin: 0px;
 }
 
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
   background-color: #fff;
-}
-
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 16px;
-    background-color: #fff;
-
-
 }
 
 .sidenav {
@@ -95,15 +90,18 @@ body {
 
 .sidenav__list-item {
 
+  padding: 20px 20px 20px 40px;
+  color: #ddd;
+}
+
+.sidenav__list-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
     padding: 20px 20px 20px 40px;
     color: #ddd;
     text-decoration:none;
 }
 
-.sidenav__list-item:hover {
-    background-color: #fff;
-    cursor: pointer;
-}
+
 
 .main-header {
   display: flex;
@@ -147,6 +145,11 @@ body {
 
 .card:nth-child(3) {
 
+  height: 265px;
+}
+
+
+
     height: auto;
 }
 
@@ -187,13 +190,26 @@ body {
 
 form .fields .input-field {
 
-    display: flex;
-    width: calc(100% / 2 - 15px);
-    flex-direction: column;
-    margin: 4px 0;
-    padding: 5px;
-    
+  display: flex;
+  width: calc(100% / 2 - 15px);
+  flex-direction: column;
+  margin: 4px 0;
+  padding: 5px;
 }
+
+form .fields .input-field.one {
+  width: 50%;
+}
+
+form .fields .input-field.two {
+  width: 75%;
+}
+
+form .fields .input-field.three {
+  width: 100%;
+}
+
+
 
 
 
@@ -244,10 +260,33 @@ form .fields .input-field.three {
   width: 100%;
 }
 
+
 .input-field label {
   font-size: 12px;
   font-weight: 500;
   color: #2e2e2e;
+
+}
+
+.card-headline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-btncontainer {
+  width: 60px;
+}
+/* .card-searchbar {
+  display: flex;
+  border: 1px solid var(--PrimaryColor);
+  border-radius: 8px;
+  margin: 0 1.5rem;
+  align-items: center;
+  padding: 0 0.5rem;
+  width: 100%;
+} */
+
 }
 
 
@@ -276,6 +315,7 @@ select {
 
 .input-field input[type="date"]:valid {
   color: #333;
+
 }
 
 .container1 form button,
@@ -296,29 +336,51 @@ select {
   cursor: pointer;
   font-size: 14px;
   font-weight: 400;
+
 }
 
 
 .container1 form button,
 .subBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 45px;
-    max-width: 200px;
-    width: 100%;
-    border: none;
-    outline: none;
-    color: #fff;
-    border-radius: 10px;
-    margin-left: 10px;
-    background-color: #0295A9;
-    transition: all 0.3s linear;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  max-width: 200px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: #02a926;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
 }
 
+.container2 form button,
+.viewBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+  margin-left: 0px;
+  background-color: #0295a9;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.container2 form button,
+.delBtn {
 .container1 form button,
 .closeBtn {
     display: flex;
@@ -369,15 +431,16 @@ select {
   height: 30px;
   width: 100%;
   border: none;
-  outline: none;
   color: #fff;
   border-radius: 10px;
   margin-left: 0px;
-  background-color: #0295a9;
+  background-color: #dc2626;
   transition: all 0.3s linear;
   cursor: pointer;
   font-size: 12px;
-  font-weight: 400;
+}
+
+
 }
 
 
@@ -416,6 +479,7 @@ select {
   font-size: 12px;
 }
 
+
 form button:hover {
   background-color: #555;
 }
@@ -438,6 +502,19 @@ form .buttons button,
 .backBtn {
   margin-right: 14px;
 }
+
+.searchBar {
+  /* border: 1px solid black; */
+  width: 100%;
+}
+.searchBar input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--PrimaryColor);
+  border-radius: 5px;
+}
+.searchBar input[type="text"]:focus {
+
 
 form .input[type="text"]:focus {
   border: 3px solid #555;
@@ -478,6 +555,126 @@ form .input[type="text"]:focus {
     flex-direction: column;
     margin: 4px 4px 4px 4px;
   }
+
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th {
+  background-color: #0295a9;
+  color: #ffff;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+
+  font-size: 12px;
+}
+
+tr:nth-child(even) {
+  background-color: #ffff;
+}
+
+
+
+.categoryModalBox {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.74); 
+  }
+  
+  .categoryModalContent {
+    background-color: white;
+    margin: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .categoryModalContent span {
+    text-align: right;
+    position: absolute;
+    right: 0.8rem;
+    top: 0.8rem;
+    cursor: pointer;
+  }
+  
+  .categoryModalContent form {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+  }
+  
+  .categoryModalContent form label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .categoryModalContent form .category-name {
+    width: 100%;
+  }
+  
+  .categoryModalContent form input {
+    padding: 0.5rem;
+    width: 100%;
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 5px;
+  }
+  
+  .categoryModalContent form ul {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .categoryModalContent form .form-top {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .categoryModalContent form button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .categoryModalContent .delete-btn {
+    background-color: red;
+    color: white;
+  }
+  
+  .categoryModalContent .modal-add-btn {
+    background-color: var(--PrimaryColor);
+    color: white;
+    width: 7rem;
+  }
+  
+  .categoryModalContent .modal-buttons {
+    display: flex;
+    justify-content: right;
+    gap: 1.5rem;
+  }
+
 }
 
 table {
