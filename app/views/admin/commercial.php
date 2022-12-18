@@ -11,7 +11,7 @@ if (isset($_SESSION['username'])) {
 
 
 $conn = mysqli_connect("localhost", "root", "", "yard");
-$rows = mysqli_query($conn, "SELECT * FROM warehouse");
+$rows = mysqli_query($conn, "SELECT * FROM commercial_users");
 
 ?>
 
@@ -57,7 +57,7 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
 
 <div class="grid-container">
 
-  <header class="header">Admin&nbsp>&nbsp Warehouse<div><a id="MyClockDisplay" class="clock" onload="showTime()" ></a>&nbsp&nbsp&nbsp<img src="<?php echo BASEURL ?>/images/img_avatar.png"class="avatar"></a></div></header>
+  <header class="header">Admin&nbsp>&nbsp Commercial & Finance <div></a>&nbsp&nbsp&nbsp<img src="<?php echo BASEURL ?>/images/img_avatar.png"class="avatar"></a></div></header>
 
 
   <aside class="sidenav">
@@ -75,7 +75,7 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
   <main class="main">
     <div class="main-header">
 
-      <h2>Add Warehouse</h2>
+      <h2>Commercial & Finance Department</h2>
 
     </div>
 
@@ -83,26 +83,39 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
     <div class="main-cards">
 
 
-      <div class="card">Add Warehouse
+      <div class="card">Add Users
      
 
  
         <div class="container">
-          <form action="<?php echo BASEURL ?>/adminFunctions/createWarehouse" method="POST" id="form">
+          <form action="<?php echo BASEURL ?>/adminFunctions/createCommercial_User" method="POST" id="form">
             <div class="form first">
               <div>
 
 
                 <div class="fields">
                   <div class="input-field">
-                    <label>Warehouse Code</label>
-                    <input name="warehouse_code" type="text" placeholder="Type Here" required>
+                    <label>Department Code</label>
+                    <input name="commercial_code" type="text" placeholder="Type Here" required>
 
                   </div>
 
                   <div class="input-field">
-                    <label>Warehouse Name</label>
-                    <input name="name" type="text" placeholder="Type Here" required>
+                    <label> Job Position</label>
+                    <input name="job_position" type="text" placeholder="Type Here" required>
+                  </div>
+
+
+                  <div class="fields">
+                  <div class="input-field">
+                    <label>Employee Id</label>
+                    <input name="employee_id" type="text" placeholder="Type Here" required>
+
+                  </div>
+
+                  <div class="input-field">
+                    <label> NIC</label>
+                    <input name="nic" type="text" placeholder="Type Here" required>
                   </div>
 
 
@@ -112,40 +125,13 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
                   </div>
 
                   <div class="input-field">
-                    <label>Capacity</label>
-                    <input name="capacity" type="text" placeholder="Type Here">
-                  </div>
-
-                  <div class="input-field w-100">
-                    <a class="locBtn"  onclick="getLocationConstant()" >GET YOUR GPS LOCATION</a>
-                  </div>
-             
-                  <div class="input-field">
-                    <label>Lattitude</label>
-                    <input type="text" id="Latitude" name="latitude" value="">
-                  </div>
-
-                  <div class="input-field">
-                  <label>Longitude</label>
-                    <input type="text" id="Longitude" name="longitude" value="">
-                  </div>
-
-              
-
-                  <div class="input-field">
-                    <label>Fleet Center</label>
-                    <input name="fleet_center" type="text" placeholder="Type Here">
-                  </div>
-
-                  <div class="input-field">
                     <label>Email Address</label>
-
                     <input name="email_address" type="text" placeholder="Type Here">
-
                   </div>
 
+
                   <div class="input-field">
-                    <label>Contact Person</label>
+                    <label>Name</label>
                     <input name="cp_name" type="text" placeholder="Type Here">
                   </div>
 
@@ -171,16 +157,17 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
               </div>
 
               <button class="subBtn" onclick="createWarehouse()" type="submit" >
-                <span class="btnText"  >Create Warehouse</span>
+                <span class="btnText"  >Create User</span>
               </button>
             </div>
           </form>
 
         </div>
+      </div>
 
       </div>
 
-      <div class="card">Warehouse List
+      <div class="card">Users List
 
 
 
@@ -188,9 +175,9 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
 
           <table>
             <tr>
-              <th>Code</th>
               <th>Name</th>
-              <th>Address</th>
+              <th>Email</th>
+              <th>Contact Number</th>
               <th></th>
               <th></th>
 
@@ -202,11 +189,11 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
             
             <tr>
 
-              <td><?php echo $row["warehouse_code"]; ?></td>
-              <td><?php echo $row["name"]; ?></td>
-              <td><?php echo $row["address"]; ?></td>
+              <td><?php echo $row["cp_name"]; ?></td>
+              <td><?php echo $row["email_address"]; ?></td>
+              <td><?php echo $row["cp_number"]; ?></td>
               <td><a class="viewBtn" href="#view"  >View</a></td> 
-              <td><a class="delBtn" onclick="deleteWarehouse()" href="<?php echo BASEURL ?>/adminFunctions/deleteWarehouse/warehouse_code"> Delete</a></td>
+              <td><a class="delBtn" onclick="deleteWarehouse()" href="<?php echo BASEURL ?>/adminFunctions/deleteCommercial_User/nic"> Delete</a></td>
 
             </tr>
             <?php endforeach; ?>
@@ -272,61 +259,42 @@ window.onclick = function(event) {
 
 
     <div class="popup_card">
-<h3>Warehouse Details <a href="<?php echo BASEURL ?>/warehouse/createWarehouse">X</a></h3>
+<h3>User Details <a href="<?php echo BASEURL ?>/warehouse/createWarehouse">X</a></h3>
     
           <form action="<?php echo BASEURL ?>/warehouse/createWarehouse" method="POST">
         
             <div class="popup_card_fields">
 
                   <div class="popup_card_input">
-                    <label>Warehouse Code</label>
-                    <input name="warehouse_code" value = <?php echo $row["warehouse_code"]; ?> >
+                    <label>Department Code</label>
+                    <input name="department_code" value = <?php echo $row["department_code"]; ?> >
                   </div>
                   <div class="popup_card_input">
-                    <label>Warehouse Name</label>
-                    <input name="name" value = <?php echo $row["name"]; ?>>
+                    <label>Job Position</label>
+                    <input name="job_position" value = <?php echo $row["job_position"]; ?>>
                   </div>
                   <div class="popup_card_input">
-                    <label>Adddress</label>
-                    <input name="address" value = <?php echo $row["password"];?>>
+                    <label>Employee_id</label>
+                    <input name="employee_id" value = <?php echo $row["employee_id"];?>>
                   </div>
-
                   <div class="popup_card_input">
-                    <label>Capacity</label>
-
-                    <input name="capacity" type="text" placeholder="Type Here">
-
+                    <label>NIC</label>
+                    <input name="nic" type="text"  value = <?php echo $row["nic"];?>>
                   </div>
-                  
-                  <div class="popup_card_input w-100">
-                    <a class="locBtn"  onclick="getLocationConstant()" >GET YOUR GPS LOCATION</a>
-                  </div>
-
                   <div class="popup_card_input">
-                    <label>Latitude</label>
-                    <input type="text" id="Latitude" name="latitude" value =<?php echo $row["latitude"];?>>
+                    <label>Address</label>
+
+                    <input name="address" type="text" value = <?php echo $row["address"];?>>
+
                   </div>
-
-                  <div class="popup_card_input">
-                  <label>Longitude</label>
-                    <input type="text" id="Longitude" name="longitude" value =<?php echo $row["longtitude"];?>>
-                  </div>
-
-                  <div class="popup_card_input">
-                    <label>Fleet Center</label>
-                    <input name="fleet_center" type="text" placeholder="Type Here">
-                  </div>
-
-
 
                   <div class="popup_card_input">
                     <label>Email Address</label>
 
-                    <input name="email_address" type="text" placeholder="Type Here">
+                    <input name="email_address" type="text"  value = <?php echo $row["email_address"];?>>
 
                   </div>
 
-                 
                   <div class="popup_card_input">
                     <label>Username</label>
                     <input name="username" value = <?php echo $row["username"];?>>
@@ -344,7 +312,7 @@ window.onclick = function(event) {
               </button>
           
         
-        <a class="closeBtn" href="<?php echo BASEURL ?>/adminFunctions/warehouse">Close</a>
+        <a class="closeBtn" href="<?php echo BASEURL ?>/adminFunctions/commercial">Close</a>
 
         </form>
 
@@ -392,12 +360,6 @@ showTime();
 
 </script>
 
-
-
-
-  </body>
-
-  </html>
 
 
 

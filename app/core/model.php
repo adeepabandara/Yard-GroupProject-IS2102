@@ -23,7 +23,6 @@ class Model extends Database
         return $result;
     }
 
-
     public function insert($table, $data)
     {
         $sql = "INSERT INTO $table SET ";
@@ -36,11 +35,11 @@ class Model extends Database
         return $result;
     }
 
-
     public function delete($table, $where)
     {
         $sql = "DELETE FROM $table WHERE $where";
         $result = $this->runQuery($sql);
         return $result;
     }
+
 }

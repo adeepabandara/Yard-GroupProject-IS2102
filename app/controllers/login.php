@@ -33,17 +33,33 @@ class login extends Controller
     }
 
     public function fleetLogin()
+
+    public function warehouse()
+    {
+        $this->view('login/warehouse');
+    }
+
+    public function warehouseLogin()
+
     {
         if (isset($_POST['username'])) {
 
             $username = $_POST['username'];
             $password = $_POST['password'];
 
+
             $this->login($username, $password, 'fleetcenter');
         } else {
             header("Location: " . BASEURL . "/login/admin");
         }
     }
+            $this->login($username, $password, 'warehouse');
+        } else {
+            // header("Location: " . BASEURL . "/login/warehouse");
+            $this->view('login/warehouse');
+        }
+    }
+
 
     public function login($username = null, $password = null, $usertype = null)
     {
@@ -53,7 +69,7 @@ class login extends Controller
 
             $result = $this->model('loginModel')->login($username, $password, $usertype);
 
-            if ($result != null) {
+            if ($result->num_rows > 0) {
                 session_destroy();
 
                 session_start();
@@ -62,19 +78,15 @@ class login extends Controller
                 echo $row['username'];
                 $_SESSION['username'] = $row['username'];
                 echo "success";
-                header("location: $path/welcome");
-
+                header("location: $path/welcome/$usertype");
             } else {
                 echo "<br>Error<br><br><br> ";
                 header("location: $path/welcome");
             }
-
         } else {
 
             echo "Invalid user";
             $this->view('login/admin');
         }
     }
-
-
 }

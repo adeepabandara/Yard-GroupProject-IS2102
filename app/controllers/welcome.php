@@ -7,6 +7,15 @@ class welcome extends Controller
         $this->view('dashboard/dashboard');
     }  
 
+    public function admin() 
+    {
+        $this->view('admin/dashboard');
+    }  
+    public function warehouse() 
+    {
+        $this->view('warehouse/dashboard');
+    }
+
     public function signout()
     {
         header("Location: " . BASEURL . "/home");
