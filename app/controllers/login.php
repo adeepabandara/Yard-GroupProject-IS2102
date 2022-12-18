@@ -9,7 +9,7 @@ class login extends Controller
 {
     public function index()
     {
-        $this->view('login/admin');
+        $this->view('login/userselection');
     }
 
     public function admin()
@@ -27,6 +27,19 @@ class login extends Controller
             $this->login($username, $password, 'admin');
         } else {
             header("Location: " . BASEURL . "/login/admin");
+        }
+    }
+
+    public function commercialLogin()
+    {
+        if (isset($_POST['username'])) {
+
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+
+            $this->login($username, $password, 'commercial');
+        } else {
+            $this->view('login/commercialLogin');
         }
     }
 
@@ -48,19 +61,15 @@ class login extends Controller
                 echo $row['username'];
                 $_SESSION['username'] = $row['username'];
                 echo "success";
-                header("location: $path/welcome");
-
+                header("location: $path/welcome/$usertype");
             } else {
                 echo "<br>Error<br><br><br> ";
                 header("location: $path/welcome");
             }
-
         } else {
 
             echo "Invalid user";
             $this->view('login/admin');
         }
     }
-
-
 }
