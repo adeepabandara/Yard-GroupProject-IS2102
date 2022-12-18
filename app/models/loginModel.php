@@ -10,7 +10,10 @@ class loginModel extends Model
     }
     public function login($username, $password,$usertype)
     {
+
         return $this->get("$usertype", "username = '$username' AND password = '$password'");
+
+
     
     }
 

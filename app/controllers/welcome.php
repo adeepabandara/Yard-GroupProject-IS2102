@@ -4,8 +4,19 @@ class welcome extends Controller
 {
     public function index() 
     {
-        $this->view('dashboard1/dashboard');
+
+        $this->view('dashboard/dashboard');
     }  
+
+    public function admin() 
+    {
+        $this->view('admin/dashboard');
+
+    }  
+    public function warehouse() 
+    {
+        $this->view('warehouse/dashboard');
+    }
 
     public function commercial() 
     {

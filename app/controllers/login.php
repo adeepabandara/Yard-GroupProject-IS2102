@@ -1,5 +1,7 @@
 <?php
 session_start();
+// var_dump('test');
+// exit();
 
 if (isset($_SESSION['username'])) {
     header('Location: ' . BASEURL . '/welcome');
@@ -9,6 +11,7 @@ class login extends Controller
 {
     public function index()
     {
+
         $this->view('login/userselection');
     }
 
@@ -30,16 +33,26 @@ class login extends Controller
         }
     }
 
-    public function commercialLogin()
+
+    public function warehouse()
+    {
+        $this->view('login/warehouse');
+    }
+
+
+    public function warehouseLogin()
+
     {
         if (isset($_POST['username'])) {
 
             $username = $_POST['username'];
             $password = $_POST['password'];
-
-            $this->login($username, $password, 'commercial');
+ 
+            $this->login($username, $password, 'warehouse');
         } else {
-            $this->view('login/commercialLogin');
+            // header("Location: " . BASEURL . "/login/warehouse");
+            $this->view('login/warehouse');
+
         }
     }
 
@@ -52,7 +65,7 @@ class login extends Controller
 
             $result = $this->model('loginModel')->login($username, $password, $usertype);
 
-            if ($result != null) {
+            if ($result->num_rows > 0) {
                 session_destroy();
 
                 session_start();

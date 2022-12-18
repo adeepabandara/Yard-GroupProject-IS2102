@@ -1,8 +1,10 @@
 @import url("https://rsms.me/inter/inter.css");
+
 :root {
   --PrimaryColor: #0295a9;
   --BackgroundColor: #efeff3;
 }
+
 
 html {
   font-family: "Inter", sans-serif;
@@ -11,6 +13,15 @@ html {
 body {
   margin: 0;
 }
+
+
+
+
+.header {
+        grid-area: header;
+        background-color: #0295A9;
+        margin: 0px;
+    }
 
 /* Assign grid instructions to our parent grid container */
 
@@ -28,9 +39,17 @@ body {
 
 /* Give every child element its grid name */
 .header {
-  grid-area: header;
-  background-color: #0295a9;
-  margin: 0px;
+
+    grid-area: header;
+    background-color: #0295A9;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    background-color: #fff;
+
+
 }
 
 .sidenav {
@@ -45,6 +64,7 @@ body {
   background-color: #efeff3;
   margin: 0px;
 }
+
 
 .header {
   display: flex;
@@ -69,14 +89,19 @@ body {
 }
 
 .sidenav__list-item {
+
   padding: 20px 20px 20px 40px;
   color: #ddd;
 }
 
 .sidenav__list-item:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
+    padding: 20px 20px 20px 40px;
+    color: #ddd;
+    text-decoration:none;
 }
+
+
 
 .main-header {
   display: flex;
@@ -99,15 +124,14 @@ body {
   margin: 0 -5px;
   flex-direction: column;
   align-items: left;
-  width: 50%;
-  background-color: rgb(255, 255, 255);
+  width: 100%;
+  background-color: #ffff;
   padding: 24px;
   box-sizing: border-box;
   border: #fff;
   border-radius: 20px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 5%;
-  margin-left: 30px;
 }
 
 /* Force varying heights to simulate dynamic content */
@@ -120,8 +144,26 @@ body {
 }
 
 .card:nth-child(3) {
+
   height: 265px;
 }
+
+
+
+    height: auto;
+}
+
+.card:nth-child(4) {
+    height: auto;
+}
+.card:nth-child(5) {
+    height: auto;
+}
+
+.card:nth-child(6) {
+    height: 100%;
+}
+
 
 .container {
   position: relative;
@@ -147,6 +189,7 @@ body {
 }
 
 form .fields .input-field {
+
   display: flex;
   width: calc(100% / 2 - 15px);
   flex-direction: column;
@@ -166,10 +209,63 @@ form .fields .input-field.three {
   width: 100%;
 }
 
+
+
+
+
+
+
+/*input box*/
+.input-field input {
+    border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-size: 12px;
+	padding: 10px;
+	width: 100%;
+}
+
+.input-field input:focus {
+    outline: 0;
+}
+
+
+.input-field.success input {
+    border-color: #09c372;
+
+}
+.input-field.error input  {
+    border-color: #ff3860;
+}
+
+.input-field.error {
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
+
+
+
+
+
+form .fields .input-field.one {
+  width: 50%;
+}
+
+form .fields .input-field.two {
+  width: 75%;
+}
+
+form .fields .input-field.three {
+  width: 100%;
+}
+
+
 .input-field label {
   font-size: 12px;
   font-weight: 500;
   color: #2e2e2e;
+
 }
 
 .card-headline {
@@ -190,6 +286,10 @@ form .fields .input-field.three {
   padding: 0 0.5rem;
   width: 100%;
 } */
+
+}
+
+
 .input-field input,
 select {
   outline: none;
@@ -215,7 +315,30 @@ select {
 
 .input-field input[type="date"]:valid {
   color: #333;
+
 }
+
+.container1 form button,
+.subBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  max-width: 200px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: #0295a9;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+
+}
+
 
 .container1 form button,
 .subBtn {
@@ -258,6 +381,50 @@ select {
 
 .container2 form button,
 .delBtn {
+.container1 form button,
+.closeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 10px;
+    margin-left: 10px;
+    background-color:#555;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.container1 form button,
+.deleteBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 10px;
+    margin-left: 10px;
+    background-color:#DC2626;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+
+.container2 form button,
+.viewBtn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -272,6 +439,46 @@ select {
   cursor: pointer;
   font-size: 12px;
 }
+
+
+}
+
+
+.container2 form button,
+.locBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    width: 98%;
+    color:#fff;
+    border-radius: 5px;
+    background-color:7A7A7A;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 400;
+
+
+}
+
+.container2 form button,
+.delBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 100%;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  margin-left: 0px;
+  background-color: #dc2626;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 12px;
+}
+
 
 form button:hover {
   background-color: #555;
@@ -295,6 +502,7 @@ form .buttons button,
 .backBtn {
   margin-right: 14px;
 }
+
 .searchBar {
   /* border: 1px solid black; */
   width: 100%;
@@ -306,6 +514,9 @@ form .buttons button,
   border-radius: 5px;
 }
 .searchBar input[type="text"]:focus {
+
+
+form .input[type="text"]:focus {
   border: 3px solid #555;
 }
 
@@ -344,6 +555,7 @@ form .buttons button,
     flex-direction: column;
     margin: 4px 4px 4px 4px;
   }
+
 }
 
 table {
@@ -462,3 +674,440 @@ tr:nth-child(even) {
     justify-content: right;
     gap: 1.5rem;
   }
+
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th {
+  background-color: #0295a9;
+  color: #ffff;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+
+  font-size: 12px;
+}
+
+tr:nth-child(even) {
+  background-color: #ffff;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.button_plus {
+    width: 35px;
+    height: 35px;
+    background: whitesmoke;
+    cursor: pointer;
+    border: 1px solid #9FA6B2;
+    border-radius: 12px;
+    margin-left: 10px;
+}
+
+/*pop_up_dialog*/
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 135%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.modal1 {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 135%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.modal2 {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 135%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 25%;
+  height: 30%;
+  font-family: 'Inter';
+}
+
+.modal1-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 25%;
+  height: 30%;
+  font-family: 'Inter';
+}
+
+.modal2-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 25%;
+  height: 30%;
+  font-family: 'Inter';
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close2 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close2:hover,
+.close2:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.add-category-title {
+  padding-left: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0;
+  font-family: 'Inter';
+  font-style: bold;
+  font-size: 14px;
+  /* identical to box height */
+
+
+  /* black */
+
+  color: #000000;
+}
+
+.horizontal-group .left {
+  float: left;
+  width: 49%;
+}
+
+.horizontal-group .right {
+  float: right;
+  width: 49%;
+}
+
+.form-body {
+  padding: 10px 40px;
+  color: #666;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-body .label-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 19px;
+
+  /* black */
+
+  color: #000000;
+}
+
+.form-body .form-input {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  /* identical to box height */
+
+
+  color: #7A7A7A;
+  box-sizing: border-box;
+  width: 100%;
+  height: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #333333;
+  text-align: left;
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  background: white;
+  outline: none;
+}
+
+.input1-form{
+	font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    /* identical to box height */
+
+
+    color: #7A7A7A;
+    box-sizing: border-box;
+    width: 100%;
+    height: 34px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #333333;
+    text-align: left;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    background: white;
+    outline: none;
+}
+
+
+.button_normal {
+  background-color: #0295A9;
+  /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 35px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-inline: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+input[type="file"] {
+  outline: none;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+#range-label {
+  width: 15%;
+  padding: 5px;
+  background-color: #1BBA93;
+  color: white;
+  border-radius: 5px;
+  font-size: 17px;
+  position: relative;
+  top: -8px;
+}
+
+tr:nth-child(even) {
+    background-color: #ffff
+}
+.form-group {
+    margin-bottom: 20px;
+}
+
+.horizontal-group .left {
+    float: left;
+    width: 49%;
+}
+
+.horizontal-group .right {
+    float: right;
+    width: 49%;
+}
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 25%;
+    height: 30%;
+    font-family: 'Inter';
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.add-category-title {
+    padding-left: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: bold;
+    font-size: 14px;
+    /* identical to box height */
+
+
+    /* black */
+
+
+    color: #000000;
+}
+
+}
+
+
+
+.input-field input,
+select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+
+.w-100 {
+    width: 120% !important;
+   
+}
+
+
+
+
+
+
+
+/*
+
+.input-field input :focus,
+.input-field select:focus {
+    box-shadow: 10px 3px 6px rgba(0, 0, 0, 0.13);
+}
+
+.input-field select,
+.input-field input[type="date"] {
+    color: #707070;
+}
+
+.input-field input[type="date"]:valid {
+    color: #333;
+}
