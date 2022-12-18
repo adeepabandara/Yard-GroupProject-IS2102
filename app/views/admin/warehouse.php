@@ -16,8 +16,45 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
 ?>
 
 
+<script type="text/javascript"> 
+    function getLocationConstant()
+   {
+       if(navigator.geolocation)
+       {
+           navigator.geolocation.getCurrentPosition(onGeoSuccess,onGeoError);  
+       } else {
+           alert("Your browser or device doesn't support Geolocation");
+       }
+   }
+   
+   // If we have a successful location update
+   function onGeoSuccess(event)
+   {
+       document.getElementById("Latitude").value =  event.coords.latitude; 
+       document.getElementById("Longitude").value = event.coords.longitude;
+   
+   }
+   
+   // If something has gone wrong with the geolocation request
+   function onGeoError(event)
+   {
+       alert("Error code " + event.code + ". " + event.message);
+   }
+    </script>
+
+
+
+
+
+
+
+
+
+
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/style.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<script defer src="<?php echo BASEURL ?>/admin/index.js"></script>
+
 <div class="grid-container">
 
   <header class="header">Admin&nbsp>&nbsp Warehouse<div><a id="MyClockDisplay" class="clock" onload="showTime()" ></a>&nbsp&nbsp&nbsp<img src="<?php echo BASEURL ?>/images/img_avatar.png"class="avatar"></a></div></header>
@@ -37,6 +74,7 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
 
   <main class="main">
     <div class="main-header">
+
       <h2>Add Warehouse</h2>
 
     </div>
@@ -46,8 +84,11 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
 
 
       <div class="card">Add Warehouse
+     
+
+ 
         <div class="container">
-          <form action="<?php echo BASEURL ?>/adminFunctions/createWarehouse" method="POST">
+          <form action="<?php echo BASEURL ?>/adminFunctions/createWarehouse" method="POST" id="form">
             <div class="form first">
               <div>
 
@@ -56,21 +97,45 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
                   <div class="input-field">
                     <label>Warehouse Code</label>
                     <input name="warehouse_code" type="text" placeholder="Type Here" required>
+
                   </div>
+
                   <div class="input-field">
                     <label>Warehouse Name</label>
                     <input name="name" type="text" placeholder="Type Here" required>
                   </div>
+
+
                   <div class="input-field">
                     <label>Adddress</label>
                     <input name="address" type="text" placeholder="Type Here">
                   </div>
+
+                  <div class="input-field">
+                    <label>Capacity</label>
+                    <input name="capacity" type="text" placeholder="Type Here">
+                  </div>
+
+                  <div class="input-field w-100">
+                    <a class="locBtn"  onclick="getLocationConstant()" >GET YOUR GPS LOCATION</a>
+                  </div>
+             
+                  <div class="input-field">
+                    <label>Lattitude</label>
+                    <input type="text" id="Latitude" name="latitude" value="">
+                  </div>
+
+                  <div class="input-field">
+                  <label>Longtitude</label>
+                    <input type="text" id="Longitude" name="longitude" value="">
+                  </div>
+
+              
+
                   <div class="input-field">
                     <label>Fleet Center</label>
                     <input name="fleet_center" type="text" placeholder="Type Here">
                   </div>
-
-
 
                   <div class="input-field">
                     <label>Email Address</label>
@@ -80,23 +145,33 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
                   </div>
 
                   <div class="input-field">
-                    <label>Capacity</label>
-
-                    <input name="capacity" type="text" placeholder="Type Here">
-
+                    <label>Contact Person</label>
+                    <input name="cp_name" type="text" placeholder="Type Here">
                   </div>
+
+                  <div class="input-field">
+                    <label>Contact Number</label>
+                    <input name="cp_number" type="text" placeholder="Type Here">
+                  </div>
+
+        
                   <div class="input-field">
                     <label>Username</label>
-                    <input name="username" type="text" placeholder="Type Here" required>
+                    <input name="username" type="text" id="username" placeholder="Type Here" required>
+                    <div class="error"></div>
                   </div>
+
+
                   <div class="input-field">
                     <label>Password</label>
                     <input name="password" type="password" placeholder="Type Here" required>
                   </div>
+
                 </div>
               </div>
-              <button class="subBtn" onclick="createWarehouse()">
-                <span class="btnText">Create Warehouse</span>
+
+              <button class="subBtn" onclick="createWarehouse()" type="submit" >
+                <span class="btnText"  >Create Warehouse</span>
               </button>
             </div>
           </form>
@@ -106,6 +181,8 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
       </div>
 
       <div class="card">Warehouse List
+
+
 
         <div class="container">
 
@@ -128,9 +205,8 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
               <td><?php echo $row["warehouse_code"]; ?></td>
               <td><?php echo $row["name"]; ?></td>
               <td><?php echo $row["address"]; ?></td>
-              <td><a class="viewBtn" href="#view" >View</a></td>
-              <td><a class="delBtn" onclick="deleteWarehouse()"
-                  href="<?php echo BASEURL ?>/adminFunctions/deleteWarehouse/<? echo $row['warehouse']; ?>">Delete</a></td>
+              <td><a class="viewBtn" href="#view"  >View</a></td> 
+              <td><a class="delBtn" onclick="deleteWarehouse()" href="<?php echo BASEURL ?>/adminFunctions/deleteWarehouse/warehouse_code"> Delete</a></td>
 
             </tr>
             <?php endforeach; ?>
@@ -156,14 +232,13 @@ function deleteWarehouse() {
   confirm("Are you Sure Want to Delete This Warehouse");
 }
 
-function createWarehouse() {
-  confirm("Warehouse Successfully Created");
-}
+
 
 window.onclick = function(event) {
   if (event.target == categoryModal) {
     categoryModal.style.display = "none";
   }
+}
 
 </script>
 
@@ -261,6 +336,9 @@ window.onclick = function(event) {
     </div>
 
   </div>
+
+  <script>
+  
   <script>
   function showTime(){
     var date = new Date();
@@ -293,7 +371,12 @@ window.onclick = function(event) {
 showTime();
 
 
+
+
 </script>
+
+
+
 
   </body>
 
@@ -312,39 +395,29 @@ showTime();
               <td>Dehiwala</td>
               <td>No20,Galle Rd,Dehiwala</td>
               <td>
-
                 <button class="viewBtn">
                   <span class="btnText">View</span>
                 </button>
               </td>
               <td>
-
                 <button class="delBtn">
                   <span class="btnText">Delete</span>
                 </button>
 <!--
-
 <div class="input-field">
   <label>Warehouse Name</label>
   <input type="date" placeholder="Enter birth date" required>
 </div>
-
 <div class="input-field">
   <label>Email</label>
   <input type="text" placeholder="Enter your email" required>
 </div>
-
 <div class="input-field">
   <label>Mobile Number</label>
   <input type="number" placeholder="Enter mobile number" required>
 </div>
-
-
-
 <div class="input-field">
   <label>Occupation</label>
   <input type="text" placeholder="Enter your ccupation" required>
 </div>
-
-
 -->
