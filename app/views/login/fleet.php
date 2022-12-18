@@ -14,7 +14,7 @@
       <a href="#" class="link">Forgot Your Password?</a>
     </div>
     <div class="action">
-      <button ><a href="<?php echo BASEURL ?>/signUp">Register</button><br><br>
+      <button><a href="<?php echo BASEURL ?>/signUp">Register</button><br><br>
       <button>Sign in</button>
     </div>
   </form>

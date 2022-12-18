@@ -6,7 +6,7 @@
 		<form action="<?php echo BASEURL ?>/signUp/fleetRegister" method="post">
 
 			<label>Name</label>
-			<input type="text" id="name" name="Name" placeholder="John Smith"><br>
+			<input type="text" id="name" name="name" placeholder="John Smith"><br>
 
 			<label>Username</label>
 			<input type="text" id="username" name="username" placeholder="yardsolutions@gmail.com"><br>

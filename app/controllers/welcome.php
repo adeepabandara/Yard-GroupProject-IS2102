@@ -4,7 +4,7 @@ class welcome extends Controller
 {
     public function index() 
     {
-        $this->view('fleet/dashboard');
+        $this->view('dashboard/dashboard');
     }  
 
     public function signout()

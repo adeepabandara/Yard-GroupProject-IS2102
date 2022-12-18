@@ -42,11 +42,11 @@ if (isset ($_GET["vehicleId"])) {
     <aside class="sidenav">
     <center><img src="images/b&wlogo.png" alt="logo" width="40%"> </center>
     <ul class="sidenav__list">
-      <li class="sidenav__list-item">Dashboard</li>
-      <li class="sidenav__list-item">Warehouse</li>
-      <li class="sidenav__list-item">Fleet Center</li>
-      <li class="sidenav__list-item">Commercial & Finance</li>
-      <li class="sidenav__list-item"><a href="welcome/signout">Sign Out</a></li>
+    <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome">Dashboard</li>
+      <li class="sidenav__list-item">Add Vehicle</li>
+      <li class="sidenav__list-item">Add Driver</li>
+      <!-- <li class="sidenav__list-item">Commercial & Finance</li> -->
+      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/home">Sign Out</a></li>
     </ul>
   </aside>
 

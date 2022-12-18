@@ -61,15 +61,15 @@ class signUp extends Controller
 
                 session_start();
 
-                $row = $result->fetch_assoc();
-                echo $row['username'];
-                $_SESSION['username'] = $row['username'];
+                //$row = $result->fetch_assoc();
+                // echo $row['username'];
+                $_SESSION['username'] = $username;
                 echo "success";
                 header("location: $path/welcome");
 
             } else {
                 echo "<br>Error<br><br><br> ";
-                header("location: $path/welcome");
+                // header("location: $path/welcome");
             }
 
         } else {
