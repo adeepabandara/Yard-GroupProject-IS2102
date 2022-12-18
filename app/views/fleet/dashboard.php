@@ -156,13 +156,13 @@ if (isset ($_GET["vehicleId"])) {
             </div>
           </form>
 
-          <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <h2 class="add-category-title">Add Category</h2>
-                        <div class="horizontal-group">
+          <!-- <div class="modal-content"> -->
+                        <!-- <span class="close">&times;</span> -->
+                        <!-- <h2 class="add-category-title">Add Category</h2> -->
+                        <!-- <div class="horizontal-group"> -->
                         <!-- <button id="add_category_button" class="button-plus" >+</button> -->
                         <!-- <div id="add_category" class="modal"> -->
-                        <form action="<?php echo BASEURL ?>/fleetcenter/addCategory" method="POST" >
+                        <!-- <form action="<?php echo BASEURL ?>/fleetcenter/addCategory" method="POST" >
                             <div class="form-group left">
                                 <label for="categoryId" class="label-title">Category
                                     ID</label>
@@ -188,10 +188,10 @@ if (isset ($_GET["vehicleId"])) {
                             <div style="text-align: center;"><button
                                     class="button_normal" type="submit">Add Category</button>
                             </div>
-                            </form>
+                            </form> -->
                         <!-- </div> -->
-                   </div>
-          </div>
+                   <!-- </div> -->
+          <!-- </div> -->
 
         </div>
 
