@@ -38,6 +38,7 @@ if (isset ($_GET["vehicleId"])) {
 
     <head>
       <!-- <script src="js/pop_up_button.js"></script>    -->
+      <!-- <script src="js/form_validation.js"></script> -->
     </head>
     <aside class="sidenav">
     <center><img src="images/b&wlogo.png" alt="logo" width="40%"> </center>
