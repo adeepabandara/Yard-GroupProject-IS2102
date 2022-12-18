@@ -37,7 +37,7 @@ if (isset ($_GET["vehicleId"])) {
     <header class="header"> Fleet Center&nbsp&nbsp>&nbsp&nbspAdd Vehicle </header>
 
     <head>
-        
+      <!-- <script src="js/pop_up_button.js"></script>    -->
     </head>
     <aside class="sidenav">
     <center><img src="images/b&wlogo.png" alt="logo" width="40%"> </center>
@@ -158,8 +158,10 @@ if (isset ($_GET["vehicleId"])) {
 
           <div class="modal-content">
                         <span class="close">&times;</span>
-                        <h1 class="add-category-title">Add Category</h1>
+                        <h2 class="add-category-title">Add Category</h2>
                         <div class="horizontal-group">
+                        <!-- <button id="add_category_button" class="button-plus" >+</button> -->
+                        <!-- <div id="add_category" class="modal"> -->
                         <form action="<?php echo BASEURL ?>/fleetcenter/addCategory" method="POST" >
                             <div class="form-group left">
                                 <label for="categoryId" class="label-title">Category
@@ -187,8 +189,9 @@ if (isset ($_GET["vehicleId"])) {
                                     class="button_normal" type="submit">Add Category</button>
                             </div>
                             </form>
-                        </div>
+                        <!-- </div> -->
                    </div>
+          </div>
 
         </div>
 
@@ -268,6 +271,13 @@ if (isset ($_GET["vehicleId"])) {
             .then(response => response.json())
             .then(response => console.log(response))
     }
+    function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
     </script>
     
 
