@@ -9,7 +9,7 @@ class warehouse extends Controller
 
     public function product()
     {
-        $this->view('warehouse/dashboard');
+        $this->view('warehouse/addProduct');
     }
 
     public function signup()
@@ -25,12 +25,11 @@ class warehouse extends Controller
             $bar_code = $_POST['bar_code'];
             $name = $_POST['name'];
             $category = $_POST['category'];
-            $sub_category = $_POST['sub_category'];
             $opening_stock = $_POST['opening_stock'];
             $reorder_level = $_POST['reorder_level'];
             $purchase_price = $_POST['purchase_price'];
             $selling_price = $_POST['selling_price'];
-            $image = $_POST['image'];
+
 
 
             $this->model('insertModel')->addProduct(
@@ -38,12 +37,11 @@ class warehouse extends Controller
                 $bar_code,
                 $name,
                 $category,
-                $sub_category,
                 $opening_stock,
                 $reorder_level,
                 $purchase_price,
                 $selling_price,
-                $image
+               
             );
             header("Location: " . BASEURL . "/warehouse/product");
         } else {

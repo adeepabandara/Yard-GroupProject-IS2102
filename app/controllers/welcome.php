@@ -5,8 +5,9 @@ class welcome extends Controller
     public function index() 
     {
 
-        $this->view('dashboard/dashboard');
+        $this->view('admin/dashboard');
     }  
+    
 
     public function admin() 
     {
@@ -21,6 +22,11 @@ class welcome extends Controller
     public function commercial() 
     {
         $this->view('commercial/dashboard');
+    }  
+
+    public function fleet() 
+    {
+        $this->view('fleet/dashboard');
     }  
 
 

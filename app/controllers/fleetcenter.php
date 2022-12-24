@@ -1,16 +1,30 @@
 <?php
-session_start();
 
 class FleetCenter extends Controller
 {
+
+
+
+    public function index() 
+    {
+        $this->view('dashboard/dashboard');
+    }  
+
+    public function vehicle() 
+    {
+        $this->view('fleet/addVehicle');
+    }  
+
+
+
 
 
     public function addVehicle()
     {
         // var_dump($_SESSION['username']);
         // exit();
-        if (isset($_SESSION['username'])) {
-            $id = (int) $_POST['id'];
+        if (isset($_POST['id'])) {
+            $id =  $_POST['id'];
             $reg_no = $_POST['reg_no'];
             $model = $_POST['model'];
             $chassis_no = $_POST['chassis_no'];
@@ -21,11 +35,11 @@ class FleetCenter extends Controller
 
             $this->model('insertModel')->addVehicle($reg_no, $model, $chassis_no, $engine_no, $color, $category, $mf_year);
 
-            header("Location: " . BASEURL . "/welcome");
+            header("Location: " . BASEURL . "/fleetcenter/vehicle");
 
         } else {
             echo ("Missing mandotary addtribute");
-            header("Location: " . BASEURL . "/welcome");
+            header("Location: " . BASEURL . "/fleetcenter/vehicle");
         }
     }
 
@@ -33,7 +47,7 @@ class FleetCenter extends Controller
     {
         echo json_encode($_POST);
 
-        if (isset($_SESSION['username'])) {
+        if (isset($_POST['username'])) {
             $vehicle_code = (int) $_POST['categoryId'];
             $description = $_POST['description'];
             $name = $_POST['categoryName'];

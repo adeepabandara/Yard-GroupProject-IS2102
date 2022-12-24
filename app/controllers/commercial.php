@@ -6,9 +6,9 @@ class commercial extends Controller{
       $this->view('commercial/dashboard');
   }
 
-  public function expensecategory() 
+  public function expenseCat() 
     {
-        $this->view('commercial/dashboard');
+        $this->view('commercial/addExpenseCat');
     }
 
     public function commercial() 
@@ -30,7 +30,7 @@ class commercial extends Controller{
 
         $this->model('insertModel')->addExpenseCategory($category_code, $name, $description);
 
-        header("Location: " . BASEURL . "/commercial/service");
+        header("Location: " . BASEURL . "/commercial/expenseCat");
 
     }
         else{

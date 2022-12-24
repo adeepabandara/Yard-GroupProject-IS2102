@@ -4,7 +4,7 @@ class Home extends Controller
 {
     public function index() 
     {
-        $this->view('login/userselection');
+        $this->view('login/login');
     }  
 
     public function signout()

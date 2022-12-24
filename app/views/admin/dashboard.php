@@ -13,7 +13,7 @@ if (isset($_SESSION['username'])) {
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/style.css">
 <div class="grid-container">
 
-  <header class="header">Dashboard<img src="<?php echo BASEURL ?>/images/img_avatar.png" class="avatar">
+  <header class="header">Dashboard <!--<img src="<?php echo BASEURL ?>/images/img_avatar.png" class="avatar">-->
 
 
 
@@ -24,7 +24,7 @@ if (isset($_SESSION['username'])) {
   <aside class="sidenav">
     <center><img src="<?php echo BASEURL ?>/images/b&wlogo.png" alt="logo" width="40%"> </center>
     <ul class="sidenav__list">
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome">Dashboard</li>
+      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/admin">Dashboard</li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/adminFunctions/warehouse">Warehouse</li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/adminFunctions/fleetCenter">Fleet Center</li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/adminFunctions/commercial">Commercial & Finance</li>
@@ -53,13 +53,13 @@ if (isset($_SESSION['username'])) {
 <div class="main-cards">
   <div class="card">
 
-    <img src="images/1.png"  width="100%">
+    <img src="<?php echo BASEURL ?>/images/1.png"  width="100%">
 
 
   </div>
   <div class="card">
 
-    <img src="images/2.png" width="100%">
+    <img src="<?php echo BASEURL ?>/images/2.png" width="100%">
   </div>
 
   </div>
