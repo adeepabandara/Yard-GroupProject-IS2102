@@ -9,7 +9,17 @@ class warehouse extends Controller
 
     public function product()
     {
-        $this->view('warehouse/dashboard');
+        $this->view('warehouse/addProduct');
+    }
+
+    public function category()
+    {
+        $this->view('warehouse/addCategory');
+    }
+
+    public function brand()
+    {
+        $this->view('warehouse/addBrand');
     }
 
     public function signup()
@@ -25,12 +35,11 @@ class warehouse extends Controller
             $bar_code = $_POST['bar_code'];
             $name = $_POST['name'];
             $category = $_POST['category'];
-            $sub_category = $_POST['sub_category'];
             $opening_stock = $_POST['opening_stock'];
             $reorder_level = $_POST['reorder_level'];
             $purchase_price = $_POST['purchase_price'];
             $selling_price = $_POST['selling_price'];
-            $image = $_POST['image'];
+
 
 
             $this->model('insertModel')->addProduct(
@@ -38,12 +47,11 @@ class warehouse extends Controller
                 $bar_code,
                 $name,
                 $category,
-                $sub_category,
                 $opening_stock,
                 $reorder_level,
                 $purchase_price,
                 $selling_price,
-                $image
+               
             );
             header("Location: " . BASEURL . "/warehouse/product");
         } else {
@@ -70,6 +78,69 @@ class warehouse extends Controller
             header("Location: " . BASEURL . "/warehouse/service");
         }
     }
+
+    public function createCategory1()
+    {
+        if (isset($_POST['product_category_code'])) {
+
+            $product_category_code = $_POST['product_category_code'];
+            $name = $_POST['name'];
+            $description = $_POST['description'];
+ 
+            $this->model('insertModel')->addCategory1(
+                $product_category_code,
+                $name,
+                $description,
+
+            );
+            header("Location: " . BASEURL . "/warehouse/category");
+        } else {
+            header("Location: " . BASEURL . "/warehouse/service");
+        }
+    }
+
+        public function createSubCategory()
+    {
+        if (isset($_POST['product_sub_category_code'])) {
+
+            $category = $_POST['category'];
+            $product_sub_category_code = $_POST['product_sub_category_code'];
+            $name = $_POST['name'];
+            $description = $_POST['description'];
+ 
+            $this->model('insertModel')->addSubCategory(
+                $category,
+                $product_sub_category_code,
+                $name,
+                $description,
+
+            );
+            header("Location: " . BASEURL . "/warehouse/category");
+        } else {
+            header("Location: " . BASEURL . "/warehouse/service");
+        }
+    }
+
+    public function createBrand()
+    {
+        if (isset($_POST['brand_code'])) {
+
+            $brand_code = $_POST['brand_code'];
+            $name = $_POST['name'];
+            $description = $_POST['description'];
+ 
+            $this->model('insertModel')->addBrand(
+                $brand_code,
+                $name,
+                $description,
+
+            );
+            header("Location: " . BASEURL . "/warehouse/brand");
+        } else {
+            header("Location: " . BASEURL . "/warehouse/service");
+        }
+    }
+
 
 
 }

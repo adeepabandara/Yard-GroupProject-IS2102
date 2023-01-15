@@ -3,7 +3,7 @@
 session_start();
 
 if (isset($_SESSION['username'])) {
-  // echo $_SESSION['username'];
+ // echo $_SESSION['username'];
 
 } else {
   echo '<br>You are not logged in';
@@ -13,7 +13,7 @@ if (isset($_SESSION['username'])) {
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/style.css">
 <div class="grid-container">
 
-  <header class="header">Dashboard <!--<img src="<?php echo BASEURL ?>/images/img_avatar.png" class="avatar">-->
+  <header class="header">Dashboard<img src="<?php echo BASEURL ?>/images/img_avatar.png" class="avatar">
 
 
 
@@ -24,17 +24,17 @@ if (isset($_SESSION['username'])) {
   <aside class="sidenav">
     <center><img src="<?php echo BASEURL ?>/images/b&wlogo.png" alt="logo" width="40%"> </center>
     <ul class="sidenav__list">
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/admin">Dashboard</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/adminFunctions/warehouse">Warehouse</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/adminFunctions/fleetCenter">Fleet Center</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/adminFunctions/commercial">Commercial & Finance</li>
+      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/commercial">Dashboard</li>
+      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/commercial/expenseCat">Expense Category</li>
+      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/commercial/expenseCat">Supplier</li>
+      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/commercial/expenseCat">Driver</li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/signout">Sign Out</a></li>
     </ul>
   </aside>
 
   <main class="main">
     <div class="main-header">
-      <h2>Welcome Adeepa !</h2>
+      <h2>Welcome User !</h2>
 
     </div>
 
@@ -44,8 +44,7 @@ if (isset($_SESSION['username'])) {
       <div class="card">Sales<h2>Rs.450,000</h2></div>
       <div class="card">Purchases<h2>Rs.450,000</h2></div>
       <div class="card">Expenses<h2>Rs.450,000</h2></div>
-      <div class="card">Most Selling<h2>Rs.450,000</h2> </div>
-      <div class="card">Most Valuable Customer<h2>Rs.450,000</h2></div>
+      
 
 </div>
 
@@ -53,13 +52,13 @@ if (isset($_SESSION['username'])) {
 <div class="main-cards">
   <div class="card">
 
-    <img src="<?php echo BASEURL ?>/images/1.png"  width="100%">
+    <img src="images/1.png"  width="100%">
 
 
   </div>
   <div class="card">
 
-    <img src="<?php echo BASEURL ?>/images/2.png" width="100%">
+    <img src="images/2.png" width="100%">
   </div>
 
   </div>

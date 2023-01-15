@@ -17,6 +17,7 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
 
 
 <script type="text/javascript"> 
+
     function getLocationConstant()
    {
        if(navigator.geolocation)
@@ -53,6 +54,7 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
 
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/style.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 <script defer src="<?php echo BASEURL ?>/admin/index.js"></script>
 
 <div class="grid-container">
@@ -74,9 +76,7 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
 
   <main class="main">
     <div class="main-header">
-
       <h2>Add Warehouse</h2>
-
     </div>
 
 
@@ -89,11 +89,13 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
  
         <div class="container">
           <form action="<?php echo BASEURL ?>/adminFunctions/createWarehouse" method="POST" id="form">
-            <div class="form first">
+            <div>
               <div>
 
 
                 <div class="fields">
+
+                
                   <div class="input-field">
                     <label>Warehouse Code</label>
                     <input name="warehouse_code" type="text" placeholder="Type Here" required>
@@ -129,8 +131,6 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
                   <label>Longitude</label>
                     <input type="text" id="Longitude" name="longitude" value="">
                   </div>
-
-              
 
                   <div class="input-field">
                     <label>Fleet Center</label>
@@ -287,7 +287,7 @@ window.onclick = function(event) {
                     <input name="name" value = <?php echo $row["name"]; ?>>
                   </div>
                   <div class="popup_card_input">
-                    <label>Adddress</label>
+                    <label>Address</label>
                     <input name="address" value = <?php echo $row["password"];?>>
                   </div>
 
@@ -309,7 +309,7 @@ window.onclick = function(event) {
 
                   <div class="popup_card_input">
                   <label>Longitude</label>
-                    <input type="text" id="Longitude" name="longitude" value =<?php echo $row["longtitude"];?>>
+                    <input type="text" id="Longitude" name="longitude" value =<?php echo $row["longitude"];?>>
                   </div>
 
                   <div class="popup_card_input">
@@ -354,7 +354,7 @@ window.onclick = function(event) {
 
   </div>
 
-  <script>
+  
   
   <script>
   function showTime(){

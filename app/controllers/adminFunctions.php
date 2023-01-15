@@ -2,7 +2,6 @@
 
 class adminFunctions extends Controller
 
-
 {
 
     public function index() 
@@ -17,8 +16,10 @@ class adminFunctions extends Controller
 
     public function fleetcenter() 
     {
-        $this->view('admin/fleetCenter');
+        $this->view('admin/fleetcenter');
     }  
+
+
     public function commercial() 
     {
         $this->view('admin/commercial');
@@ -34,17 +35,21 @@ class adminFunctions extends Controller
             $name = $_POST['name'];
             $address = $_POST['address'];
             $email_address = $_POST['email_address'];
+
             $longitude = $_POST['longitude'];
             $latitude = $_POST['latitude'];
             $cp_name = $_POST['cp_name'];
             $cp_number = $_POST['cp_number'];
+
             $fleet_center = $_POST['fleet_center'];
             $capacity = $_POST['capacity'];
             $username = $_POST['username'];
             $password = $_POST['password'];
 
             $this->model('insertModel')->addWarehouse($warehouse_code, $name,$longitude,$latitude,$cp_name,$cp_number, $address, $email_address, $fleet_center, $capacity, $username, $password);
+            $this->model('insertModel')->addUser($username, $password,'warehouse');
             $this->model('mailModel')->sendMail($email_address, $username, $password,$cp_name);
+
             header("Location: " . BASEURL . "/adminFunctions/warehouse");
 
         } else {
@@ -52,7 +57,8 @@ class adminFunctions extends Controller
         }
     }
 
-    public function createFleetcenter()
+
+    public function createFleetCenter()
     {
         if (isset($_POST['username'])) {
 
@@ -67,7 +73,8 @@ class adminFunctions extends Controller
             $username = $_POST['username'];
             $password = $_POST['password'];
 
-            $this->model('insertModel')->addFleetcenter($fleetcenter_code, $name,$longitude,$latitude,$cp_name,$cp_number, $address, $email_address, $username, $password);
+            $this->model('insertModel')->addFleetCenter($fleetcenter_code, $name,$longitude,$latitude,$cp_name,$cp_number, $address, $email_address, $username, $password);
+            $this->model('insertModel')->addUser($username, $password,'fleet');
             $this->model('mailModel')->sendMail($email_address, $username, $password,$cp_name);
 
             header("Location: " . BASEURL . "/adminFunctions/fleetcenter");
@@ -80,22 +87,23 @@ class adminFunctions extends Controller
 
 
 
-    public function createCommercial_User()
+    public function createCommercial()
     {
         if (isset($_POST['username'])) {
 
-            $department_code = $_POST['department_code'];
-            $job_position = $_POST['job_position'];
-            $employee_id = $_POST['employee_id'];
-            $nic = $_POST['nic'];
+            $commercial_code = $_POST['commercial_code'];
+            $name = $_POST['name'];
             $address = $_POST['address'];
             $email_address = $_POST['email_address'];
+            $longitude = $_POST['longitude'];
+            $latitude = $_POST['latitude'];
             $cp_name = $_POST['cp_name'];
             $cp_number = $_POST['cp_number'];
             $username = $_POST['username'];
             $password = $_POST['password'];
 
-            $this->model('insertModel')->addCommercial_User($department_code,$job_position,$employee_id,$nic, $cp_name,$cp_number, $address, $email_address, $username, $password);
+            $this->model('insertModel')->addCommercial($commercial_code,$name, $cp_name,$cp_number,$longitude,$latitude, $address, $email_address, $username, $password);
+            $this->model('insertModel')->addUser($username, $password,'commercial');
             $this->model('mailModel')->sendMail($email_address, $username, $password,$cp_name);
 
             header("Location: " . BASEURL . "/adminFunctions/commercial");
@@ -113,10 +121,6 @@ class adminFunctions extends Controller
 
 
 
-
-    
-
-
     public function deleteWarehouse($warehouse_code)
     {
         if (isset($warehouse_code)) {
@@ -126,12 +130,11 @@ class adminFunctions extends Controller
         }
     }
 
+
     public function viewWarehouse($warehouse_code)
     
 
     {   
-
-        
 
         if (isset($warehouse_code)) {
             $this->model('viewModel')->viewWarehouse($warehouse_code);

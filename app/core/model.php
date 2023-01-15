@@ -35,6 +35,7 @@ class Model extends Database
         return $result;
     }
 
+
     public function delete($table, $where)
     {
         $sql = "DELETE FROM $table WHERE $where";
