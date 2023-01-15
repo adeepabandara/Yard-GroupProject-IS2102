@@ -109,13 +109,50 @@ class insertModel extends Model
   }
 
 
-    //public function addCategory($vehicle_code, $name,$description)
-    
-        // var_dump($reg_no, $chassis_no, $engine_no, $color, $category);
-        // exit();
-       // $this->insert('vehicle_category', ['description' => $description,'vehicle_category_code' => $vehicle_code,'name' => $name,
-        //]);
+    public function addVehicleCategory($vehicle_category_code, $name, $description)
+    {
 
+        // var_dump($vehicle_category_code, $name, $description);
+        // exit();
+        $this->insert('vehicle_category', [
+            'description' => $description,
+            'vehicle_category_code' => $vehicle_category_code,
+            'name' => $name,
+        ]);
+    }
+
+    public function addDriver($driverId, $name, $nic, $contactNo, $address, $eAddress, $uName, $password)
+    {
+
+        // var_dump($vehicle_category_code, $name, $description);
+        // exit();
+        $this->insert('driver', [
+            'driverId' => $driverId,
+           'name' => $name,
+           'nic' => $nic,
+           'contactNo' => $contactNo,
+           'address' => $address,
+           'eAddress' => $eAddress,
+           'uName' => $uName,
+           'password' => $password,
+        ]);
+    }
+
+    public function addFuelStation($stationId, $name, $address, $location, $creditLimit, $contactPerson, $contactNo)
+    {
+
+        // var_dump($vehicle_category_code, $name, $description);
+        // exit();
+        $this->insert('fuelstation', [
+            'stationId' => $stationId,
+           'name' => $name,
+           'address' => $address,
+           'location' => $location,
+           'creditLimit' => $creditLimit,
+           'contactPerson' => $contactPerson,
+           'contactNo' => $contactNo,
+        ]);
+    }
     
 
  public function addCommercial($commercial_code,$name, $cp_name,$cp_number,$longitude,$latitude, $address, $email_address, $username, $password)
