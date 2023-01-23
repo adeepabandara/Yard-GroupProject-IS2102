@@ -16,17 +16,35 @@ if (isset($_SESSION['username'])) {
 
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/style.css">
 <div class="grid-container">
+<<<<<<< Updated upstream
   <header class="header"> Commercial&Finance&nbsp&nbsp>&nbsp&nbspExpense Category </header>
+=======
+
+  <header class="header">Dashboard<img src="<?php echo BASEURL ?>/images/img_avatar.png" class="avatar">
+
+
+
+
+  </header>
+>>>>>>> Stashed changes
 
 
   <aside class="sidenav">
     <center><img src="<?php echo BASEURL ?> /images/b&wlogo.png" alt="logo" width="40%"> </center>
     <ul class="sidenav__list">
+<<<<<<< Updated upstream
       <li class="sidenav__list-item" <a href="<?php echo BASEURL ?>/welcome">Dashboard</li>
       <li class="sidenav__list-item">Expense Category</li>
       <li class="sidenav__list-item">Supplier</li>
       <li class="sidenav__list-item">Driver</li>
       <li class="sidenav__list-item"><<a href="<?php echo BASEURL ?>/home">Sign Out</a></li>
+=======
+      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/commercial">Dashboard</li>
+      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/commercial/expenseCat">Expense Category</li>
+      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/commercial/expense_record">Expense Record</li>
+      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/commercial/customer">Customer</li>
+      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/signout">Sign Out</a></li>
+>>>>>>> Stashed changes
     </ul>
   </aside>
 
@@ -36,6 +54,7 @@ if (isset($_SESSION['username'])) {
     </div>
 
 
+<<<<<<< Updated upstream
 
     <div class="main-cards">
       <div class="card">
@@ -263,7 +282,100 @@ if (isset($_SESSION['username'])) {
   openCategoryBtn.onclick = function() {
     categoryModal.style.display = "block";
   }
+=======
+      <div class="card">Sales<h2>Rs.450,000</h2>
+      </div>
+      <div class="card">Purchases<h2>Rs.450,000</h2>
+      </div>
+      <div class="card">Expenses<h2>Rs.450,000</h2>
+      </div>
 
+
+    </div>
+
+
+    <div class="main-cards">
+      <div class="card">
+
+        <img src="images/1.png" width="100%">
+
+
+      </div>
+      <div class="card">
+
+        <img src="images/2.png" width="100%">
+      </div>
+>>>>>>> Stashed changes
+
+    </div>
+
+
+    <div class="main-cards">
+      <div class="card">
+
+        <table>
+          <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+          </tr>
+          <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+          </tr>
+          <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+          </tr>
+          <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+          </tr>
+          <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+          </tr>
+          <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+          </tr>
+        </table>
+
+      </div>
+
+    </div>
+
+</div>
 
   closeCategoryModal.onclick = function() {
     categoryModal.style.display = "none";
@@ -298,6 +410,7 @@ if (isset($_SESSION['username'])) {
 </div>
 
 
+<<<<<<< Updated upstream
 
 <div class="input-field">
   <label>Occupation</label>
@@ -306,3 +419,8 @@ if (isset($_SESSION['username'])) {
 
 
 -->
+=======
+</body>
+
+</html>
+>>>>>>> Stashed changes
