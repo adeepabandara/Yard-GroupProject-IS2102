@@ -23,8 +23,12 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
     <ul class="sidenav__list">
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/warehouse">Dashboard</a></li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/product">Product</a></li>
+
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/category">Category</a></li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/brand">Brand</a></li>
+
+      <li class="sidenav__list-item">Category</li>
+
       <li class="sidenav__list-item">Inventory</li>
       <li class="sidenav__list-item">Stock Adjustment</li>
       <li class="sidenav__list-item">Purchase Requisition</li>
@@ -49,6 +53,7 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
                 <div class="fields">
 
                   <div class="input-field">
+
                     <label>Product Code *</label>
                     <input type="text" id="code" name="product_code" placeholder="Type Here..." required>
                     <span id="code-error" class="hide required-color error-message" >Must be 4 numbers</span>
@@ -65,6 +70,20 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
                     <input type="text" id="name" name="name" placeholder="Type Here..." required>
                     <span id="name-error" class="hide required-color error-message" >Invalid Input</span>
                     <span id="name-empty" class="hide required-color error-message" >Name Cannot Be Empty</span>
+
+                    <label>Product Code</label>
+                    <input type="text" name="product_code" placeholder="Type Here..." required="required" />
+                  </div>
+
+                  <div class="input-field">
+                    <label>Bar Code</label>
+                    <input type="text" name="bar_code" placeholder="Type Here..." />
+                  </div>
+
+                  <div class="input-field ">
+                    <label>Product Name</label>
+                    <input type="text" name="name" placeholder="Type Here..." required="required">
+
                   </div>
 
                   <div class="input-field">
@@ -102,7 +121,11 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
 
                 </div>
 
+
                 <button id="submit-button" class="subBtn" onclick="save()">Add Product</button>
+
+                <button class="subBtn">Add Product</button>
+
 
 
               </div>
@@ -116,11 +139,17 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
 
 
     <div class="card">Product List
+
     <br><br>
         <input type="text" id="myInput" class="card-searchbar" onkeyup="myFunction()" placeholder="Search for products.." >
       <div class="container">
 
         <table id="myTable">
+
+      <div class="container">
+
+        <table>
+
           <tr>
             <th>Code</th>
             <th>Name</th>
@@ -169,24 +198,39 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
 
           <div class="popup_card_input">
             <label>Category ID </label>
+
             <input type="text" id="code1" name="product_category_code" placeholder="Type Here..." required>
             <span id="code-error1" class="hide required-color error-message" >Must be 4 numbers</span>
             <span id="code-empty1" class="hide required-color error-message" >Category ID Cannot Be Empty</span>
+
+            <input type="text" name="product_category_code" placeholder="Type Here..." required="required">
+
           </div>
 
           <div class="popup_card_input">
             <label>Category Name * </label>
+
             <input type="text" id="name1" name="name" class="form-input" placeholder="Type Here..." required>
             <span id="name-error1" class="hide required-color error-message" >Invalid Input</span>
             <span id="name-empty1" class="hide required-color error-message" >Name Cannot Be Empty</span>
           </div>
 
         <div class="popup_card_input">
+
+            <input type="text" name="name" class="form-input" placeholder="Type Here..." required="required">
+          </div>
+
+        <div class="popup_card_input w-100 ">
+
           <label >Description</label>
           <input type="textarea" name="description"  placeholder="Type Here...">
         </div>
 
+
         <button id="submit-button1" class="subBtn" onclick="save()">Add Category</button></div>
+
+        <button class="subBtn">Add Category</button></div>
+
       </form>
 
 
@@ -194,7 +238,6 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
 
   </div>
 
-  
 
 
 
@@ -205,7 +248,60 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
 
 
   <script>
-    
+
+    function validateForm() {
+      // Validate product code
+      var product_code = document.forms["create_product_form"]["product_code"].value;
+      if (product_code == "") {
+        alert("Product code must be filled out");
+        return false;
+      } else if (product_code.length != 4) {
+        alert("Product code must be 5 characters");
+        return false;
+      } else if (isNaN(product_code)) {
+        alert("Product code must be a number");
+        return false;
+      }
+
+      // Validate bar code
+      var bar_code = document.forms["create_product_form"]["bar_code"].value;
+      if (bar_code == "") {
+        alert("Bar code must be filled out");
+        return false;
+      } else if (bar_code.length != 12) {
+        alert("Bar code must be 12 digits");
+        return false;
+      } else if (isNaN(bar_code)) {
+        alert("Bar code must be a number");
+        return false;
+      }
+
+      // Validate product name
+      var product_name = document.forms["create_product_form"]["product_name"].value;
+      if (product_name == "") {
+        alert("Product name must be filled out");
+        return false;
+      } else if (product_name.length > 50) {
+        alert("Product name must be less than 50 characters");
+        return false;
+      }
+
+
+
+
+
+      // If all validations pass, submit the form
+      return true;
+
+    }
+
+    function submitForm() {
+      if (validateForm()) {
+        document.forms["create_product_form"].submit();
+      }
+    }
+
+
     window.onload = function () {
       // Get the modal
       var modal = document.getElementById("add_category");
@@ -262,6 +358,7 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
 
     }
   </script>
+
 
 <script>
 //ID
@@ -409,9 +506,9 @@ submitButton1.addEventListener("click", () => {
 
 
 
-
       </div>
       </form>
+
 
     </div>
 
@@ -558,3 +655,6 @@ function myFunction() {
 			document.getElementById("msg").innerHTML = userPreference; 
 		}
     </script>
+
+    </div>
+

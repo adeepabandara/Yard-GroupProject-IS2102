@@ -24,10 +24,15 @@ if (isset($_SESSION['username'])) {
 <aside class="sidenav">
     <center><img src="<?php echo BASEURL ?>/images/b&wlogo.png" alt="logo" width="40%"> </center>
     <ul class="sidenav__list">
+
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/warehouse">Dashboard</a></li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/product">Product</a></li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/category">Category</a></li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/brand">Brand</a></li>
+
+    <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/warehouse">Dashboard</a></li>
+      <li  class="sidenav__list-item" ><a href="<?php echo BASEURL ?>/warehouse/product">Product</a></li>
+      <li class="sidenav__list-item">Category</li>
       <li class="sidenav__list-item">Inventory</li>
       <li class="sidenav__list-item">Stock Adjustment</li>
       <li class="sidenav__list-item">Purchase Requisition</li>

@@ -10,6 +10,7 @@ class warehouse extends Controller
     public function product()
     {
         $this->view('warehouse/addProduct');
+
     }
 
     public function category()
@@ -20,6 +21,7 @@ class warehouse extends Controller
     public function brand()
     {
         $this->view('warehouse/addBrand');
+
     }
 
     public function signup()
