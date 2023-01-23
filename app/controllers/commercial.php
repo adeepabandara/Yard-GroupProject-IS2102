@@ -7,17 +7,19 @@ class commercial extends Controller
     $this->view('commercial/dashboard');
   }
 
-<<<<<<< Updated upstream
+
   public function expensecategory() 
+
+  public function expenseCat() 
     {
-        $this->view('commercial/dashboard');
+        $this->view('commercial/addExpenseCat');
     }
-=======
+
   public function expenseCat()
   {
     $this->view('commercial/addExpenseCat');
   }
->>>>>>> Stashed changes
+
 
   public function commercial()
   {
@@ -47,11 +49,10 @@ class commercial extends Controller
       $description = $_POST['description'];
 
 
-<<<<<<< Updated upstream
+
         header("Location: " . BASEURL . "/commercial/service");
-=======
+
       $this->model('insertModel')->addExpenseCategory($category_code, $name, $description);
->>>>>>> Stashed changes
 
       header("Location: " . BASEURL . "/commercial/expenseCat");
     } else {
@@ -73,6 +74,9 @@ class commercial extends Controller
       $email = $_POST['email'];
       $address = $_POST['address'];
       $gps_location = $_POST['gps_location'];
+
+        header("Location: " . BASEURL . "/commercial/expenseCat");
+
 
 
       $this->model('insertModel')->addCustomer($id, $contact_no, $name, $identity_no, $email, $address, $gps_location);

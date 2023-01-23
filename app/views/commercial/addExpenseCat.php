@@ -26,6 +26,8 @@ if (isset($_SESSION['username'])) {
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/commercial/expenseCat">Expense Category</li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/commercial/expense_record">Expense Record</li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/commercial/customer">Customer</li>
+      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/commercial/expenseCat">Supplier</li>
+      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/commercial/expenseCat">Driver</li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/signout">Sign Out</a></li>
     </ul>
   </aside>
@@ -73,6 +75,27 @@ if (isset($_SESSION['username'])) {
 
 
               </tr>
+
+          ?>
+
+            <tr>
+              <td><?php echo $row["category_code"]; ?></td>
+              <td><?php echo $row["name"]; ?></td>
+              <td><?php echo $row["description"]; ?></td>
+              <td>
+                <button class="viewBtn">
+                  <span class="btnText">Edit</span>
+                </button>
+              </td>
+              <td>
+                <button class="delBtn">
+                  <span class="btnText">Select</span>
+                </button>
+              </td>
+
+
+            </tr>
+
             <?php endforeach; ?>
           </table>
 
@@ -95,12 +118,12 @@ if (isset($_SESSION['username'])) {
               <th>Description</th>
               <th></th>
               <th></th>
-              <!--
+
             </tr>
             <?php $i = 1; ?>
             <?php foreach ($rows as $row) :
 
-            ?>
+
 
             <tr>
               <td><?php echo $row["category_code"]; ?></td>
@@ -138,6 +161,7 @@ if (isset($_SESSION['username'])) {
 </html>
 
             -->
+
 
               <div class="overlay" id="addCategory_Modal">
 
@@ -188,6 +212,52 @@ if (isset($_SESSION['username'])) {
                   </div>
 
                 </div>
+
+<div class="overlay" id="addCategory_Modal">
+
+  <div class="popup-main-cards">
+
+
+    <h3>Add Category</h3>
+
+
+    
+
+      <div class="popup_card">
+
+
+        <div class="close-icon"> <a href="<?php echo BASEURL ?>/commercial/expenseCat">X</a></div>
+        <h3>Add Category</h3>
+
+
+        <form action="<?php echo BASEURL ?>/commercial/createExpenseCat" method="POST">
+          <div class="popup_card_fields">
+
+            <div class="popup_card_input">
+              <label>Category ID </label>
+              <input type="text" name="category_code" placeholder="Type Here..." required="required">
+            </div>
+
+            <div class="popup_card_input">
+              <label>Category Name * </label>
+              <input type="text" name="name" class="form-input" placeholder="Type Here..." required="required">
+            </div>
+
+            <div class="popup_card_input w-100 ">
+              <label>Description</label>
+              <input type="textarea" name="description" placeholder="Type Here...">
+            </div>
+
+            <button class="subBtn">Add Category</button>
+          </div>
+        </form>
+
+
+      </div>
+
+  </div>
+
+
 
 
 
@@ -309,3 +379,9 @@ if (isset($_SESSION['username'])) {
                   }
                 });
               </script>
+
+
+
+  </form>
+</div>
+

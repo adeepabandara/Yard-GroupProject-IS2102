@@ -27,39 +27,53 @@ class insertModel extends Model
         return $result;
     }
 
-    public function addCommercial($name, $username, $password)
-    {
-        $this->insert('commercial', ['name' => $name, 'username' => $username, 'password' => $password]);
-    }
-}
-
-    public function addProduct($product_code, $bar_code, $name, $category, $sub_category, $opening_stock, $reorder_level, $purchase_price, $selling_price, $image)
+    public function addProduct($product_code, $bar_code, $name, $category, $opening_stock, $reorder_level, $purchase_price, $selling_price)
     {
         $this->insert('product', [
             'product_code' => $product_code, 'bar_code' => $bar_code, 'name' => $name, 'category' => $category,
-<<<<<<< Updated upstream
+
             'sub_category' => $sub_category, 'opening_stock' => $opening_stock, 'reorder_level' => $reorder_level, 'purchase_price' => $purchase_price, 'selling_price' => $selling_price, 'image' => $image
-=======
+
             'opening_stock' => $opening_stock, 'reorder_level' => $reorder_level, 'purchase_price' => $purchase_price, 'selling_price' => $selling_price,
->>>>>>> Stashed changes
+
+             'opening_stock' => $opening_stock, 'reorder_level' => $reorder_level, 'purchase_price' => $purchase_price, 'selling_price' => $selling_price,
+
         ]);
     }
 
     public function addCategory($product_category_code,  $name, $description)
     {
         $this->insert('product_category', ['product_category_code' => $product_category_code, 'name' => $name, 'description' => $description]);
-    }
-<<<<<<< Updated upstream
-}
- 
-=======
 
->>>>>>> Stashed changes
+    }
+
+}
+
+
+    public function addCategory1($product_category_code,  $name, $description)
+    {
+        $this->insert('product_category', ['product_category_code' => $product_category_code, 'name' => $name, 'description' => $description]);
+        
+    }
+
+    public function addSubCategory($category, $product_sub_category_code,  $name, $description)
+    {
+        $this->insert('product_sub_category', ['product_sub_category_code' => $product_sub_category_code, 'category' => $category, 'name' => $name, 'description' => $description]);
+        
+    }
+
+    public function addBrand($brand_code,  $name, $description)
+    {
+        $this->insert('brand', ['brand_code' => $brand_code, 'name' => $name, 'description' => $description]);
+
+    }
+
+
 
 
     public function addWarehouse($warehouse_code, $name, $longitude, $latitude, $cp_name, $cp_number, $address, $email_address, $fleet_center, $capacity, $username, $password)
     {
-<<<<<<< Updated upstream
+
       $this->insert('warehouse', 
       
       ['warehouse_code'=> $warehouse_code,
@@ -73,13 +87,27 @@ class insertModel extends Model
       'fleet_center'=> $fleet_center,
       'capacity'=> $capacity,
       'username'=> $username,
+
       'password'=> $password]);
+
+      'password'=> $password]); 
+
         
    }
 
+   public function addUser($username,$password,$user_type)
+   {
+     $this->insert('users', 
+     
+     ['username'=> $username,
+     'password'=> $password,
+     'user_type'=> $user_type]);
+       
+  }
+
 
     }
-=======
+
         $this->insert(
             'warehouse',
 
@@ -116,32 +144,74 @@ class insertModel extends Model
 
 
 
->>>>>>> Stashed changes
+
+
+
     public function addVehicle($reg_no, $model, $chassis_no, $engine_no, $color, $category, $mf_year)
     {
         // var_dump($reg_no, $chassis_no, $engine_no, $color, $category);
         // exit();
         $this->insert('vehicle', [
-            'registration_no' => $reg_no,
-            'chassie_no' => $chassis_no,
+            'reg_no' => $reg_no,
+            'chassis_no' => $chassis_no,
             'engine_no' => $engine_no,
             'color' => $color,
-<<<<<<< Updated upstream
+
             'vehicle_category' => $category,
             'name' => $model,
             'manufactured_year'=>$mf_year,
-=======
+
             'category' => $category,
             'model' => $model,
             'mf_year' => $mf_year,
->>>>>>> Stashed changes
+
+            'category' => $category,
+            'model' => $model,
+            'mf_year'=>$mf_year,
+
+
+   public function addFleetcenter( $fleetcenter_code,$name,$longitude,$latitude,$cp_name,$cp_number, $address,$email_address,$username,$password)
+
+      'password'=> $password]); 
+        
+   }
+
+   public function addUser($username,$password,$user_type)
+   {
+     $this->insert('users', 
+     
+     ['username'=> $username,
+     'password'=> $password,
+     'user_type'=> $user_type]);
+       
+  }
+
+
+
+    
+    public function addVehicle($reg_no, $model, $chassis_no, $engine_no, $color, $category, $mf_year)
+    {
+        // var_dump($reg_no, $chassis_no, $engine_no, $color, $category);
+        // exit();
+        $this->insert('vehicle', [
+            'reg_no' => $reg_no,
+            'chassis_no' => $chassis_no,
+            'engine_no' => $engine_no,
+            'color' => $color,
+            'category' => $category,
+            'model' => $model,
+            'mf_year'=>$mf_year,
+
 
 
         ]);
     }
 
-<<<<<<< Updated upstream
+
    public function addFleetcenter( $fleetcenter_code,$name,$longitude,$latitude,$cp_name,$cp_number, $address,$email_address,$username,$password)
+
+   public function addFleetCenter( $fleetcenter_code,$name,$longitude,$latitude,$cp_name,$cp_number, $address,$email_address,$username,$password)
+
    {
      $this->insert('fleetcenter', 
      
@@ -159,27 +229,92 @@ class insertModel extends Model
   }
 
 
-    public function addCategory($vehicle_code, $name,$description)
-    {
+
+  public function addCommercial_User($department_code,$job_position,$employee_id,$nic, $cp_name,$cp_number, $address, $email_address, $username, $password)
+
+    //public function addCategory($vehicle_code, $name,$description)
+    
         // var_dump($reg_no, $chassis_no, $engine_no, $color, $category);
+        // exit();
+       // $this->insert('vehicle_category', ['description' => $description,'vehicle_category_code' => $vehicle_code,'name' => $name,
+        //]);
+
+    public function addVehicleCategory($vehicle_category_code, $name, $description)
+    {
+
+        // var_dump($vehicle_category_code, $name, $description);
         // exit();
         $this->insert('vehicle_category', [
             'description' => $description,
-            'vehicle_category_code' => $vehicle_code,
+            'vehicle_category_code' => $vehicle_category_code,
             'name' => $name,
         ]);
-
     }
 
-  public function addCommercial_User($department_code,$job_position,$employee_id,$nic, $cp_name,$cp_number, $address, $email_address, $username, $password)
+    public function addDriver($driverId, $name, $nic, $contactNo, $address, $eAddress, $uName, $password)
+    {
+
+        // var_dump($vehicle_category_code, $name, $description);
+        // exit();
+        $this->insert('driver', [
+            'driverId' => $driverId,
+           'name' => $name,
+           'nic' => $nic,
+           'contactNo' => $contactNo,
+           'address' => $address,
+           'eAddress' => $eAddress,
+           'uName' => $uName,
+           'password' => $password,
+        ]);
+    }
+
+    public function addFuelStation($stationId, $name, $address, $location, $creditLimit, $contactPerson, $contactNo)
+    {
+
+        // var_dump($vehicle_category_code, $name, $description);
+        // exit();
+        $this->insert('fuelstation', [
+            'stationId' => $stationId,
+           'name' => $name,
+           'address' => $address,
+           'location' => $location,
+           'creditLimit' => $creditLimit,
+           'contactPerson' => $contactPerson,
+           'contactNo' => $contactNo,
+        ]);
+    }
+
+    
+
+ public function addCommercial($commercial_code,$name, $cp_name,$cp_number,$longitude,$latitude, $address, $email_address, $username, $password)
+
    {
-     $this->insert('commercial_users', 
+     $this->insert('commercial', 
      
-     ['department_code'=> $department_code,
-     'job_position'=> $job_position, 
-     'employee_id'=> $employee_id,
-     'nic'=> $nic,
+     ['commercial_code'=> $commercial_code,
+     'name'=> $name, 
      'address'=> $address,
+
+    //public function addCategory($vehicle_code, $name,$description)
+    
+        // var_dump($reg_no, $chassis_no, $engine_no, $color, $category);
+        // exit();
+       // $this->insert('vehicle_category', ['description' => $description,'vehicle_category_code' => $vehicle_code,'name' => $name,
+        //]);
+
+    
+
+ public function addCommercial($commercial_code,$name, $cp_name,$cp_number,$longitude,$latitude, $address, $email_address, $username, $password)
+   {
+     $this->insert('commercial', 
+     
+     ['commercial_code'=> $commercial_code,
+     'name'=> $name, 
+     'address'=> $address,
+     'longitude'=> $longitude,
+     'latitude'=> $latitude,
+     'longitude'=> $longitude,
+     'latitude'=> $latitude,
      'cp_name'=> $cp_name,
      'cp_number'=> $cp_number,
      'email_address'=> $email_address,
@@ -187,7 +322,7 @@ class insertModel extends Model
      'password'=> $password]);
        
   }
-=======
+
     public function addFleetCenter($fleetcenter_code, $name, $longitude, $latitude, $cp_name, $cp_number, $address, $email_address, $username, $password)
     {
         $this->insert(
@@ -215,7 +350,7 @@ class insertModel extends Model
     // exit();
     // $this->insert('vehicle_category', ['description' => $description,'vehicle_category_code' => $vehicle_code,'name' => $name,
     //]);
->>>>>>> Stashed changes
+
 
 
 
@@ -239,9 +374,9 @@ class insertModel extends Model
         );
     }
 
-<<<<<<< Updated upstream
+
 }
-=======
+
     public function addCustomer($id, $contact_no, $name, $identity_no, $email, $address, $gps_location)
     {
         $this->insert(
@@ -258,7 +393,7 @@ class insertModel extends Model
             ]
         );
     }
->>>>>>> Stashed changes
+
 
     public function addExpenseRecord($expense_entry_no, $date, $name, $amount, $description, $add_category, $add_subcategory, $source)
     {

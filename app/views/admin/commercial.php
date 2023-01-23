@@ -1,3 +1,11 @@
+
+<!DOCTYPE html>
+
+
+
+
+
+
 <?php
 
 session_start();
@@ -12,7 +20,8 @@ if (isset($_SESSION['username'])) {
 
 $conn = mysqli_connect("localhost", "root", "", "yard");
 $rows = mysqli_query($conn, "SELECT * FROM commercial_users");
-
+$rows = mysqli_query($conn, "SELECT * FROM users");
+$rows = mysqli_query($conn, "SELECT * FROM users");
 ?>
 
 
@@ -53,6 +62,7 @@ $rows = mysqli_query($conn, "SELECT * FROM commercial_users");
 
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/style.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 <script defer src="<?php echo BASEURL ?>/admin/index.js"></script>
 
 <div class="grid-container">
@@ -88,7 +98,13 @@ $rows = mysqli_query($conn, "SELECT * FROM commercial_users");
 
  
         <div class="container">
+
           <form action="<?php echo BASEURL ?>/adminFunctions/createCommercial_User" method="POST" id="form">
+
+          <form action="<?php echo BASEURL ?>/adminFunctions/createCommercial" method="POST" id="form">
+
+          <form action="<?php echo BASEURL ?>/adminFunctions/createCommercial" method="POST" id="form">
+
             <div class="form first">
               <div>
 
@@ -101,27 +117,58 @@ $rows = mysqli_query($conn, "SELECT * FROM commercial_users");
                   </div>
 
                   <div class="input-field">
+
                     <label> Job Position</label>
                     <input name="job_position" type="text" placeholder="Type Here" required>
+
+                    <label>Name</label>
+                    <input name="name" type="text" placeholder="Type Here" required>
+
+                    <label>Name</label>
+                    <input name="name" type="text" placeholder="Type Here" required>
+
                   </div>
 
 
                   <div class="fields">
                   <div class="input-field">
+
                     <label>Employee Id</label>
                     <input name="employee_id" type="text" placeholder="Type Here" required>
 
+                    <label>Address</label>
+                    <input name="address" type="text" placeholder="Type Here" >
+
+                    <label>Address</label>
+                    <input name="address" type="text" placeholder="Type Here" >
+
                   </div>
 
                   <div class="input-field">
+
                     <label> NIC</label>
                     <input name="nic" type="text" placeholder="Type Here" required>
+
+                    <label>latitude</label>
+                    <input name="latitude" type="text" placeholder="Type Here" >
+
+                    <label>latitude</label>
+                    <input name="latitude" type="text" placeholder="Type Here" >
+
                   </div>
 
 
                   <div class="input-field">
+
                     <label>Adddress</label>
                     <input name="address" type="text" placeholder="Type Here">
+
+                    <label>longitude </label>
+                    <input name="longitude" type="text" placeholder="Type Here">
+
+                    <label>longitude </label>
+                    <input name="longitude" type="text" placeholder="Type Here">
+
                   </div>
 
                   <div class="input-field">
