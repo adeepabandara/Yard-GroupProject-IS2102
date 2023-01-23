@@ -2,6 +2,14 @@
 
 class welcome extends Controller
 {
+
+    public function index() 
+    {
+
+        $this->view('admin/dashboard');
+
+    } 
+
     public function index() 
     {
 
@@ -9,9 +17,16 @@ class welcome extends Controller
     }  
     
 
+    }  
+    
+
+
     public function admin() 
     {
         $this->view('admin/dashboard');
+
+    }   
+
 
     }  
     public function warehouse() 
@@ -28,6 +43,7 @@ class welcome extends Controller
     {
         $this->view('fleet/dashboard');
     }  
+
 
 
     public function signout()

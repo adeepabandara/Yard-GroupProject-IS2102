@@ -24,11 +24,12 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/warehouse">Dashboard</a></li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/product">Product</a></li>
 
+      <li class="sidenav__list-item">Category</li>
+
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/category">Category</a></li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/brand">Brand</a></li>
 
       <li class="sidenav__list-item">Category</li>
-
       <li class="sidenav__list-item">Inventory</li>
       <li class="sidenav__list-item">Stock Adjustment</li>
       <li class="sidenav__list-item">Purchase Requisition</li>
@@ -70,6 +71,7 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
                     <input type="text" id="name" name="name" placeholder="Type Here..." required>
                     <span id="name-error" class="hide required-color error-message" >Invalid Input</span>
                     <span id="name-empty" class="hide required-color error-message" >Name Cannot Be Empty</span>
+
 
                     <label>Product Code</label>
                     <input type="text" name="product_code" placeholder="Type Here..." required="required" />
@@ -122,10 +124,14 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
                 </div>
 
 
+                <button class="subBtn">Add Product</button>
+
+
+
+
                 <button id="submit-button" class="subBtn" onclick="save()">Add Product</button>
 
                 <button class="subBtn">Add Product</button>
-
 
 
               </div>
@@ -140,6 +146,11 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
 
     <div class="card">Product List
 
+      <div class="container">
+
+        <table>
+
+
     <br><br>
         <input type="text" id="myInput" class="card-searchbar" onkeyup="myFunction()" placeholder="Search for products.." >
       <div class="container">
@@ -149,6 +160,7 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
       <div class="container">
 
         <table>
+
 
           <tr>
             <th>Code</th>
@@ -199,16 +211,21 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
           <div class="popup_card_input">
             <label>Category ID </label>
 
+            <input type="text" name="product_category_code" placeholder="Type Here..." required="required">
+
+
             <input type="text" id="code1" name="product_category_code" placeholder="Type Here..." required>
             <span id="code-error1" class="hide required-color error-message" >Must be 4 numbers</span>
             <span id="code-empty1" class="hide required-color error-message" >Category ID Cannot Be Empty</span>
 
             <input type="text" name="product_category_code" placeholder="Type Here..." required="required">
 
+
           </div>
 
           <div class="popup_card_input">
             <label>Category Name * </label>
+
 
             <input type="text" id="name1" name="name" class="form-input" placeholder="Type Here..." required>
             <span id="name-error1" class="hide required-color error-message" >Invalid Input</span>
@@ -217,15 +234,20 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
 
         <div class="popup_card_input">
 
+
             <input type="text" name="name" class="form-input" placeholder="Type Here..." required="required">
           </div>
 
         <div class="popup_card_input w-100 ">
 
+
+
           <label >Description</label>
           <input type="textarea" name="description"  placeholder="Type Here...">
         </div>
 
+
+        <button class="subBtn">Add Category</button></div>
 
         <button id="submit-button1" class="subBtn" onclick="save()">Add Category</button></div>
 
@@ -237,6 +259,7 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
     </div>
 
   </div>
+
 
 
 
@@ -358,6 +381,7 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
 
     }
   </script>
+
 
 
 <script>
@@ -508,6 +532,9 @@ submitButton1.addEventListener("click", () => {
 
       </div>
       </form>
+
+
+    </div>
 
 
     </div>

@@ -37,6 +37,12 @@ if (isset ($_GET["vehicleId"])) {
         }
     }
 
+}
+?>
+
+
+
+
 if (isset($_GET["vehicleId"])) {
   $vehicleId = $_GET["vehicleId"];
   $vehicle = $db->runQuery("SELECT * from vehicle where vehicle_code ='" . $vehicleId . "'");
@@ -60,6 +66,7 @@ if (isset($_GET["vehicleId"])) {
 
 
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/style.css">
+
 
 <div class="grid-container">
     <header class="header"> Fleet Center&nbsp&nbsp>&nbsp&nbspAdd Vehicle </header>
@@ -87,6 +94,7 @@ if (isset($_GET["vehicleId"])) {
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/fleetcenter/category">Add Category</li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/fleetcenter/driver">Add driver</li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/fleetcenter/fuel">Add Fuel Station</li>
+
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/signout">Sign Out</a></li>
     </ul>
   </aside>
@@ -104,6 +112,9 @@ if (isset($_GET["vehicleId"])) {
         <div class="container">
           <form action="<?php echo BASEURL ?>/fleetcenter/addVehicle" method="POST">
             <div>
+
+              <div >
+
 
               <div >
     <div>
@@ -125,9 +136,13 @@ if (isset($_GET["vehicleId"])) {
                     <label>Registartion No *</label>
 
                     <input name="reg_no">
+
+
+                    <input name="reg_no">
        <input name="reg_no" id="reg-no-id">
                     <span id="error-reg-no-id" class="hide required-color error-message">Invalid Input</span>
                     <span id="empty-reg-no-id" class="hide required-color error-message">Registration Number Cannot Be Empty</span>
+
 
                   </div>
 
@@ -137,16 +152,21 @@ if (isset($_GET["vehicleId"])) {
 
                     <input name="model" >
 
+
+                    <input name="model" >
+
                     <input name="model" id="name-id">
                     <span id="error-name-id" class="hide required-color error-message">Invalid Input</span>
                     <span id="empty-name-id" class="hide required-color error-message">Name Cannot Be Empty</span>
-
                   </div>
 
 
 
                   <div class="input-field">
                     <label>Chassis No *</label>
+
+                    <input name="chassis_no" >
+
 
                     <input name="chassis_no" >
          <input name="chassis_no" id="chassi-no">
@@ -157,6 +177,9 @@ if (isset($_GET["vehicleId"])) {
 
                   <div class="input-field">
                     <label>Engine No *</label>
+
+                    <input name="engine_no">
+
 
                     <input name="engine_no">
 
@@ -205,6 +228,7 @@ if (isset($_GET["vehicleId"])) {
                 <button class="subBtn">Add Vehicle</button>
               </button>
 
+
                     <input type="date" name="mf_year">
                   </div>
 
@@ -246,6 +270,7 @@ if (isset($_GET["vehicleId"])) {
               <center>
                 <button class="subBtn" id="submit-button">Add Vehicle</button>
                 </button>
+
 
               </center>
             </div>
@@ -292,6 +317,7 @@ if (isset($_GET["vehicleId"])) {
             </tr>
             <?php endforeach; ?>
 
+
               <tr>
                 <th>Code</th>
                 <th>Name</th>
@@ -317,6 +343,7 @@ if (isset($_GET["vehicleId"])) {
 
                 </tr>
               <?php endforeach; ?>
+
 
 
             </tbody>
@@ -434,6 +461,7 @@ if (isset($_GET["vehicleId"])) {
 
 
 
+
       <h3>Vehicle Details <a href="<?php echo BASEURL ?>/fleetcenter/vehicle">X</a></h3>
 
       <form action="<?php echo BASEURL ?>/fleetcenter/addVehicle" method="POST">
@@ -520,7 +548,7 @@ if (isset($_GET["vehicleId"])) {
 
 
 
-
       </form>
       <!-- Script -->
       <script src="<?php echo BASEURL ?>/public/js/addVehicle.js"></script>
+

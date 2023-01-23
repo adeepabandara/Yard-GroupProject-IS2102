@@ -16,6 +16,7 @@ class FleetCenter extends Controller
         $this->view('fleet/addVehicle');
     }  
 
+
     public function category() 
     {
         $this->view('fleet/addCategory');
@@ -28,7 +29,6 @@ class FleetCenter extends Controller
     {
         $this->view('fleet/addFuelStation');
     }  
-
 
 
 
@@ -71,6 +71,7 @@ class FleetCenter extends Controller
             $this->model('insertModel')->addCategory($vehicle_code, $name, $description);
             header("Location: " . BASEURL . "/welcome");
 
+
         if (isset($_SESSION['username'])) {
             $vehicle_category_code = (int) $_POST['vehicle_category_code'];
             $description = $_POST['description'];
@@ -101,12 +102,14 @@ class FleetCenter extends Controller
             $this->model('insertModel')->addDriver($driverId, $name, $nic, $contactNo, $address, $eAddress, $uName, $password);
             header("Location: " . BASEURL . "/fleetcenter/driver");
 
+
         } else {
             echo ("Missing mandotary addtribute");
             exit();
             // header("Location: " . BASEURL . "/welcome");
         }
     }
+
 
     public function addFuelStation()
     {
