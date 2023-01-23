@@ -37,6 +37,24 @@ class insertModel extends Model
     public function addCategory($product_category_code,  $name, $description)
     {
         $this->insert('product_category', ['product_category_code' => $product_category_code, 'name' => $name, 'description' => $description]);
+        
+    }
+
+    public function addCategory1($product_category_code,  $name, $description)
+    {
+        $this->insert('product_category', ['product_category_code' => $product_category_code, 'name' => $name, 'description' => $description]);
+        
+    }
+
+    public function addSubCategory($category, $product_sub_category_code,  $name, $description)
+    {
+        $this->insert('product_sub_category', ['product_sub_category_code' => $product_sub_category_code, 'category' => $category, 'name' => $name, 'description' => $description]);
+        
+    }
+
+    public function addBrand($brand_code,  $name, $description)
+    {
+        $this->insert('brand', ['brand_code' => $brand_code, 'name' => $name, 'description' => $description]);
     }
 
  
@@ -109,6 +127,13 @@ class insertModel extends Model
   }
 
 
+    //public function addCategory($vehicle_code, $name,$description)
+    
+        // var_dump($reg_no, $chassis_no, $engine_no, $color, $category);
+        // exit();
+       // $this->insert('vehicle_category', ['description' => $description,'vehicle_category_code' => $vehicle_code,'name' => $name,
+        //]);
+
     public function addVehicleCategory($vehicle_category_code, $name, $description)
     {
 
@@ -153,6 +178,7 @@ class insertModel extends Model
            'contactNo' => $contactNo,
         ]);
     }
+
     
 
  public function addCommercial($commercial_code,$name, $cp_name,$cp_number,$longitude,$latitude, $address, $email_address, $username, $password)

@@ -1,9 +1,9 @@
 <?php
+
   session_start();
 
 class FleetCenter extends Controller
 {
-
 
 
     public function index() 
@@ -15,6 +15,7 @@ class FleetCenter extends Controller
     {
         $this->view('fleet/addVehicle');
     }  
+
     public function category() 
     {
         $this->view('fleet/addCategory');
@@ -27,6 +28,7 @@ class FleetCenter extends Controller
     {
         $this->view('fleet/addFuelStation');
     }  
+
 
 
 
@@ -58,6 +60,17 @@ class FleetCenter extends Controller
 
     public function addCategory()
     {
+
+        echo json_encode($_POST);
+
+        if (isset($_POST['username'])) {
+            $vehicle_code = (int) $_POST['categoryId'];
+            $description = $_POST['description'];
+            $name = $_POST['categoryName'];
+
+            $this->model('insertModel')->addCategory($vehicle_code, $name, $description);
+            header("Location: " . BASEURL . "/welcome");
+
         if (isset($_SESSION['username'])) {
             $vehicle_category_code = (int) $_POST['vehicle_category_code'];
             $description = $_POST['description'];
@@ -72,6 +85,7 @@ class FleetCenter extends Controller
             // header("Location: " . BASEURL . "/welcome");
         }
     }
+
     public function addDriver()
     {
         if (isset($_SESSION['username'])) {
@@ -114,6 +128,7 @@ class FleetCenter extends Controller
             // header("Location: " . BASEURL . "/welcome");
         }
     }
+
 
 
 }

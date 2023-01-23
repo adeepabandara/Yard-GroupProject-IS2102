@@ -224,6 +224,22 @@ a:active {
 }
 
 
+
+.container form .add-button {
+    position: relative;
+    background-color: #7A7A7A;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 9px 5px 9px 5px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 3px;
+    border-radius: 5px;
+
+
 .container form .add-button {
     position: relative;
     background-color: #7A7A7A;
@@ -660,6 +676,50 @@ select {
 .h-100 {
     height: 120% !important;
 }
+
+
+
+.searchBar input[type="text"] {
+    width: 100%;
+    padding: 0px;
+    border: 1px solid #0295A9;
+    border-radius: 5px;
+
+}
+
+form .input[type="text"]:focus {
+    border: 3px solid #555;
+}
+
+.card-searchbar {
+    display: flex;
+    border: 1px solid #0295A9;
+    border-radius: 8px;
+    margin: 0 1.5rem;
+    align-items: center;
+    padding: 0 0.5rem;
+    width: 100%;
+}
+
+ .required-color {
+    color: #ff4747;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .error {
+    border-color: #ff4747 !important;
+  }
+  .valid {
+    border-color: #37a137 !important;
+  }
+
+  .error-message {
+    margin-top: 0.02rem;
+  }
+
 
 
 .searchBar input[type="text"] {

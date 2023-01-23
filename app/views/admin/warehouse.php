@@ -354,7 +354,7 @@ window.onclick = function(event) {
 
   </div>
 
-  <script>
+  
   
   <script>
   function showTime(){
