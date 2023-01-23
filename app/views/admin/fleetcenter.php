@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream
+=======
+<!DOCTYPE html>
+
+>>>>>>> Stashed changes
 <?php
 
 session_start();
@@ -28,7 +33,11 @@ $rows = mysqli_query($conn, "SELECT * FROM fleetcenter");
 
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/style.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<<<<<<< Updated upstream
 <script defer src="<?php echo BASEURL ?>/admin/index.js"></script>
+=======
+
+>>>>>>> Stashed changes
 
 <div class="grid-container">
 

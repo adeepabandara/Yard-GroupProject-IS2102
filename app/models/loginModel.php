@@ -8,6 +8,7 @@ class loginModel extends Model
     {
         parent::__construct();
     }
+<<<<<<< Updated upstream
     public function login($username, $password,$usertype)
     {
         return $this->get("admin", "username = '$username' AND password = '$password'");
@@ -15,4 +16,17 @@ class loginModel extends Model
     }
    
    
+=======
+    public function login($username, $password)
+    {
+
+        return $this->get('users',"username = '$username' AND password = '$password'");
+
+
+    
+    }
+
+   
+
+>>>>>>> Stashed changes
 }
