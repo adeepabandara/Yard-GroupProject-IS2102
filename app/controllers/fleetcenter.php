@@ -1,4 +1,5 @@
 <?php
+  session_start();
 
 class FleetCenter extends Controller
 {
@@ -13,6 +14,18 @@ class FleetCenter extends Controller
     public function vehicle() 
     {
         $this->view('fleet/addVehicle');
+    }  
+    public function category() 
+    {
+        $this->view('fleet/addCategory');
+    }  
+    public function driver() 
+    {
+        $this->view('fleet/addDriver');
+    }  
+    public function fuel() 
+    {
+        $this->view('fleet/addFuelStation');
     }  
 
 
@@ -45,15 +58,13 @@ class FleetCenter extends Controller
 
     public function addCategory()
     {
-        echo json_encode($_POST);
-
-        if (isset($_POST['username'])) {
-            $vehicle_code = (int) $_POST['categoryId'];
+        if (isset($_SESSION['username'])) {
+            $vehicle_category_code = (int) $_POST['vehicle_category_code'];
             $description = $_POST['description'];
-            $name = $_POST['categoryName'];
+            $name = $_POST['name'];
 
-            $this->model('insertModel')->addCategory($vehicle_code, $name, $description);
-            header("Location: " . BASEURL . "/welcome");
+            $this->model('insertModel')->addVehicleCategory($vehicle_category_code, $name, $description);
+            header("Location: " . BASEURL . "/fleetcenter/category");
 
         } else {
             echo ("Missing mandotary addtribute");
@@ -61,6 +72,49 @@ class FleetCenter extends Controller
             // header("Location: " . BASEURL . "/welcome");
         }
     }
+    public function addDriver()
+    {
+        if (isset($_SESSION['username'])) {
+            $driverId = (int) $_POST['driverId'];
+            $name = $_POST['name'];
+            $nic = (int) $_POST['nic'];
+            $contactNo = (int) $_POST['contactNo'];
+            $address = $_POST['address'];
+            $eAddress = (int) $_POST['eAddress'];
+            $uName = (int) $_POST['uName'];
+            $password = (int) $_POST['password'];
+
+            $this->model('insertModel')->addDriver($driverId, $name, $nic, $contactNo, $address, $eAddress, $uName, $password);
+            header("Location: " . BASEURL . "/fleetcenter/driver");
+
+        } else {
+            echo ("Missing mandotary addtribute");
+            exit();
+            // header("Location: " . BASEURL . "/welcome");
+        }
+    }
+
+    public function addFuelStation()
+    {
+        if (isset($_SESSION['username'])) {
+            $stationId = (int) $_POST['stationId'];
+            $name = $_POST['name'];
+            $address =  $_POST['address'];
+            $location =  $_POST['location'];
+            $creditLimit = $_POST['creditLimit'];
+            $contactPerson = $_POST['contactPerson'];
+            $contactNo = (int) $_POST['contactNo'];
+
+            $this->model('insertModel')->addFuelStation($stationId, $name, $address, $location, $creditLimit, $contactPerson, $contactNo);
+            header("Location: " . BASEURL . "/fleetcenter/fuel");
+
+        } else {
+            echo ("Missing mandotary addtribute");
+            exit();
+            // header("Location: " . BASEURL . "/welcome");
+        }
+    }
+
 
 }
 ?>
