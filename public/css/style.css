@@ -1,4 +1,14 @@
+
+@import url("https://rsms.me/inter/inter.css");
+
+
+:root {
+  --PrimaryColor: #0295a9;
+  --BackgroundColor: #efeff3;
+}
+
 @import url('https://rsms.me/inter/inter.css');
+
 
 
 html {
@@ -15,6 +25,41 @@ body {
         background-color: #0295A9;
         margin: 0px;
     }
+=======
+html {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.right {
+  align-self: flex-end;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}
+
+.close-icon {
+  position: relative;
+  top: -10px;
+  text-decoration: none;
+  right: -10px;
+  margin-right: 1px;
+  align-self: flex-end;
+}
+
+.header {
+  grid-area: header;
+  background-color: #0295a9;
+  margin: 0px;
+}
+
 
 .right {
     align-self: flex-end;
@@ -116,10 +161,6 @@ a:active {
     margin: 0px;
 }
 
-
-
-
-
 .sidenav {
     display: flex;
     /* Will be hidden on mobile */
@@ -135,6 +176,7 @@ a:active {
 }
 
 .sidenav__list-item {
+
     padding: 20px 20px 20px 40px;
     color: #ddd;
 
@@ -142,6 +184,7 @@ a:active {
 
 
     text-decoration: none;
+
 
 
 }
@@ -154,6 +197,17 @@ a:active {
     cursor: pointer;
 }
 
+
+
+  padding: 20px 20px 20px 40px;
+  color: #ddd;
+  text-decoration: none;
+}
+
+.sidenav__list-item:hover {
+  background-color: #fff;
+  cursor: pointer;
+}
 
 .main-header {
     display: flex;
@@ -203,20 +257,32 @@ a:active {
 }
 
 .card:nth-child(3) {
+
+
+  height: 265px;
+}
+
+
+
+
     height: auto;
+
+  height: auto;
+
 }
 
 .card:nth-child(4) {
-    height: auto;
+  height: auto;
 }
 
 .card:nth-child(5) {
-    height: auto;
+  height: auto;
 }
 
 .card:nth-child(6) {
-    height: 100%;
+  height: 100%;
 }
+
 
 
 
@@ -248,6 +314,22 @@ a:active {
 
 form .fields .input-field {
 
+
+.container form .input-field {
+
+  display: flex;
+  width: calc(100% / 2 - 15px);
+  flex-direction: column;
+  margin: 4px 0;
+  padding: 5px;
+}
+
+
+form .fields .input-field.one {
+  width: 50%;
+
+form .fields .input-field {
+
 .container form .input-field {
 
     display: flex;
@@ -257,51 +339,6 @@ form .fields .input-field {
     padding: 5px;
 
 
-}
-
-.container form .input-row {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    overflow: hidden;
-
-
-}
-
-
-
-.container form .add-button {
-    position: relative;
-    background-color: #7A7A7A;
-    border: none;
-    font-size: 20px;
-    color: #FFFFFF;
-    padding: 9px 5px 9px 5px;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    margin-left: 3px;
-    border-radius: 5px;
-
-
-.container form .add-button {
-    position: relative;
-    background-color: #7A7A7A;
-    border: none;
-    font-size: 20px;
-    color: #FFFFFF;
-    padding: 9px 5px 9px 5px;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    margin-left: 3px;
-    border-radius: 5px;
-
-}
-
-
 
 }
 
@@ -315,6 +352,22 @@ form .fields .input-field {
 }
 
 
+
+.container form .add-button {
+    position: relative;
+    background-color: #7A7A7A;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 9px 5px 9px 5px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 3px;
+    border-radius: 5px;
+
+
 .container form .add-button {
     position: relative;
     background-color: #7A7A7A;
@@ -331,15 +384,72 @@ form .fields .input-field {
 
 }
 
+
+
+}
+
+.container form .input-row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+
+
+}
+
+
+.container form .add-button {
+    position: relative;
+    background-color: #7A7A7A;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 9px 5px 9px 5px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 3px;
+    border-radius: 5px;
+
+}
+
+
+.container form .input-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  overflow: hidden;
 
 
 
 .input-field input:focus {
     outline: 0;
+
+}
+
+.container form .add-button {
+  position: relative;
+  background-color: #7a7a7a;
+  border: none;
+  font-size: 20px;
+  color: #ffffff;
+  padding: 9px 5px 9px 5px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 3px;
+  border-radius: 5px;
 }
 
 
+.input-field input:focus {
+  outline: 0;
+}
+
 .input-field.success input {
+
     border-color: #09c372;
 }
 
@@ -349,17 +459,20 @@ form .fields .input-field {
 .input-field.error input {
 
     border-color: #ff3860;
+
+  border-color: #09c372;
+}
+
+.input-field.error input {
+  border-color: #ff3860;
+
 }
 
 .input-field.error {
-    color: #ff3860;
-    font-size: 9px;
-    height: 13px;
+  color: #ff3860;
+  font-size: 9px;
+  height: 13px;
 }
-
-
-
-
 
 form .fields .input-field.one {
     width: 50%;
@@ -370,7 +483,41 @@ form .fields .input-field.two {
 }
 
 form .fields .input-field.three {
+
+  width: 100%;
+
+}
+
+
+.input-field label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2e2e2e;
+
+}
+
+.card-headline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-btncontainer {
+  width: 60px;
+}
+/* .card-searchbar {
+  display: flex;
+  border: 1px solid var(--PrimaryColor);
+  border-radius: 8px;
+  margin: 0 1.5rem;
+  align-items: center;
+  padding: 0 0.5rem;
+  width: 100%;
+} */
+
+
     width: 100%;
+
 }
 
 
@@ -385,6 +532,94 @@ form .fields .input-field.three {
 
 
 .container1 form button,
+
+.subBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  max-width: 200px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+  margin-left: 10px;
+
+}
+
+.input-field label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+
+.container1 form button,
+.blue-add-btn-right {
+  display: flex;
+  justify-content: center;
+  max-width: 200px;
+  width: 20%;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+
+  background-color: #0295a9;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+
+  margin-left: auto;
+  padding: 10px;
+
+}
+
+.container1 form button,
+.subBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  max-width: 200px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+  margin-left: 10px;
+
+  background-color: #02a926;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.container2 form button,
+.viewBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+  margin-left: 0px;
+  background-color: #0295a9;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 12px;
+
+  background-color: #0295a9;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 14px;
+
+  font-weight: 400;
+
 .blue-add-btn-right {
     display: flex;
     justify-content: center;
@@ -422,10 +657,12 @@ form .fields .input-field.three {
     cursor: pointer;
     font-size: 14px;
     font-weight: 400;
+
 }
 
 .container1 form button,
 .closeBtn {
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -444,10 +681,29 @@ form .fields .input-field.three {
     cursor: pointer;
     font-size: 14px;
     font-weight: 400;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  max-width: 200px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: #555;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+
 }
 
 .container1 form button,
 .deleteBtn {
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -466,7 +722,45 @@ form .fields .input-field.three {
     cursor: pointer;
     font-size: 14px;
     font-weight: 400;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  max-width: 200px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: #dc2626;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+
 }
+
+
+.container2 form button,
+.viewBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 100%;
+  border: none;
+
+  color: #fff;
+  border-radius: 10px;
+  margin-left: 0px;
+  background-color: #dc2626;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 12px;
+}
+
 
 
 
@@ -489,11 +783,21 @@ form .fields .input-field.three {
     font-size: 12px;
     font-weight: 400;
 
-}
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+  margin-left: 0px;
+  background-color: #0295a9;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 400;
 
+}
 
 .container2 form button,
 .locBtn {
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -517,10 +821,48 @@ form .fields .input-field.three {
 
 
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+  width: 98%;
+  color: #fff;
+  border-radius: 5px;
+  background-color: 7A7A7A;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 400;
+
 }
 
 .container2 form button,
 .delBtn {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 100%;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  margin-left: 0px;
+  background-color: #dc2626;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+form button i,
+form .backBtn i {
+  margin: 0 6px;
+}
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -534,6 +876,7 @@ form .fields .input-field.three {
     transition: all 0.3s linear;
     cursor: pointer;
     font-size: 12px;
+
 
 
 }
@@ -562,11 +905,52 @@ form .buttons button,
     margin-right: 14px;
 }
 
+
+.searchBar {
+  /* border: 1px solid black; */
+  width: 100%;
+
+form .input[type="text"]:focus {
+  border: 3px solid #555;
+
 form .input[type=text]:focus {
     border: 3px solid #555;
+
 }
 
 
+
+@media only screen and (max-width: 1440px) {
+
+  /* Show the sidenav */
+  .grid-container {
+    grid-template-columns: 240px 1fr;
+    /* Show the side nav for non-mobile screens */
+    grid-template-areas:
+      "sidenav header"
+      "sidenav main"
+      "sidenav footer";
+  }
+
+
+  .sidenav {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+
+
+  .sidenav {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+  }
+
+  form .input-row {
+    display: flex;
+    width: calc(90% / 1 - 20px);
+    flex-direction: row;
+
+  }
 
 
 
@@ -589,10 +973,31 @@ form .input[type=text]:focus {
         flex-direction: column;
     }
 
+
 }
 
 /* Medium-sized screen breakpoint (tablet, 1050px) */
+
 @media only screen and (max-width: 1000px) {
+
+@media only screen and (max-width: 1440px) {
+
+  /* Break out main cards into two columns */
+  .main-cards {
+    column-count: 1;
+    column-gap: 50px;
+    margin-bottom: 10%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  form .fields .input-field {
+    display: flex;
+
+    width: calc(90% / 1 - 20px);
+    flex-direction: column;
+    margin: 4px 4px 4px 4px;
+  }
 
 
     form .input-row {
@@ -643,6 +1048,23 @@ form .input[type=text]:focus {
         width: calc(100%/ 2 - 20px)o;
         flex-direction: column;
 
+
+    width: calc(100% / 2 - 20px) o;
+    flex-direction: column;
+  }
+
+  form .input-row {
+    display: flex;
+    width: calc(100% / 2 - 20px);
+    margin: 4px 4px 4px 4px;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+
         width: calc(100%/ 2 - 20px)o;
         flex-direction: column;
 
@@ -656,6 +1078,7 @@ form .input[type=text]:focus {
 
 
     }
+
 }
 
 
@@ -683,6 +1106,13 @@ td {
 
 tr:nth-child(even) {
     background-color: #ffff
+}
+
+
+.row {
+    display: flex;
+    width: 100%;
+    align-items: center;
 }
 
 
@@ -851,17 +1281,107 @@ select {
 
 
 
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup_card {
+  flex-direction: column;
+  align-items: left;
+  width: 50%;
+  background-color: #fff;
+  padding: 24px;
+  box-sizing: border-box;
+  border: #fff;
+  border-radius: 20px;
+  margin-bottom: auto;
+  margin-left: 25%;
+  margin-top: 5%;
+  display: flex;
+}
+
+.popup_card_fields {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  flex-wrap: wrap;
+}
+
+.popup_card_input {
+  display: flex;
+  width: calc(100% / 2 - 15px);
+  flex-direction: column;
+  margin: 4px 0;
+  padding: 5px;
+  border-radius: 12%;
+}
+
+.textarea {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin: 4px 0;
+  padding: 5px;
+  border-radius: 12%;
+}
+
+.popup_card_input input,
+select {
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 42px;
+  margin: 8px 0;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.clock {
+  position: relative;
+
+  margin-top: 20%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #0295a9;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+
 .input-field input,
 select {
-    outline: none;
-    font-size: 14px;
-    font-weight: 400;
-    color: #333;
-    border-radius: 5px;
-    border: 1px solid #aaa;
-    padding: 0 15px;
-    height: 42px;
-    margin: 8px 0;
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 42px;
+  margin: 8px 0;
 }
 
 .w-100 {
@@ -930,6 +1450,56 @@ form .input[type="text"]:focus {
 form .input[type="text"]:focus {
     border: 3px solid #555;
 }
+
+
+.input-field input[type="date"]:valid {
+    color: #333;
+  width: 100% !important;
+}
+
+.h-100 {
+  height: 120% !important;
+}
+
+.searchBar input[type="text"] {
+  width: 100%;
+  padding: 0px;
+  border: 1px solid #0295a9;
+  border-radius: 5px;
+}
+
+form .input[type="text"]:focus {
+  border: 3px solid #555;
+}
+
+.card-searchbar {
+  display: flex;
+  border: 1px solid #0295a9;
+  border-radius: 8px;
+  margin: 0 1.5rem;
+  align-items: center;
+  padding: 0 0.5rem;
+  width: 100%;
+}
+
+.required-color {
+  color: #ff4747;
+}
+
+.hide {
+  display: none;
+}
+
+.error {
+  border-color: #ff4747 !important;
+}
+
+.valid {
+  border-color: #37a137 !important;
+}
+
+.error-message {
+  margin-top: 0.2rem;
 
 .card-searchbar {
     display: flex;
@@ -1005,6 +1575,7 @@ form .input[type="text"]:focus {
 
   .sidenav::-webkit-scrollbar {
     display: none;
+
 }
 
   .sidenav .logo{
