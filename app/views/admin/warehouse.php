@@ -1,39 +1,33 @@
-<<<<<<< Updated upstream
-=======
 <!DOCTYPE html>
 
 <script defer src="active.js"></script>
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
 
->>>>>>> Stashed changes
 <?php
 
 session_start();
 
 if (isset($_SESSION['username'])) {
-<<<<<<< Updated upstream
  // echo $_SESSION['username'];
-=======
+
   // echo $_SESSION['username'];
->>>>>>> Stashed changes
 
 } else {
   echo '<br>You are not logged in';
 }
 
 
-<<<<<<< Updated upstream
+
 $conn = mysqli_connect("localhost", "root", "", "yard");
 $rows = mysqli_query($conn, "SELECT * FROM warehouse");
-=======
->>>>>>> Stashed changes
 
 ?>
 
 
-<<<<<<< Updated upstream
+
 <script type="text/javascript"> 
+
     function getLocationConstant()
    {
        if(navigator.geolocation)
@@ -64,7 +58,6 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
 
 
 
-=======
 
 
 <script type="text/javascript">
@@ -88,14 +81,13 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
     alert("Error code " + event.code + ". " + event.message);
   }
 </script>
->>>>>>> Stashed changes
 
 
 
 
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/style.css">
-<<<<<<< Updated upstream
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 <script defer src="<?php echo BASEURL ?>/admin/index.js"></script>
 
 <div class="grid-container">
@@ -117,10 +109,10 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
 
   <main class="main">
     <div class="main-header">
-
       <h2>Add Warehouse</h2>
 
-=======
+
+
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/sidebar.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -184,7 +176,7 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
   <main class="main">
     <div class="main-header">
       <h2>Add Warehouse</h2>
->>>>>>> Stashed changes
+
     </div>
 
 
@@ -192,17 +184,18 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
 
 
       <div class="card">Add Warehouse
-<<<<<<< Updated upstream
-     
+
 
  
         <div class="container">
           <form action="<?php echo BASEURL ?>/adminFunctions/createWarehouse" method="POST" id="form">
-            <div class="form first">
+            <div>
               <div>
 
 
                 <div class="fields">
+
+                
                   <div class="input-field">
                     <label>Warehouse Code</label>
                     <input name="warehouse_code" type="text" placeholder="Type Here" required>
@@ -238,8 +231,6 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
                   <label>Longitude</label>
                     <input type="text" id="Longitude" name="longitude" value="">
                   </div>
-
-              
 
                   <div class="input-field">
                     <label>Fleet Center</label>
@@ -284,7 +275,7 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
               </button>
             </div>
           </form>
-=======
+
 
 
 
@@ -387,7 +378,7 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
                 </button>
               </div>
             </form>
->>>>>>> Stashed changes
+
 
         </div>
 
@@ -396,7 +387,6 @@ $rows = mysqli_query($conn, "SELECT * FROM warehouse");
       <div class="card">Warehouse List
 
 
-<<<<<<< Updated upstream
 
         <div class="container">
 
@@ -501,7 +491,7 @@ window.onclick = function(event) {
                     <input name="name" value = <?php echo $row["name"]; ?>>
                   </div>
                   <div class="popup_card_input">
-                    <label>Adddress</label>
+                    <label>Address</label>
                     <input name="address" value = <?php echo $row["password"];?>>
                   </div>
 
@@ -523,7 +513,7 @@ window.onclick = function(event) {
 
                   <div class="popup_card_input">
                   <label>Longitude</label>
-                    <input type="text" id="Longitude" name="longitude" value =<?php echo $row["longtitude"];?>>
+                    <input type="text" id="Longitude" name="longitude" value =<?php echo $row["longitude"];?>>
                   </div>
 
                   <div class="popup_card_input">
@@ -568,7 +558,7 @@ window.onclick = function(event) {
 
   </div>
 
-  <script>
+  
   
   <script>
   function showTime(){
@@ -600,7 +590,7 @@ window.onclick = function(event) {
 }
 
 showTime();
-=======
+
         <div class="container">
           <?php
 
@@ -786,20 +776,15 @@ sidebarBtn.onclick = function() {
 
 
 
->>>>>>> Stashed changes
 
 
 
 
-<<<<<<< Updated upstream
+
 </script>
-=======
->>>>>>> Stashed changes
 
 
 
-
-<<<<<<< Updated upstream
   </body>
 
   </html>
@@ -843,7 +828,6 @@ sidebarBtn.onclick = function() {
   <input type="text" placeholder="Enter your ccupation" required>
 </div>
 -->
-=======
 
 
 
@@ -894,4 +878,4 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 </script>
->>>>>>> Stashed changes
+

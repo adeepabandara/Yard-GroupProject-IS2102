@@ -1,5 +1,4 @@
-<<<<<<< Updated upstream
-=======
+
 <!DOCTYPE html>
 
 
@@ -7,8 +6,6 @@
 
 
 
-
->>>>>>> Stashed changes
 <?php
 
 session_start();
@@ -22,12 +19,9 @@ if (isset($_SESSION['username'])) {
 
 
 $conn = mysqli_connect("localhost", "root", "", "yard");
-<<<<<<< Updated upstream
 $rows = mysqli_query($conn, "SELECT * FROM commercial_users");
-=======
 $rows = mysqli_query($conn, "SELECT * FROM users");
->>>>>>> Stashed changes
-
+$rows = mysqli_query($conn, "SELECT * FROM users");
 ?>
 
 
@@ -68,11 +62,8 @@ $rows = mysqli_query($conn, "SELECT * FROM users");
 
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/style.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-<<<<<<< Updated upstream
-<script defer src="<?php echo BASEURL ?>/admin/index.js"></script>
-=======
 
->>>>>>> Stashed changes
+<script defer src="<?php echo BASEURL ?>/admin/index.js"></script>
 
 <div class="grid-container">
 
@@ -107,11 +98,13 @@ $rows = mysqli_query($conn, "SELECT * FROM users");
 
  
         <div class="container">
-<<<<<<< Updated upstream
+
           <form action="<?php echo BASEURL ?>/adminFunctions/createCommercial_User" method="POST" id="form">
-=======
+
           <form action="<?php echo BASEURL ?>/adminFunctions/createCommercial" method="POST" id="form">
->>>>>>> Stashed changes
+
+          <form action="<?php echo BASEURL ?>/adminFunctions/createCommercial" method="POST" id="form">
+
             <div class="form first">
               <div>
 
@@ -124,47 +117,58 @@ $rows = mysqli_query($conn, "SELECT * FROM users");
                   </div>
 
                   <div class="input-field">
-<<<<<<< Updated upstream
+
                     <label> Job Position</label>
                     <input name="job_position" type="text" placeholder="Type Here" required>
-=======
+
                     <label>Name</label>
                     <input name="name" type="text" placeholder="Type Here" required>
->>>>>>> Stashed changes
+
+                    <label>Name</label>
+                    <input name="name" type="text" placeholder="Type Here" required>
+
                   </div>
 
 
                   <div class="fields">
                   <div class="input-field">
-<<<<<<< Updated upstream
+
                     <label>Employee Id</label>
                     <input name="employee_id" type="text" placeholder="Type Here" required>
-=======
+
                     <label>Address</label>
                     <input name="address" type="text" placeholder="Type Here" >
->>>>>>> Stashed changes
+
+                    <label>Address</label>
+                    <input name="address" type="text" placeholder="Type Here" >
 
                   </div>
 
                   <div class="input-field">
-<<<<<<< Updated upstream
+
                     <label> NIC</label>
                     <input name="nic" type="text" placeholder="Type Here" required>
-=======
+
                     <label>latitude</label>
                     <input name="latitude" type="text" placeholder="Type Here" >
->>>>>>> Stashed changes
+
+                    <label>latitude</label>
+                    <input name="latitude" type="text" placeholder="Type Here" >
+
                   </div>
 
 
                   <div class="input-field">
-<<<<<<< Updated upstream
+
                     <label>Adddress</label>
                     <input name="address" type="text" placeholder="Type Here">
-=======
+
                     <label>longitude </label>
                     <input name="longitude" type="text" placeholder="Type Here">
->>>>>>> Stashed changes
+
+                    <label>longitude </label>
+                    <input name="longitude" type="text" placeholder="Type Here">
+
                   </div>
 
                   <div class="input-field">

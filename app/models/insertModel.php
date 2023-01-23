@@ -7,17 +7,12 @@ class insertModel extends Model
         parent::__construct();
     }
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
     public function userCheck($column,$value)
     {
         $result = $this->get('warehouse', "$column = '$value'");
         return $result;
     }
-<<<<<<< Updated upstream
-=======
 
 
  
@@ -42,11 +37,29 @@ class insertModel extends Model
     public function addCategory($product_category_code,  $name, $description)
     {
         $this->insert('product_category', ['product_category_code' => $product_category_code, 'name' => $name, 'description' => $description]);
+
+    }
+
+    public function addCategory1($product_category_code,  $name, $description)
+    {
+        $this->insert('product_category', ['product_category_code' => $product_category_code, 'name' => $name, 'description' => $description]);
+        
+    }
+
+    public function addSubCategory($category, $product_sub_category_code,  $name, $description)
+    {
+        $this->insert('product_sub_category', ['product_sub_category_code' => $product_sub_category_code, 'category' => $category, 'name' => $name, 'description' => $description]);
+        
+    }
+
+    public function addBrand($brand_code,  $name, $description)
+    {
+        $this->insert('brand', ['brand_code' => $brand_code, 'name' => $name, 'description' => $description]);
+
     }
 
  
 
->>>>>>> Stashed changes
      public function addWarehouse( $warehouse_code,$name,$longitude,$latitude,$cp_name,$cp_number, $address,$email_address,$fleet_center, $capacity,$username,$password)
     {
       $this->insert('warehouse', 
@@ -62,14 +75,43 @@ class insertModel extends Model
       'fleet_center'=> $fleet_center,
       'capacity'=> $capacity,
       'username'=> $username,
-<<<<<<< Updated upstream
+
       'password'=> $password]);
+
+      'password'=> $password]); 
+
         
    }
 
+   public function addUser($username,$password,$user_type)
+   {
+     $this->insert('users', 
+     
+     ['username'=> $username,
+     'password'=> $password,
+     'user_type'=> $user_type]);
+       
+  }
+
+
+
+    
+    public function addVehicle($reg_no, $model, $chassis_no, $engine_no, $color, $category, $mf_year)
+    {
+        // var_dump($reg_no, $chassis_no, $engine_no, $color, $category);
+        // exit();
+        $this->insert('vehicle', [
+            'reg_no' => $reg_no,
+            'chassis_no' => $chassis_no,
+            'engine_no' => $engine_no,
+            'color' => $color,
+            'category' => $category,
+            'model' => $model,
+            'mf_year'=>$mf_year,
+
 
    public function addFleetcenter( $fleetcenter_code,$name,$longitude,$latitude,$cp_name,$cp_number, $address,$email_address,$username,$password)
-=======
+
       'password'=> $password]); 
         
    }
@@ -101,12 +143,13 @@ class insertModel extends Model
             'mf_year'=>$mf_year,
 
 
+
         ]);
 
     }
 
    public function addFleetCenter( $fleetcenter_code,$name,$longitude,$latitude,$cp_name,$cp_number, $address,$email_address,$username,$password)
->>>>>>> Stashed changes
+
    {
      $this->insert('fleetcenter', 
      
@@ -124,17 +167,72 @@ class insertModel extends Model
   }
 
 
-<<<<<<< Updated upstream
+
   public function addCommercial_User($department_code,$job_position,$employee_id,$nic, $cp_name,$cp_number, $address, $email_address, $username, $password)
+
+    //public function addCategory($vehicle_code, $name,$description)
+    
+        // var_dump($reg_no, $chassis_no, $engine_no, $color, $category);
+        // exit();
+       // $this->insert('vehicle_category', ['description' => $description,'vehicle_category_code' => $vehicle_code,'name' => $name,
+        //]);
+
+    public function addVehicleCategory($vehicle_category_code, $name, $description)
+    {
+
+        // var_dump($vehicle_category_code, $name, $description);
+        // exit();
+        $this->insert('vehicle_category', [
+            'description' => $description,
+            'vehicle_category_code' => $vehicle_category_code,
+            'name' => $name,
+        ]);
+    }
+
+    public function addDriver($driverId, $name, $nic, $contactNo, $address, $eAddress, $uName, $password)
+    {
+
+        // var_dump($vehicle_category_code, $name, $description);
+        // exit();
+        $this->insert('driver', [
+            'driverId' => $driverId,
+           'name' => $name,
+           'nic' => $nic,
+           'contactNo' => $contactNo,
+           'address' => $address,
+           'eAddress' => $eAddress,
+           'uName' => $uName,
+           'password' => $password,
+        ]);
+    }
+
+    public function addFuelStation($stationId, $name, $address, $location, $creditLimit, $contactPerson, $contactNo)
+    {
+
+        // var_dump($vehicle_category_code, $name, $description);
+        // exit();
+        $this->insert('fuelstation', [
+            'stationId' => $stationId,
+           'name' => $name,
+           'address' => $address,
+           'location' => $location,
+           'creditLimit' => $creditLimit,
+           'contactPerson' => $contactPerson,
+           'contactNo' => $contactNo,
+        ]);
+    }
+
+    
+
+ public function addCommercial($commercial_code,$name, $cp_name,$cp_number,$longitude,$latitude, $address, $email_address, $username, $password)
+
    {
-     $this->insert('commercial_users', 
+     $this->insert('commercial', 
      
-     ['department_code'=> $department_code,
-     'job_position'=> $job_position, 
-     'employee_id'=> $employee_id,
-     'nic'=> $nic,
+     ['commercial_code'=> $commercial_code,
+     'name'=> $name, 
      'address'=> $address,
-=======
+
     //public function addCategory($vehicle_code, $name,$description)
     
         // var_dump($reg_no, $chassis_no, $engine_no, $color, $category);
@@ -153,7 +251,8 @@ class insertModel extends Model
      'address'=> $address,
      'longitude'=> $longitude,
      'latitude'=> $latitude,
->>>>>>> Stashed changes
+     'longitude'=> $longitude,
+     'latitude'=> $latitude,
      'cp_name'=> $cp_name,
      'cp_number'=> $cp_number,
      'email_address'=> $email_address,

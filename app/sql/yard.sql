@@ -1,5 +1,5 @@
 -- phpMyAdmin SQL Dump
-<<<<<<< Updated upstream
+
 -- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
@@ -7,15 +7,19 @@
 -- Generation Time: Nov 17, 2022 at 06:39 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.16
-=======
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
+
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+
 -- Host: 127.0.0.1
 -- Generation Time: Dec 24, 2022 at 10:22 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
->>>>>>> Stashed changes
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,8 +38,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
-<<<<<<< Updated upstream
-=======
+
 -- Table structure for table `admin`
 --
 
@@ -55,7 +58,7 @@ INSERT INTO `admin` (`admin_code`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
->>>>>>> Stashed changes
+
 -- Table structure for table `brand`
 --
 
@@ -63,16 +66,16 @@ CREATE TABLE `brand` (
   `brand_code` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` varchar(100) DEFAULT NULL
-<<<<<<< Updated upstream
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
->>>>>>> Stashed changes
 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 -- --------------------------------------------------------
 
 --
-<<<<<<< Updated upstream
+
 -- Table structure for table `commercial&finance`
 --
 
@@ -88,7 +91,11 @@ CREATE TABLE `commercial&finance` (
   `username` varchar(15) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
+
+-- Table structure for table `commercial`
+--
+
+
 -- Table structure for table `commercial`
 --
 
@@ -111,7 +118,7 @@ CREATE TABLE `commercial` (
 
 INSERT INTO `commercial` (`commercial_code`, `name`, `address`, `longitude`, `latitude`, `cp_name`, `cp_number`, `email_address`, `username`, `password`) VALUES
 (1, 'Commercial  & Financ', 'No 23, Main Street, ', 0, 0, '', 0, '', 'pavan', 'pavan');
->>>>>>> Stashed changes
+
 
 -- --------------------------------------------------------
 
@@ -123,9 +130,9 @@ CREATE TABLE `expense_category` (
   `category_code` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` varchar(100) DEFAULT NULL
-<<<<<<< Updated upstream
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -134,7 +141,7 @@ CREATE TABLE `expense_category` (
 
 INSERT INTO `expense_category` (`category_code`, `name`, `description`) VALUES
 (23423, 'fghrgherh', 'rehgerht');
->>>>>>> Stashed changes
+
 
 -- --------------------------------------------------------
 
@@ -149,11 +156,14 @@ CREATE TABLE `expense_record` (
   `amount` int(11) NOT NULL,
   `description` varchar(100) DEFAULT NULL,
   `source` longblob DEFAULT NULL
-<<<<<<< Updated upstream
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
->>>>>>> Stashed changes
+
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 -- --------------------------------------------------------
 
@@ -166,11 +176,12 @@ CREATE TABLE `expense_sub_category` (
   `category_code` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` varchar(100) DEFAULT NULL
-<<<<<<< Updated upstream
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
->>>>>>> Stashed changes
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -189,9 +200,9 @@ CREATE TABLE `fleetcenter` (
   `email_address` varchar(100) NOT NULL,
   `username` varchar(15) NOT NULL,
   `password` varchar(15) NOT NULL
-<<<<<<< Updated upstream
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -200,7 +211,7 @@ CREATE TABLE `fleetcenter` (
 
 INSERT INTO `fleetcenter` (`fleetcenter_code`, `name`, `address`, `longitude`, `latitude`, `cp_name`, `cp_number`, `email_address`, `username`, `password`) VALUES
 (1, 'Kandy', 'No 23, Main Street, Kandy', 80, 7, 'Shashini', '', '', 'shashini', 'shashini');
->>>>>>> Stashed changes
+
 
 -- --------------------------------------------------------
 
@@ -212,24 +223,23 @@ CREATE TABLE `product` (
   `product_code` int(11) NOT NULL,
   `bar_code` int(11) DEFAULT NULL,
   `name` varchar(100) NOT NULL,
-<<<<<<< Updated upstream
   `category` int(11) NOT NULL,
   `sub_category` int(11) NOT NULL,
-=======
->>>>>>> Stashed changes
   `opening_stock` int(11) DEFAULT NULL,
   `reorder_level` int(11) DEFAULT NULL,
   `selling_price` int(11) DEFAULT NULL,
   `purchase_price` int(11) DEFAULT NULL,
   `image` varbinary(100) DEFAULT NULL,
-<<<<<<< Updated upstream
   `ecommerce_status` binary(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
+
   `ecommerce_status` binary(100) DEFAULT NULL,
   `category` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
->>>>>>> Stashed changes
+  `ecommerce_status` binary(100) DEFAULT NULL,
+  `category` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 -- --------------------------------------------------------
 
@@ -241,11 +251,10 @@ CREATE TABLE `product_category` (
   `product_category_code` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` varchar(100) DEFAULT NULL
-<<<<<<< Updated upstream
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
->>>>>>> Stashed changes
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 -- --------------------------------------------------------
 
@@ -258,9 +267,7 @@ CREATE TABLE `product_sub_category` (
   `name` varchar(100) NOT NULL,
   `description` varchar(100) DEFAULT NULL,
   `category` int(11) NOT NULL
-<<<<<<< Updated upstream
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -285,7 +292,7 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `user_type`) VALUES
 (5, 'bethmi', 'bethmi', 'warehouse'),
 (6, 'shashini', 'shashini', 'fleet'),
 (7, 'pavan', 'pavan', 'commercial');
->>>>>>> Stashed changes
+
 
 -- --------------------------------------------------------
 
@@ -294,18 +301,21 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `user_type`) VALUES
 --
 
 CREATE TABLE `vehicle` (
-<<<<<<< Updated upstream
+
   `vehicle_code` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `registration_no` varchar(100) DEFAULT NULL,
   `chassie_no` varchar(100) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `model` varchar(100) NOT NULL,
+  `reg_no` varchar(100) DEFAULT NULL,
+  `chassis_no` varchar(100) DEFAULT NULL,
   `engine_no` varchar(100) DEFAULT NULL,
-  `manufactured_year` date DEFAULT NULL,
+  `mf_year` date DEFAULT NULL,
   `color` varchar(100) DEFAULT NULL,
   `documents` longblob DEFAULT NULL,
   `vehicle_category` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
   `id` int(11) NOT NULL,
   `model` varchar(100) NOT NULL,
   `reg_no` varchar(100) DEFAULT NULL,
@@ -316,7 +326,8 @@ CREATE TABLE `vehicle` (
   `documents` longblob DEFAULT NULL,
   `category` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
->>>>>>> Stashed changes
+  `category` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -328,11 +339,10 @@ CREATE TABLE `vehicle_category` (
   `vehicle_category_code` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` varchar(100) DEFAULT NULL
-<<<<<<< Updated upstream
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
->>>>>>> Stashed changes
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -343,11 +353,13 @@ CREATE TABLE `vehicle_category` (
 CREATE TABLE `warehouse` (
   `warehouse_code` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-<<<<<<< Updated upstream
+
   `address` varchar(100) DEFAULT NULL,
-=======
+
   `address` varchar(100) DEFAULT 'Not Set',
->>>>>>> Stashed changes
+
+  `address` varchar(100) DEFAULT 'Not Set',
+
   `longitude` int(11) DEFAULT NULL,
   `latitude` int(11) DEFAULT NULL,
   `cp_name` varchar(100) DEFAULT NULL,
@@ -357,9 +369,9 @@ CREATE TABLE `warehouse` (
   `capacity` varchar(100) DEFAULT NULL,
   `username` varchar(15) NOT NULL,
   `password` varchar(15) NOT NULL
-<<<<<<< Updated upstream
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-=======
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -368,39 +380,43 @@ CREATE TABLE `warehouse` (
 
 INSERT INTO `warehouse` (`warehouse_code`, `name`, `address`, `longitude`, `latitude`, `cp_name`, `cp_number`, `email_address`, `fleet_center`, `capacity`, `username`, `password`) VALUES
 (1, 'Nugegoda', 'No 07,  Cross Street , Nugegoda', 80, 7, '', 0, 'adeepabandara@gmail.com', 0, '', 'bethmi', 'bethmi');
->>>>>>> Stashed changes
+
 
 --
 -- Indexes for dumped tables
 --
 
 --
-<<<<<<< Updated upstream
-=======
+
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_code`);
 
 --
->>>>>>> Stashed changes
+
 -- Indexes for table `brand`
 --
 ALTER TABLE `brand`
   ADD PRIMARY KEY (`brand_code`);
 
 --
-<<<<<<< Updated upstream
+
 -- Indexes for table `commercial&finance`
 --
 ALTER TABLE `commercial&finance`
   ADD PRIMARY KEY (`commercial&finance_code`);
-=======
+
 -- Indexes for table `commercial`
 --
 ALTER TABLE `commercial`
   ADD PRIMARY KEY (`commercial_code`);
->>>>>>> Stashed changes
+
+-- Indexes for table `commercial`
+--
+ALTER TABLE `commercial`
+  ADD PRIMARY KEY (`commercial_code`);
+
 
 --
 -- Indexes for table `expense_category`
@@ -431,13 +447,14 @@ ALTER TABLE `fleetcenter`
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
-<<<<<<< Updated upstream
   ADD PRIMARY KEY (`product_code`),
   ADD KEY `category` (`category`),
   ADD KEY `sub_category` (`sub_category`);
-=======
+
   ADD PRIMARY KEY (`product_code`);
->>>>>>> Stashed changes
+
+  ADD PRIMARY KEY (`product_code`);
+
 
 --
 -- Indexes for table `product_category`
@@ -453,13 +470,13 @@ ALTER TABLE `product_sub_category`
   ADD KEY `category` (`category`);
 
 --
-<<<<<<< Updated upstream
+
 -- Indexes for table `vehicle`
 --
 ALTER TABLE `vehicle`
   ADD PRIMARY KEY (`vehicle_code`),
   ADD KEY `vehicle_category` (`vehicle_category`);
-=======
+
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -470,7 +487,18 @@ ALTER TABLE `users`
 --
 ALTER TABLE `vehicle`
   ADD PRIMARY KEY (`id`);
->>>>>>> Stashed changes
+
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `vehicle`
+--
+ALTER TABLE `vehicle`
+  ADD PRIMARY KEY (`id`);
+
 
 --
 -- Indexes for table `vehicle_category`
@@ -490,18 +518,22 @@ ALTER TABLE `warehouse`
 --
 
 --
-<<<<<<< Updated upstream
+
 -- AUTO_INCREMENT for table `brand`
---
-ALTER TABLE `brand`
-  MODIFY `brand_code` int(11) NOT NULL AUTO_INCREMENT;
+
+-- AUTO_INCREMENT for table `admin`
 
 --
--- AUTO_INCREMENT for table `commercial&finance`
+ALTER TABLE `admin`
+  MODIFY `admin_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
+-- AUTO_INCREMENT for table `brand`
+--
+
 ALTER TABLE `commercial&finance`
   MODIFY `commercial&finance_code` int(11) NOT NULL AUTO_INCREMENT;
-=======
+
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
@@ -512,17 +544,21 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `brand`
   MODIFY `brand_code` int(11) NOT NULL AUTO_INCREMENT;
->>>>>>> Stashed changes
+
+ALTER TABLE `brand`
+  MODIFY `brand_code` int(11) NOT NULL AUTO_INCREMENT;
+
 
 --
 -- AUTO_INCREMENT for table `expense_category`
 --
 ALTER TABLE `expense_category`
-<<<<<<< Updated upstream
+
   MODIFY `category_code` int(11) NOT NULL AUTO_INCREMENT;
-=======
+
   MODIFY `category_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23424;
->>>>>>> Stashed changes
+
+  MODIFY `category_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23424;
 
 --
 -- AUTO_INCREMENT for table `expense_record`
@@ -540,31 +576,36 @@ ALTER TABLE `expense_sub_category`
 -- AUTO_INCREMENT for table `fleetcenter`
 --
 ALTER TABLE `fleetcenter`
-<<<<<<< Updated upstream
+
   MODIFY `fleetcenter_code` int(11) NOT NULL AUTO_INCREMENT;
-=======
+
   MODIFY `fleetcenter_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
->>>>>>> Stashed changes
+
+  MODIFY `fleetcenter_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-<<<<<<< Updated upstream
+
   MODIFY `product_code` int(11) NOT NULL AUTO_INCREMENT;
-=======
+
   MODIFY `product_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123124;
->>>>>>> Stashed changes
+
+  MODIFY `product_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123124;
 
 --
 -- AUTO_INCREMENT for table `product_category`
 --
 ALTER TABLE `product_category`
-<<<<<<< Updated upstream
+
   MODIFY `product_category_code` int(11) NOT NULL AUTO_INCREMENT;
-=======
+
   MODIFY `product_category_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
->>>>>>> Stashed changes
+
+  MODIFY `product_category_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 
 --
 -- AUTO_INCREMENT for table `product_sub_category`
@@ -573,12 +614,12 @@ ALTER TABLE `product_sub_category`
   MODIFY `product_sub_category_code` int(11) NOT NULL AUTO_INCREMENT;
 
 --
-<<<<<<< Updated upstream
+
 -- AUTO_INCREMENT for table `vehicle`
 --
 ALTER TABLE `vehicle`
   MODIFY `vehicle_code` int(11) NOT NULL AUTO_INCREMENT;
-=======
+
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
@@ -589,7 +630,17 @@ ALTER TABLE `users`
 --
 ALTER TABLE `vehicle`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
->>>>>>> Stashed changes
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `vehicle`
+--
+ALTER TABLE `vehicle`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 
 --
 -- AUTO_INCREMENT for table `vehicle_category`
@@ -601,11 +652,11 @@ ALTER TABLE `vehicle_category`
 -- AUTO_INCREMENT for table `warehouse`
 --
 ALTER TABLE `warehouse`
-<<<<<<< Updated upstream
+
   MODIFY `warehouse_code` int(11) NOT NULL AUTO_INCREMENT;
-=======
   MODIFY `warehouse_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=212314;
->>>>>>> Stashed changes
+  MODIFY `warehouse_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=212314;
+
 
 --
 -- Constraints for dumped tables
@@ -618,20 +669,19 @@ ALTER TABLE `expense_sub_category`
   ADD CONSTRAINT `expense_sub_category_ibfk_1` FOREIGN KEY (`category_code`) REFERENCES `expense_category` (`category_code`);
 
 --
-<<<<<<< Updated upstream
+
 -- Constraints for table `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`sub_category`) REFERENCES `product_sub_category` (`product_sub_category_code`);
 
 --
-=======
->>>>>>> Stashed changes
+
+
 -- Constraints for table `product_sub_category`
 --
 ALTER TABLE `product_sub_category`
   ADD CONSTRAINT `product_sub_category_ibfk_1` FOREIGN KEY (`category`) REFERENCES `product_category` (`product_category_code`);
-<<<<<<< Updated upstream
 
 --
 -- Constraints for table `vehicle`
@@ -644,8 +694,7 @@ ALTER TABLE `vehicle`
 --
 ALTER TABLE `warehouse`
   ADD CONSTRAINT `warehouse_ibfk_1` FOREIGN KEY (`fleet_center`) REFERENCES `fleetcenter` (`fleetcenter_code`);
-=======
->>>>>>> Stashed changes
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

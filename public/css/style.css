@@ -10,14 +10,12 @@ body {
 }
 
 
-<<<<<<< Updated upstream
-
 .header {
         grid-area: header;
         background-color: #0295A9;
         margin: 0px;
     }
-=======
+
 .right {
     align-self: flex-end;
 }
@@ -43,11 +41,37 @@ a:active {
 }
 
 .header {
+.right {
+    align-self: flex-end;
+}
+
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+}
+
+
+.close-icon {
+
+    position: relative;
+    top: -10px;
+    text-decoration: none;
+    right: -10px;
+    margin-right: 1px;
+    align-self: flex-end;
+
+}
+
+.header {
+
     grid-area: header;
     background-color: #0295A9;
     margin: 0px;
 }
->>>>>>> Stashed changes
+
 
 /* Assign grid instructions to our parent grid container */
 
@@ -64,10 +88,7 @@ a:active {
 }
 
 
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 /* Give every child element its grid name */
 
 .header {
@@ -81,10 +102,7 @@ a:active {
 }
 
 
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 .sidenav {
     grid-area: sidenav;
     background-color: #0295A9;
@@ -119,13 +137,13 @@ a:active {
 .sidenav__list-item {
     padding: 20px 20px 20px 40px;
     color: #ddd;
-<<<<<<< Updated upstream
-    text-decoration:none;
-    
-=======
+
     text-decoration: none;
 
->>>>>>> Stashed changes
+
+    text-decoration: none;
+
+
 }
 
 
@@ -191,10 +209,7 @@ a:active {
 .card:nth-child(4) {
     height: auto;
 }
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 .card:nth-child(5) {
     height: auto;
 }
@@ -230,35 +245,63 @@ a:active {
     flex-wrap: wrap;
 }
 
-<<<<<<< Updated upstream
+
 form .fields .input-field {
-=======
+
 .container form .input-field {
->>>>>>> Stashed changes
+
     display: flex;
     width: calc(100% / 2 - 15px);
     flex-direction: column;
     margin: 4px 0;
     padding: 5px;
-<<<<<<< Updated upstream
-    
+
+
+}
+
+.container form .input-row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+
+
 }
 
 
 
+.container form .add-button {
+    position: relative;
+    background-color: #7A7A7A;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 9px 5px 9px 5px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 3px;
+    border-radius: 5px;
 
 
-/*input box*/
-.input-field input {
-    border: 2px solid #f0f0f0;
-	border-radius: 4px;
-	display: block;
-	font-size: 12px;
-	padding: 10px;
-	width: 100%;
+.container form .add-button {
+    position: relative;
+    background-color: #7A7A7A;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 9px 5px 9px 5px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 3px;
+    border-radius: 5px;
+
 }
 
-=======
+
 
 }
 
@@ -289,7 +332,8 @@ form .fields .input-field {
 }
 
 
->>>>>>> Stashed changes
+
+
 .input-field input:focus {
     outline: 0;
 }
@@ -298,12 +342,12 @@ form .fields .input-field {
 .input-field.success input {
     border-color: #09c372;
 }
-<<<<<<< Updated upstream
-.input-field.error input  {
-=======
+
+
+
 
 .input-field.error input {
->>>>>>> Stashed changes
+
     border-color: #ff3860;
 }
 
@@ -338,8 +382,7 @@ form .fields .input-field.three {
     color: #2e2e2e;
 }
 
-<<<<<<< Updated upstream
-=======
+
 
 .container1 form button,
 .blue-add-btn-right {
@@ -360,7 +403,7 @@ form .fields .input-field.three {
 }
 
 
->>>>>>> Stashed changes
+
 .container1 form button,
 .subBtn {
     display: flex;
@@ -394,11 +437,9 @@ form .fields .input-field.three {
     color: #fff;
     border-radius: 10px;
     margin-left: 10px;
-<<<<<<< Updated upstream
+
     background-color:#555;
-=======
-    background-color: #555;
->>>>>>> Stashed changes
+
     transition: all 0.3s linear;
     cursor: pointer;
     font-size: 14px;
@@ -418,11 +459,9 @@ form .fields .input-field.three {
     color: #fff;
     border-radius: 10px;
     margin-left: 10px;
-<<<<<<< Updated upstream
+
     background-color:#DC2626;
-=======
-    background-color: #DC2626;
->>>>>>> Stashed changes
+
     transition: all 0.3s linear;
     cursor: pointer;
     font-size: 14px;
@@ -431,12 +470,7 @@ form .fields .input-field.three {
 
 
 
-<<<<<<< Updated upstream
 
-
-
-=======
->>>>>>> Stashed changes
 .container2 form button,
 .viewBtn {
     display: flex;
@@ -465,25 +499,24 @@ form .fields .input-field.three {
     justify-content: center;
     padding: 1%;
     width: 98%;
-<<<<<<< Updated upstream
+
     color:#fff;
     border-radius: 5px;
     background-color:7A7A7A;
-=======
     color: #fff;
     border-radius: 5px;
     background-color:#aaa;
->>>>>>> Stashed changes
+    color: #fff;
+    border-radius: 5px;
+    background-color: 7A7A7A;
+
     transition: all 0.3s linear;
     cursor: pointer;
     font-size: 12px;
     font-weight: 400;
 
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 }
 
 .container2 form button,
@@ -534,11 +567,11 @@ form .input[type=text]:focus {
 }
 
 
-<<<<<<< Updated upstream
-@media only screen and (max-width: 1400px) {
-=======
+
+
+
 @media only screen and (max-width: 1440px) {
->>>>>>> Stashed changes
+
 
     /* Show the sidenav */
     .grid-container {
@@ -555,12 +588,12 @@ form .input[type=text]:focus {
         width: auto;
         flex-direction: column;
     }
-<<<<<<< Updated upstream
+
 }
 
 /* Medium-sized screen breakpoint (tablet, 1050px) */
 @media only screen and (max-width: 1000px) {
-=======
+
 
     form .input-row {
         display: flex;
@@ -573,7 +606,20 @@ form .input[type=text]:focus {
 
 /* Medium-sized screen breakpoint (tablet, 1050px) */
 @media only screen and (max-width: 1440px) {
->>>>>>> Stashed changes
+
+
+    form .input-row {
+        display: flex;
+        width: calc(90%/ 1 - 20px);
+        flex-direction: row;
+
+
+    }
+}
+
+/* Medium-sized screen breakpoint (tablet, 1050px) */
+@media only screen and (max-width: 1440px) {
+
 
     /* Break out main cards into two columns */
     .main-cards {
@@ -584,19 +630,19 @@ form .input[type=text]:focus {
         flex-wrap: wrap;
 
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
     }
 
     form .fields .input-field {
         display: flex;
-<<<<<<< Updated upstream
+
         width: calc(90%/ 1 - 20px);
         flex-direction: column;
         margin: 4px 4px 4px 4px
-=======
+
+        width: calc(100%/ 2 - 20px)o;
+        flex-direction: column;
+
         width: calc(100%/ 2 - 20px)o;
         flex-direction: column;
 
@@ -608,7 +654,7 @@ form .input[type=text]:focus {
         margin: 4px 4px 4px 4px;
 
 
->>>>>>> Stashed changes
+
     }
 }
 
@@ -624,12 +670,7 @@ table {
 th {
     background-color: #0295A9;
     color: #ffff;
-<<<<<<< Updated upstream
 
-
-
-=======
->>>>>>> Stashed changes
 }
 
 th,
@@ -647,7 +688,7 @@ tr:nth-child(even) {
 
 
 .overlay {
-<<<<<<< Updated upstream
+
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -657,11 +698,24 @@ tr:nth-child(even) {
 	transition: opacity 500ms;
 	visibility: hidden;
 	opacity: 0;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+
 }
+
 .overlay:target {
+
 	visibility: visible;
 	opacity: 1;
-=======
+
     position:fixed;
     top: 0;
     bottom: 0;
@@ -678,35 +732,43 @@ tr:nth-child(even) {
     visibility: visible;
     opacity: 1;
     overflow:scroll;
->>>>>>> Stashed changes
+
+    visibility: visible;
+    opacity: 1;
+
 }
 
 
 
-<<<<<<< Updated upstream
  
 .popup_card {
     flex-direction: column;
     align-items: left;
     width:50%;
     background-color:#fff;
-=======
+
 
 .popup_card {
     flex-direction: column;
     align-items: left;
     width: 50%;
     background-color: #fff;
->>>>>>> Stashed changes
+
+
+.popup_card {
+    flex-direction: column;
+    align-items: left;
+    width: 50%;
+    background-color: #fff;
+
     padding: 24px;
     box-sizing: border-box;
     border: #fff;
     border-radius: 20px;
-<<<<<<< Updated upstream
+
     margin-bottom:auto;
-=======
-    margin-bottom: auto;
->>>>>>> Stashed changes
+
+
     margin-left: 25%;
     margin-top: 5%;
     display: flex;
@@ -719,11 +781,9 @@ tr:nth-child(even) {
     display: flex;
     align-items: center;
     justify-content: center;
-<<<<<<< Updated upstream
+
     width:fit-content;
-=======
-    width: fit-content;
->>>>>>> Stashed changes
+
     flex-wrap: wrap;
 }
 
@@ -737,8 +797,7 @@ tr:nth-child(even) {
     border-radius: 12%;
 }
 
-<<<<<<< Updated upstream
-=======
+
 .textarea {
     display: flex;
     width: 100%;
@@ -748,7 +807,7 @@ tr:nth-child(even) {
     border-radius: 12%;
 }
 
->>>>>>> Stashed changes
+
 .popup_card_input input,
 select {
     outline: none;
@@ -775,16 +834,11 @@ select {
 
     margin-top: 20%;
     transform: translateX(-50%) translateY(-50%);
-<<<<<<< Updated upstream
     color:#0295A9;
+    color: #0295A9;
     font-size: 20px;
     letter-spacing: 2px;
-   
 
-
-}
-
-=======
     color: #0295A9;
     font-size: 20px;
     letter-spacing: 2px;
@@ -792,7 +846,9 @@ select {
 
 
 }
->>>>>>> Stashed changes
+
+}
+
 
 
 .input-field input,
@@ -809,13 +865,20 @@ select {
 }
 
 .w-100 {
-<<<<<<< Updated upstream
+
     width: 120% !important;
    
 }
 
-=======
+
     width: 100% !important;
+
+    width: 100% !important;
+}
+
+.h-100 {
+    height: 120% !important;
+
 }
 
 .h-100 {
@@ -828,6 +891,7 @@ select {
     padding: 0px;
     border: 1px solid #0295A9;
     border-radius: 5px;
+
 }
 
 form .input[type="text"]:focus {
@@ -853,30 +917,62 @@ form .input[type="text"]:focus {
 
 
 
->>>>>>> Stashed changes
 
-
-
-
-
-
-<<<<<<< Updated upstream
 /*
 
 .input-field input :focus,
 .input-field select:focus {
     box-shadow: 10px 3px 6px rgba(0, 0, 0, 0.13);
+
+
 }
 
-.input-field select,
-.input-field input[type="date"] {
-    color: #707070;
+form .input[type="text"]:focus {
+    border: 3px solid #555;
 }
 
-.input-field input[type="date"]:valid {
-    color: #333;
+.card-searchbar {
+    display: flex;
+    border: 1px solid #0295A9;
+    border-radius: 8px;
+    margin: 0 1.5rem;
+    align-items: center;
+    padding: 0 0.5rem;
+    width: 100%;
+
 }
-=======
+
+ .required-color {
+    color: #ff4747;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .error {
+    border-color: #ff4747 !important;
+  }
+  .valid {
+    border-color: #37a137 !important;
+  }
+
+  .error-message {
+    margin-top: 0.02rem;
+  }
+
+
+
+.searchBar input[type="text"] {
+    width: 100%;
+    padding: 0px;
+    border: 1px solid #0295A9;
+    border-radius: 5px;
+}
+
+form .input[type="text"]:focus {
+    border: 3px solid #555;
+}
 
 
 
@@ -1058,4 +1154,15 @@ form .input[type="text"]:focus {
     padding-right: 8px;
   }
   
->>>>>>> Stashed changes
+
+
+.card-searchbar {
+    display: flex;
+    border: 1px solid #0295A9;
+    border-radius: 8px;
+    margin: 0 1.5rem;
+    align-items: center;
+    padding: 0 0.5rem;
+    width: 100%;
+}
+

@@ -2,28 +2,31 @@
 
 class welcome extends Controller
 {
-<<<<<<< Updated upstream
-
 
     public function index() 
     {
+
         $this->view('admin/dashboard');
+
     } 
-=======
+
     public function index() 
     {
 
         $this->view('admin/dashboard');
     }  
     
->>>>>>> Stashed changes
+
+    }  
+    
+
 
     public function admin() 
     {
         $this->view('admin/dashboard');
-<<<<<<< Updated upstream
+
     }   
-=======
+
 
     }  
     public function warehouse() 
@@ -40,7 +43,7 @@ class welcome extends Controller
     {
         $this->view('fleet/dashboard');
     }  
->>>>>>> Stashed changes
+
 
 
     public function signout()
