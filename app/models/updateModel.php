@@ -14,7 +14,6 @@ class updateModel extends Model
             'warehouse',
 
             [
-                
                 'name' => $name,
                 'address' => $address,
                 'longitude' => $longitude,
@@ -27,6 +26,7 @@ class updateModel extends Model
                 'username' => $username,
                 'password' => $password
             ]
+            
             ,"warehouse_code= '$warehouse_code'"
         );
 

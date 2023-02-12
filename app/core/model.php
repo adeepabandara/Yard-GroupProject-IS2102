@@ -24,12 +24,22 @@ class Model extends Database
     }
 
 
+
+
+
+
+
     public function lastId($table,$where)
     {
         $sql ="SELECT MAX($where) AS max_id FROM $table";
         $result = $this->runQuery($sql);
         return $result;
     }
+
+
+
+
+
 
 
     public function getjoin($table1, $table2, $joinOn, $where = null, $order = null, $limit = null)
@@ -88,6 +98,11 @@ public function getjoin4($table1, $table2, $table3, $table4, $table5, $joinOn1, 
     $result = $this->runQuery($sql);
     return $result;
 }
+
+
+
+
+
     public function insert($table, $data)
     {
         $sql = "INSERT INTO $table SET ";
@@ -101,6 +116,8 @@ public function getjoin4($table1, $table2, $table3, $table4, $table5, $joinOn1, 
     }
 
 
+
+    
 
     public function update($table, $data, $where)
     {

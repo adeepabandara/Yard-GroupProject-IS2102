@@ -26,6 +26,9 @@ class viewModel extends Model
         return $this->get('supplier');
     }
 
+
+
+
     public function viewWarehouse($wid = null)
     {
         if (isset($wid)){
@@ -38,6 +41,13 @@ class viewModel extends Model
 
 
         }
+
+
+
+
+
+
+
 
 
         public function viewSupplier($sid = null)
@@ -53,6 +63,10 @@ class viewModel extends Model
     
             }
 
+
+
+            
+
         public function viewId($table,$where)
         {
 
@@ -61,6 +75,10 @@ class viewModel extends Model
         return $result;
     
             }
+
+
+
+
     
             public function viewFleetJob($fjid = null)
             {

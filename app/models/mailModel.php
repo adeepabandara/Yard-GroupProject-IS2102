@@ -6,10 +6,7 @@ use PHPMailer\PHPMailer\Exception;
 class MailModel extends Model {
 
     public function sendMail($email_address, $username, $password,$cp_name){  
-
-
-    
-
+        
     require 'PHPMailer/src/Exception.php';
     require 'PHPMailer/src/PHPMailer.php';
     require 'PHPMailer/src/SMTP.php';

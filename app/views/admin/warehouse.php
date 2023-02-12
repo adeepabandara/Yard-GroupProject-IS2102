@@ -122,7 +122,7 @@ if (isset($_SESSION['username'])) {
 
         <div class="container">
           <form action="<?php echo BASEURL ?>/adminFunctions/createWarehouse" method="POST" id="form">
-            <form action="<?php echo BASEURL ?>/adminFunctions/viewWarehouse" method="POST" id="form">
+        
               <div>
                 <div>
 
@@ -168,12 +168,6 @@ if (isset($_SESSION['username'])) {
                     </div>
 
 
-
-                    <div class="popup_card_input w-100">
-                  <a class="locBtn" href="#one">Open Map</a>
-                </div>
-
-
                     <div class="input-field w-100">
                       <a class="locBtn" onclick="getLocationConstant()">GET YOUR GPS LOCATION</a>
                     </div>
@@ -181,12 +175,12 @@ if (isset($_SESSION['username'])) {
 
                     <div class="input-field">
                       <label>Lattitude</label>
-                      <input type="text" id="Latitude" name="latitude" value="">
+                      <input type="text" id="latitude" name="latitude" value="">
                     </div>
 
                     <div class="input-field">
                       <label>Longitude</label>
-                      <input type="text" id="Longitude" name="longitude" value="">
+                      <input type="text" id="longitude" name="longitude" value="">
                     </div>
 
                     <div class="input-field">
@@ -227,7 +221,7 @@ if (isset($_SESSION['username'])) {
                   </div>
                 </div>
 
-                <button class="subBtn" onclick="createWarehouse()" type="submit">
+                <button class="subBtn" type="submit">
                   <span class="btnText">Create Warehouse</span>
 
                 </button>
@@ -255,6 +249,7 @@ if (isset($_SESSION['username'])) {
           echo "<th></th>";
 
           echo "</tr>";
+          
           while ($row = $data['result']->fetch_assoc()) {
 
             $wc = $row['warehouse_code'];
@@ -263,7 +258,7 @@ if (isset($_SESSION['username'])) {
             echo "<td>" . $row["warehouse_code"] . "</td>";
             echo "<td>" . $row["name"] . "</td>";
             echo "<td>" . $row["address"] . "</td>";
-            echo "<td><a class='viewBtn' onclick='abc(\"$wc\")'  href='#view' >View</a></td>";
+            echo "<td><a class='viewBtn' onclick='view(\"$wc\")'  href='#view' >View</a></td>";
 
             echo "<td><a class='delBtn' href=" . BASEURL . "/adminFunctions/deleteWarehouse/" . $row["warehouse_code"] . "> Delete</a></td>";
             echo "</tr>";
@@ -275,6 +270,8 @@ if (isset($_SESSION['username'])) {
         </div>
 
       </div>
+
+
 
 
 
@@ -440,8 +437,8 @@ sidebarBtn.onclick = function() {
 
 
     <script>
-      function abc(warehouse_code) {
-        var url = '<?php echo "$path/warehouse/getWarehouse/" ?>' + warehouse_code;
+      function view(warehouse_code) {
+        var url = '<?php echo "$path/adminFunctions/getWarehouse/" ?>' + warehouse_code;
         console.log(url);
         fetch(url)
           .then((response) => response.json())
@@ -466,6 +463,14 @@ sidebarBtn.onclick = function() {
 
       };
     </script>
+
+
+
+
+
+
+
+
 
 <script>
 /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */

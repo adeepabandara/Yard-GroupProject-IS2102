@@ -63,7 +63,7 @@ class adminFunctions extends Controller
 
     public function editWarehouse()
     {
-        if (isset($_POST['username'])) {
+        if (isset($_POST['warehouse_code'])) {
 
             $warehouse_code = $_POST['warehouse_code'];
             $name = $_POST['name'];
@@ -81,7 +81,7 @@ class adminFunctions extends Controller
             $password = $_POST['password'];
 
             $this->model('updateModel')->updateWarehouse($warehouse_code, $name, $longitude, $latitude, $cp_name, $cp_number, $address, $email_address, $fleet_center, $capacity, $username, $password);
-            // $this->model('updateModel')->updateUser($username, $password,'warehouse');
+         
 
 
             header("Location: " . BASEURL . "/adminFunctions/viewWarehouse");
@@ -171,7 +171,7 @@ class adminFunctions extends Controller
         $this->model('deleteModel')->deleteWarehouse('warehouse',$append);
 
         
-            header("Location: " . BASEURL . "/adminFunctions/viewWarehouse");
+        header("Location: " . BASEURL . "/adminFunctions/viewWarehouse");
 
         }
     
@@ -194,13 +194,33 @@ class adminFunctions extends Controller
    
     }
 
-    
 
+    public function getWarehouse($wid = null){
+        $result=$this->model('viewModel')->viewWarehouse( $wid );
+        $json = array();
+        while($row = $result->fetch_assoc()){
+            $array['warehouse_code'] = $row['warehouse_code'];
+            $array['name'] = $row['name'];
+            $array['address'] = $row['address'];
+            $array['capacity'] = $row['capacity'];
+            $array['latitude'] = $row['latitude'];
+            $array['longitude'] = $row['longitude'];
+            $array['cp_name'] = $row['cp_name'];
+            $array['cp_number'] = $row['cp_number'];
+            $array['fleet_center'] = $row['fleet_center'];
+            $array['email_address'] = $row['email_address'];
+            $array['username'] = $row['username'];
+            $array['password'] = $row['password'];
+
+            array_push($json, $array);
+        }
+        $response = json_encode($json);
+       
+        echo $response;
         
+    }
 
-
-
-
+    
 
                 }
 
