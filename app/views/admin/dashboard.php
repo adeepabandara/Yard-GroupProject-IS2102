@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <script defer src="active.js"></script>
 
@@ -7,10 +6,6 @@
 session_start();
 
 if (isset($_SESSION['username'])) {
-
- // echo $_SESSION['username'];
-  // echo $_SESSION['username'];
-
   // echo $_SESSION['username'];
 
 } else {
@@ -18,38 +13,14 @@ if (isset($_SESSION['username'])) {
 }
 ?>
 
+
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/style.css">
-
-<div class="grid-container">
-
-
-  <header class="header">Dashboard<img src="<?php echo BASEURL ?>/images/img_avatar.png" class="avatar">
-
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
 <div class="grid-container">
+  
+  <header class="header">Dashboard </header>
 
-  <header class="header">Dashboard <!--<img src="<?php echo BASEURL ?>/images/img_avatar.png" class="avatar">-->
-
-  <header class="header">Dashboard <!--<img src="<?php echo BASEURL ?>/images/img_avatar.png" class="avatar">-->
-
-
-
-
-</header>
-
-
-
-  <aside class="sidenav">
-    <center><img src="<?php echo BASEURL ?>/images/b&wlogo.png" alt="logo" width="40%"> </center>
-    <ul class="sidenav__list">
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/admin">Dashboard</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/adminFunctions/warehouse">Warehouse</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/adminFunctions/fleetCenter">Fleet Center</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/adminFunctions/commercial">Commercial & Finance</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/signout">Sign Out</a></li>
-    </ul>
-  </aside>
 
 <div class="sidenav">
     <div class="logo"><center><img src="<?php echo BASEURL ?>/images/b&wlogo.png" alt="logo" width="40%"></center></div>
@@ -94,7 +65,6 @@ if (isset($_SESSION['username'])) {
   <a class="link" href="<?php echo BASEURL ?>/home/signout"><i class='bx bxs-left-arrow-square'></i>&nbsp Signout</a>
 </div>
 
-
   <main class="main">
     <div class="main-header">
       <h2>Welcome Adeepa !</h2>
@@ -116,25 +86,13 @@ if (isset($_SESSION['username'])) {
 <div class="main-cards">
   <div class="card">
 
-
-    <img src="images/1.png"  width="100%">
-
     <img src="<?php echo BASEURL ?>/images/1.png"  width="100%">
-
-    <img src="<?php echo BASEURL ?>/images/1.png"  width="100%">
-
 
 
   </div>
   <div class="card">
 
-
-    <img src="images/2.png" width="100%">
-
     <img src="<?php echo BASEURL ?>/images/2.png" width="100%">
-
-    <img src="<?php echo BASEURL ?>/images/2.png" width="100%">
-
   </div>
 
   </div>
@@ -206,19 +164,6 @@ if (isset($_SESSION['username'])) {
   </div>
 
 
-</div>
-
-
-
-
-
-
-
-
-
-  </body>
-
-
 
 
   </body>
@@ -244,7 +189,6 @@ for (i = 0; i < dropdown.length; i++) {
 
 
  
-
 
   </html>
 

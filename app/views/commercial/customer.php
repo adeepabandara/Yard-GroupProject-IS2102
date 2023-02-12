@@ -1,8 +1,5 @@
 <?php
 
-$conn = mysqli_connect("localhost", "root", "", "yard");
-$rows = mysqli_query($conn, "SELECT * FROM customer");
-
 session_start();
 
 if (isset($_SESSION['username'])) {
@@ -14,20 +11,54 @@ if (isset($_SESSION['username'])) {
 ?>
 
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/style.css">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/validate.css">
 <div class="grid-container">
   <header class="header"> Commercial&Finance&nbsp&nbsp>&nbsp&nbspCustomer </header>
 
 
-  <aside class="sidenav">
-    <center><img src="<?php echo BASEURL ?>/images/b&wlogo.png" alt="logo" width="40%"> </center>
-    <ul class="sidenav__list">
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/commercial">Dashboard</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/commercial/expenseCat">Expense Category</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/commercial/expense_record">Expense Record</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/commercial/customer">Customer</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/signout">Sign Out</a></li>
-    </ul>
-  </aside>
+  <div class="sidenav">
+    <div class="logo"><center><img src="<?php echo BASEURL ?>/images/b&wlogo.png" alt="logo" width="40%"></center></div>
+  <a class="link"  href="<?php echo BASEURL ?>/welcome/commercial"><i class='bx bxs-dashboard'></i>&nbsp Dashboard</a>
+
+  <button class="dropdown-btn"><i class='bx bxs-store-alt'></i>&nbsp Expenses
+    <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div  class="dropdown-container">
+    <a class="link-drop" href="<?php echo BASEURL ?>/commercial/expense_record">Record Expense</a>
+    <a class="link-drop" href="<?php echo BASEURL ?>/commercial/expenseCat">Expense Category</a>
+  </div>
+
+
+  <a class="link-on" href="<?php echo BASEURL ?>/commercial/customer"><i class='bx bxs-truck'></i>&nbsp Customers</a>
+  <a class="link" href="#contact"><i class='bx bxs-coin'></i>&nbsp Requistions</a>
+  <button class="dropdown-btn"><i class='bx bxs-file' ></i>&nbsp Reports
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div  class="dropdown-container">
+    <a class="link-drop" href="#">Daily Sales Report</a>
+    <a class="link-drop" href="#">Link 2</a>
+    <a class="link-drop" href="#">Link 3</a>
+  </div>
+  <button class="dropdown-btn"><i class='bx bxs-file' ></i>&nbsp Reports
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div  class="dropdown-container">
+    <a class="link-drop" href="#">Link 1</a>
+    <a class="link-drop" href="#">Link 2</a>
+    <a class="link-drop" href="#">Link 3</a>
+  </div>
+  <button class="dropdown-btn"><i class='bx bxs-file' ></i>&nbsp Reports
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div  class="dropdown-container">
+    <a class="link-drop" href="#">Link 1</a>
+    <a class="link-drop" href="#">Link 2</a>
+    <a class="link-drop" href="#">Link 3</a>
+  </div>
+  <a class="link" href="<?php echo BASEURL ?>/home/signout"><i class='bx bxs-left-arrow-square'></i>&nbsp Signout</a>
+</div>
 
   <main class="main">
     <div class="main-header">
@@ -138,172 +169,6 @@ if (isset($_SESSION['username'])) {
 
         </div>
       </div>
-
-      <!-- <div class="card">Customer List
-
-        <div class="container">
-
-            <table class="leftBox-table">
-                <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  
-                  <th></th>
-                  <th></th>
-                </tr>
-                <tr>
-                  <td>ED003</td>
-                  <td>Nimal</td>
-                  
-                  <td><button class="viewBtn">
-                    <span class="btnText">View</span>
-                  </button></td>
-                  <td><button class="delBtn">
-                    <span class="btnText">Delete</span>
-                  </button></td>
-                </tr>
-                <tr>
-                  <td>ED003</td>
-                  <td>Nimal</td>
-                
-                  <td><button class="viewBtn">
-                    <span class="btnText">View</span>
-                  </button></td>
-                  <td><button class="delBtn">
-                    <span class="btnText">Delete</span>
-                  </button></td>
-                </tr>
-                <tr>
-                  <td>ED003</td>
-                  <td>Nimal</td>
-                
-                  <td><button class="viewBtn">
-                    <span class="btnText">View</span>
-                  </button></td>
-                  <td><button class="delBtn">
-                    <span class="btnText">Delete</span>
-                  </button></td>
-                </tr>
-                <tr>
-                  <td>ED003</td>
-                  <td>Nimal</td>
-               
-                  <td><button class="viewBtn">
-                    <span class="btnText">View</span>
-                  </button></td>
-                  <td><button class="delBtn">
-                    <span class="btnText">Delete</span>
-                  </button></td>
-                </tr>
-                <tr>
-                  <td>ED003</td>
-                  <td>Nimal</td>
-                 
-                  <td><button class="viewBtn">
-                    <span class="btnText">View</span>
-                  </button></td>
-                  <td><button class="delBtn">
-                    <span class="btnText">Delete</span>
-                  </button></td>
-                </tr>
-              </table>
-             
-                </span>
-              </div>
-            </div>
-      </div>
-
-    </div> -->
-
-    </div>
-
-    <!-- <div class="overlay" id="view">
-
-  <div class="popup-main-cards">
-
-
-    <div class="popup_card">
-<h3>Warehouse Details <a href="<?php echo BASEURL ?>/warehouse/createWarehouse">X</a></h3>
-    
-<form action="<?php echo BASEURL ?>/fleetcenter/addVehicle" method="POST">
-            <div>
-              <div>
-
-
-              <div class="popup_card_fields">
-
-                  <div class="popup_card_input">
-                    <label >Vehicle ID</label>
-                    <input name="id" name="id" value = <?php echo $row["id"]; ?>/>
-                  </div>
-
-                  <div class="popup_card_input">
-                    <label>Registartion No *</label>
-                    <input name="reg_no" value = <?php echo $row["reg_no"]; ?> />
-                  </div>
-
-
-                  <div class="popup_card_input">
-                    <label>Model / Name *</label>
-                    <input name="model" value = <?php echo $row["model"]; ?>>
-                  </div>
-
-
-
-                  <div class="popup_card_input">
-                    <label>Chassis No *</label>
-                    <input type="text" name="chassis_no" value = <?php echo $row["chassis_no"]; ?> >
-                  </div>
-
-                  <div class="popup_card_input">
-                    <label>Engine No *</label>
-                    <input name="engine_no" value = <?php echo $row["engine_no"]; ?>>
-                  </div>
-
-                  <div class="popup_card_input">
-                    <label>Manufactured Year </label>
-                    <input  type="date" name="mf_year" value = <?php echo $row["mf_year"]; ?>>
-                  </div>
-
-                  <div class="popup_card_input">
-                    <label >Vehicle Color *</label>
-                    <input name="color" value = <?php echo $row["color"]; ?>>
-                  </div>
-
-                  <div class="popup_card_input">
-                    <label >Vehice Category *</label>
-                    <input name="category" value = <?php echo $row["category"]; ?>>
-                    <?php
-                    if ($categories->num_rows > 0) {
-                      while ($row = $categories->fetch_assoc()) {
-                        $selected = isset($vehicle_category) && $vehicle_category == $row['vehicle_category_code'] ? "selected" : "";
-                        echo "<option value=\"" . $row['vehicle_category_code'] . "\"" . $selected . ">" . $row['name'] . "</option>";
-                      }
-                    }
-                    ?>
-                      
-                  </div>
-        
-                  <div class="popup_card_input">
-                    <label >Upload Documents *</label>
-
-                    <div class="drag-area">
-                        <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                        <input type="file" id="myfile">
-                    </div>
-                  </div>
-
-              <button class="deleteBtn" onclick="createWarehouse()">
-                <span class="btnText">Delete</span>
-              </button>
-              <button class="subBtn" onclick="createWarehouse()">
-                <span class="btnText">Update</span>
-              </button>
-      
-          
-        
-        <a class="closeBtn" href="<?php echo BASEURL ?>/fleetcenter/vehicle">Close</a>
-          </form> -->
 
 
 
@@ -564,3 +429,23 @@ if (isset($_SESSION['username'])) {
         }
       });
     </script>
+
+
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>

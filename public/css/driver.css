@@ -35,10 +35,13 @@ a:active {
 }
 
 .header {
-    grid-area: header;
-    background-color: #0295A9;
-    margin: 0px;
-    
+    padding: 4px;
+    align-items: left;
+    background: white;
+    color: #0295A9;
+    font-size: 18px;
+    height: 40px;
+    width: 500px;
 }
 
 /* Assign grid instructions to our parent grid container */
@@ -56,17 +59,6 @@ a:active {
 }
 
 
-/* Give every child element its grid name */
-
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 16px;
-    background-color: #fff;
-
-
-}
 
 
 .sidenav {
@@ -120,7 +112,6 @@ a:active {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    margin-left: 0%;
     height: 40px;
     /* Force our height since we don't have actual content yet */
     background-color: #EFEFF3;
@@ -207,117 +198,6 @@ a:active {
     flex-wrap: wrap;
 }
 
-
-
-/*new*/
-.container form .header-fields {
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    flex-wrap: wrap;
-    
-}
-
-/*new*/
-.container form .header-sub-fields {
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    margin-bottom: 30px;
-}
-
-/*new*/
-.button-row{
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    margin-bottom: 30px;
-}
-
-/*new*/
-.container form .header-input-field {
-    margin-left: 1%;
-    padding: 10px;
-    flex-direction: column;
-}
-
-/*new*/
-.disable-input-field {
-
-    flex-direction: column;
-    width: 10%;
-    background-color: #aaa;
-    outline: none;
-    font-size: 30px;
-    font-weight: 400;
-    color: #333;
-    border-radius: 5px;
-    border: 1px solid #aaa;
-    padding: 0 15px;
-    height: 70px;
-    margin: 8px 0;
-    margin-right: 20px;
-    
-
-}
-
-.disable-input-field-mobile {
-
-    flex-direction: column;
-    width: 40%;
-    background-color: #aaa;
-    outline: none;
-    font-size: 30px;
-    font-weight: 400;
-    color: #333;
-    border-radius: 5px;
-    border: 1px solid #aaa;
-    padding: 0 15px;
-    height: 70px;
-    margin: 8px 0;
-    margin-right: 20px;
-    
-
-}
-
-
-
-/*new*/
-.add-button-fullwidth {
-    display: flex;
-    justify-content: center;
-    height: 40px;
-    width: 100%;
-    border: none;
-    color: #fff;
-    border-radius: 5px;
-    background-color: #0295A9;
-    transition: all 0.3s linear;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight:bold;
-    padding: 10px;
-    margin-top: 20px;
-}
-/*new*/
-.status-feild{
-    margin-left: 1%;
-    padding: 10px;
-    background-color: #0295A9;
-    border-radius: 5px;
-    border:none;
-    color: #ffff;
-    font-size:15px;
-    font-weight: bold;
-    align-items: center;
-    align-content: center;
-    margin-right:auto;
-
-    width: 70px;
-
-}
-
-
 .container form .input-field {
     display: flex;
     width: calc(100% / 2 - 15px);
@@ -399,12 +279,6 @@ form .fields .input-field.three {
 }
 
 
-.header-input-field label {
-    font-size: 15px;
-    color: #2e2e2e;
-}
-
-
 .container1 form button,
 .blue-add-btn-right {
     display: flex;
@@ -426,39 +300,41 @@ form .fields .input-field.three {
 
 .container1 form button,
 .subBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 45px;
-    max-width: 200px;
-    width: 100%;
+    max-width: 300px;
     border: none;
     outline: none;
     color: #fff;
     border-radius: 10px;
-    margin-left: 10px;
     background-color: #0295A9;
-    transition: all 0.3s linear;
+    /* transition: all 0.3s linear; */
     cursor: pointer;
     font-size: 14px;
     font-weight: 400;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 150px;
+}
+
+.jobview-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .container1 form button,
 .closeBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 45px;
     max-width: 200px;
-    width: 100%;
     border: none;
     outline: none;
     color: #fff;
     border-radius: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
+    text-align: center;
     background-color: #555;
-    transition: all 0.3s linear;
+    /* transition: all 0.3s linear; */
     cursor: pointer;
     font-size: 14px;
     font-weight: 400;
@@ -516,12 +392,11 @@ form .fields .input-field.three {
     width: 98%;
     color: #fff;
     border-radius: 5px;
-    background-color:#aaa;
+    background-color: 7A7A7A;
     transition: all 0.3s linear;
     cursor: pointer;
     font-size: 12px;
     font-weight: 400;
-
 
 
 }
@@ -544,27 +419,6 @@ form .fields .input-field.three {
 
 
 }
-
-
-.container2 form button,
-.selBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    width: 100%;
-    border: none;
-    color: #fff;
-    border-radius: 10px;
-    margin-left: 0px;
-    background-color:#7A7A7A;
-    transition: all 0.3s linear;
-    cursor: pointer;
-    font-size: 12px;
-
-
-}
-
 
 
 form button:hover {
@@ -632,7 +486,6 @@ form .input[type=text]:focus {
         margin-bottom: 10%;
         display: flex;
         flex-wrap: wrap;
-        padding: 2%;
 
 
 
@@ -671,19 +524,19 @@ th {
 th,
 td {
     text-align: left;
-    padding: 8px;
+    padding: 15px;
 
     font-size: 12px;
 }
 
 tr:nth-child(even) {
-    background-color: #ffff
+    background-color: rgb(223, 221, 221)
 }
 
 
 
 .overlay {
-    position:fixed;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -692,22 +545,13 @@ tr:nth-child(even) {
     transition: opacity 500ms;
     visibility: hidden;
     opacity: 0;
-   
 }
 
 .overlay:target {
     visibility: visible;
     opacity: 1;
-    overflow:scroll;
 }
 
-.popup_card_table {
-
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-
-}
 
 
 
@@ -834,185 +678,206 @@ form .input[type="text"]:focus {
     width: 100%;
 }
 
-#map {
-    width: 100%;
-    height: 480px;
-}
-
-
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* Fixed sidenav, full height */
-.sidenav {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color:#0295A9;
-    color: #FFFFFF;
-    overflow-x: hidden;
-    padding-top: 20px;
-    font-family: 'Inter', sans-serif;
-    scrollbar-width: none;
-
-
-   
-    
-  }
-
-  .sidenav::-webkit-scrollbar {
-    display: none;
-}
-
-  .sidenav .logo{
-    height: 50px;
+.label {
+    color: #0295A9;
+    background-color: #e7e7e7;
+    font-size:30px;
+    border-radius: 15px;
+    height: 75px;
+    width: 200px;
     align-items: center;
     display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-
-  }
-  .sidenav .link{
-    background-color:#0295A9;
-    color:#FFFFFF;
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
-    height: 20px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 20px;
-    margin-left: 5%;
-    margin-right: 10%;
-    margin-bottom: 2%;
-    border-radius: 10px;
-    width: 90%;
-    border-radius: 10px 0 0 10px
-
-  }
-
-  .sidenav .link-on{
-    background-color:#EFEFF3;
-    color:#0295A9;
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
-    height: 20px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 20px;
-    margin-left: 5%;
-    margin-right: 10%;
-    margin-bottom: 2%;
-    border-radius: 10px;
-    width: 90%;
-    border-radius: 10px 0 0 10px
-
-  }
-
-  .sidenav .link-drop{
-    background-color:#0295A9;
-    color:#FFFFFF;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    height: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 35px;
-    margin-left: 16%;
-    margin-right: 10%;
-    margin-top: 2%;
+    justify-content: center;
+    margin-left: 150px;    
     
+}
 
-  }
+.loginbody {
+	background: #0295A9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+}
+.card1 {
+	background: #e0e4e4;
+	
+ 
+}
+.label1 {
+    color: #0295A9;
+    background-color: #ffff;
+    font-size:15px;
+    border-radius: 25px;
+    height: 40px;
+    width: 140px;
+    align-items: center;
+    border-color:#0295A9 ;
+    display: inline-block;
+    border-radius: 5px;
 
-  .sidenav .link-drop-on{
-    background-color:#EFEFF3;
-    color:#0295A9;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    height: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 35px;
-    margin-left: 16%;
-    margin-right: 10%;
-    margin-top: 2%;
     
+    
+    
+}
+.labelno {
+    display: inline-block;
+    margin-left: 60px;
+    background-color: #16A34A;
+    width: 50px;
+    height: 40px;
+   text-align: center;
+   border-radius: 10px;
+   border:white;
+   border-width:1px;
+    border-style:solid;
+    color:white;
+    font-weight: bold;
 
-  }
-  .sidenav .link:hover{
-    background-color:#EFEFF3;
-    color:#0295A9;
-    font-family: 'Inter', sans-serif;
 
-  }
-  
-  /* Style the sidenav links and the dropdown button */
-  .sidenav a, .dropdown-btn {
-    text-decoration: none;
-    font-size: 18px;
-    color: #FFFFFF;
-    display: block;
-    border: none;
-    background: none;
+}
+
+.lableno1 {
+    display: inline-block;
+    margin-left: 45px;
+    background-color: #DC2626;
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    border-radius: 10px;
+    border:white;
+     border-width:1px;
+      border-style:solid;
+      color:white;
+      font-weight: bold;
+
+
+}
+
+.card2{
+    background-color: #0295A9;
+    /* width: 380px; */
+    padding: 30px;
+    margin: 20px;
+    border-radius: 20px;
+    color: #e7e7e7;
+}
+
+.card3{
+    background-color: #d2d4d4;
+    /* width: 380px; */
+    padding: 30px;
+    border-radius: 20px;
+    color: #0295A9;
+    width: 290px;
+}
+.card4{
+    background-color: #f7fafb;
+    width: 400px;
+    padding: 20px;
+    /* margin: 20px; */
+   
+    color: #e7e7e7;
+}
+
+.menubody{
+    background-color: #0295A9;
+    align-items: center;
+}
+.card5{
+    background-color: #e3e6e6;
+    /* width: 500px; */
+    padding: 30px;
+    margin: 20px;
+    border-radius: 20px;
+    color: #0295A9;
+}
+.labelview {
+    display: inline-block;
+    margin-left: 260px;
+    background-color:#0295A9;
+    width: 100px;
+    height: 30px;
+   text-align: center;
+   border-radius: 10px;
+   border:white;
+   border-width:1px;
+    border-style:solid;
+    color:white;
+    font-weight: bold;
+
+
+}
+.labelnav {
+    display: inline-block;
+    margin-left: 260px;
+    background-color:#16A34A;
+    width: 100px;
+    height: 30px;
+    align-items: center;
+    text-align: center;
+   border-radius: 10px;
+   border:white;
+   border-width:1px;
+    border-style:solid;
+    color:white;
+    font-weight: bold;
+
+
+}
+
+.labelcall {
+    display: inline-block;
+    margin-left: 265px;
+    background-color:#0295A9;
+    width: 100px;
+    height: 30px;
+   text-align: center;
+   border-radius: 10px;
+   border:white;
+   border-width:1px;
+    border-style:solid;
+    color:white;
+    font-weight: bold;
+    
+}
+
+.bluBtn{
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
     width: 100%;
-    text-align: left;
-    cursor: pointer;
+    border: none;
     outline: none;
-    height: 50px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 20px;
-    margin-left: 5%;
-    margin-right: 10%;
+    color: #fff;
     border-radius: 10px;
-  }
-  
-  /* On mouse-over */
-  .sidenav a:hover, .dropdown-btn:hover {
-    color:#0295A9;
-    background-color: #EFEFF3;
-
-  }
-  
-  
-  /* Add an active class to the active dropdown button */
-  .active {
-    background-color:#EFEFF3;
-    color:#0295A9;
-  }
-  
-  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-  .dropdown-container {
-    display: none;
+    margin-left: 100px;
     background-color: #0295A9;
-    color: #FFFFFF;
-    padding-left: 0px;
-    transition: 0.5ms;
-  }
+    /* transition: all 0.3s linear; */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+}
 
-  .dropdown-container-on {
-    display:block;
-    background-color: #0295A9;
-    color: #FFFFFF;
-    padding-left: 0px;
-  }
-
-
-  
-
-  
-  
-  
-  
-  /* Optional: Style the caret down icon */
-  .fa-caret-down {
-    float: right;
-    padding-right: 8px;
-  }
-  
+.greyBtn{
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 10px;
+    margin-left: 100px;
+    background-color: rgb(148, 145, 145);
+    /* transition: all 0.3s linear; */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 2px;
+}

@@ -10,16 +10,6 @@ class welcome extends Controller
 
     } 
 
-    public function index() 
-    {
-
-        $this->view('admin/dashboard');
-    }  
-    
-
-    }  
-    
-
 
     public function admin() 
     {
@@ -27,8 +17,14 @@ class welcome extends Controller
 
     }   
 
+    public function driver() 
+    {
+        $this->view('driver/dashboard');
 
-    }  
+    } 
+
+
+    
     public function warehouse() 
     {
         $this->view('warehouse/dashboard');

@@ -1,23 +1,5 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  background-color: #3164ff;
-}
-.container {
-  width: 90vw;
-  max-width: 600px;
-  padding: 2em 1.5em;
-  background-color: #ffffff;
-  margin: 1em auto;
-  border-radius: 0.5em;
-}
-h4 {
-  font-size: 1.5em;
-}
+
+
 .input-section {
   margin: 0.5em 0;
 }
@@ -32,6 +14,7 @@ label {
 }
 .error-message {
   margin-top: 0.2em;
+
 }
 input,
 button {
@@ -45,19 +28,14 @@ input {
   padding: 1em 0.5em;
   border: 1.5px solid #d0d0d0;
 }
-button {
-  font-size: 1em;
-  background-color: #3164ff;
-  border: none;
-  color: #ffffff;
-  padding: 0.8em 0;
-  margin-top: 2em;
-}
+
 .required-color {
   color: #ff4747;
+  font-size: 11px;
 }
 .error {
   border-color: #ff4747  !important;
+  font-size: 11px;
 }
 .valid {
   border-color: #37a137 !important;

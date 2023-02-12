@@ -7,10 +7,21 @@ class deleteModel extends Model
         parent::__construct();
     }
 
-    public function deleteWarehouse($warehouse_code)
+    public function deleteWarehouse($table,$where)
     {
-        $link= $this->delete('warehouse',"warehouse_code = $warehouse_code");
+        $this->delete($table,$where);
+
+        }
+    
+    public function deleteVehicle($id)
+    {
+        $link= $this->delete('vehicle',"id = $id");
+
+        }
+    
+    public function deleteProduct($product_code)
+    {
+        $link= $this->delete('product',"product_code = $product_code");
 
         }
     }
-

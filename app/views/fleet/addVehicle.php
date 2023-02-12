@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+
 
 if (isset($_SESSION['username'])) {
  // echo $_SESSION['username'];
@@ -10,350 +10,209 @@ if (isset($_SESSION['username'])) {
 }
 ?>
 
-<?php
-
-$conn = mysqli_connect("localhost", "root", "", "yard");
-$rows = mysqli_query($conn, "SELECT * FROM vehicle");
-?>
-
-
-<?php
-$db = new Database();
-$vehicles = $db->runQuery("SELECT * from vehicle");
-$categories = $db->runQuery("SELECT * from vehicle_category");
-
-if (isset ($_GET["vehicleId"])) {
-    $vehicleId = $_GET["vehicleId"];
-    $vehicle = $db->runQuery("SELECT * from vehicle where vehicle_code ='".$vehicleId."'");
-    if ($vehicles->num_rows > 0) {
-        while ($row = $vehicle->fetch_assoc()) {
-            $model = $row['name'];
-            $reg_no = $row['registration_no'];
-            $chassis_no = $row['chassie_no'];
-            $engine_no = $row['engine_no'];
-            $mf_year = $row['manufactured_year'];
-            $color = $row['color'];
-            $vehicle_category = $row['vehicle_category'];
-        }
-    }
-
-}
-?>
-
-
-
-
-if (isset($_GET["vehicleId"])) {
-  $vehicleId = $_GET["vehicleId"];
-  $vehicle = $db->runQuery("SELECT * from vehicle where vehicle_code ='" . $vehicleId . "'");
-  if ($vehicles->num_rows > 0) {
-    while ($row = $vehicle->fetch_assoc()) {
-      $model = $row['name'];
-      $reg_no = $row['registration_no'];
-      $chassis_no = $row['chassie_no'];
-      $engine_no = $row['engine_no'];
-      $mf_year = $row['manufactured_year'];
-      $color = $row['color'];
-      $vehicle_category = $row['vehicle_category'];
-    }
-  }
-
-}
-?>
-
 
 
 
 
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/style.css">
-
-
-<div class="grid-container">
-    <header class="header"> Fleet Center&nbsp&nbsp>&nbsp&nbspAdd Vehicle </header>
-
-    <head>
-    </head>
-    <aside class="sidenav">
-    <center><img src="<?php echo BASEURL ?>/images/b&wlogo.png" alt="logo" width="40%"> </center>
-    <ul class="sidenav__list">
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/fleetcenter">Dashboard</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/fleetcenter/vehicle">Add Vehicle</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/fleetcenter/driver">Add driver</li>
-
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/validate.css">
+
+
 <div class="grid-container">
   <header class="header"> Fleet Center&nbsp&nbsp>&nbsp&nbspAdd Vehicle </header>
 
-  <head>
-  </head>
-  <aside class="sidenav">
-    <center><img src="<?php echo BASEURL ?>/images/b&wlogo.png" alt="logo" width="40%"> </center>
-    <ul class="sidenav__list">
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/fleet">Dashboard</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/fleetcenter/vehicle">Add Vehicle</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/fleetcenter/category">Add Category</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/fleetcenter/driver">Add driver</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/fleetcenter/fuel">Add Fuel Station</li>
 
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/signout">Sign Out</a></li>
-    </ul>
-  </aside>
+
+  <div class="sidenav">
+    <div class="logo">
+      <center><img src="<?php echo BASEURL ?>/images/b&wlogo.png" alt="logo" width="40%"></center>
+    </div>
+    <a class="link" href="<?php echo BASEURL ?>/welcome/fleet"><i class='bx bxs-dashboard'></i>&nbsp
+      Dashboard</a>
+
+    <button class="dropdown-btn"><i class='bx bxs-store-alt'></i>&nbsp Vehicle
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="dropdown-container-on">
+      <a class="link-drop-on" href="<?php echo BASEURL ?>/fleetcenter/vehicle">Add Vehicle</a>
+      <a class="link-drop" href="<?php echo BASEURL ?>/fleetcenter/category">Category</a>
+
+    </div>
+
+
+    <a class="link" href="<?php echo BASEURL ?>/fleetcenter/driver"><i class='bx bxs-truck'></i>&nbsp Drivers</a>
+    <a class="link" href="<?php echo BASEURL ?>/fleetcenter/fuel"><i class='bx bxs-coin'></i>&nbsp Fuel Station</a>
+    <button class="dropdown-btn"><i class='bx bxs-file'></i>&nbsp Reports
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a class="link-drop" href="#">Daily Sales Report</a>
+      <a class="link-drop" href="#">Link 2</a>
+      <a class="link-drop" href="#">Link 3</a>
+    </div>
+    <button class="dropdown-btn"><i class='bx bxs-file'></i>&nbsp Reports
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a class="link-drop" href="#">Link 1</a>
+      <a class="link-drop" href="#">Link 2</a>
+      <a class="link-drop" href="#">Link 3</a>
+    </div>
+    <button class="dropdown-btn"><i class='bx bxs-file'></i>&nbsp Reports
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a class="link-drop" href="#">Link 1</a>
+      <a class="link-drop" href="#">Link 2</a>
+      <a class="link-drop" href="#">Link 3</a>
+    </div>
+    <a class="link" href="<?php echo BASEURL ?>/home/signout"><i class='bx bxs-left-arrow-square'></i>&nbsp Signout</a>
+  </div>
 
   <main class="main">
     <div class="main-header">
       <h2>Add Vehicle</h2>
     </div>
 
-
     <div class="main-cards">
-
 
       <div class="card">Add Vehicle
         <div class="container">
           <form action="<?php echo BASEURL ?>/fleetcenter/addVehicle" method="POST">
             <div>
 
-              <div >
+              <div class="fields">
+                <div class="input-field">
+                  <label>Vehicle ID</label>
+                  <input type="text" name="id" id="vehicle-id" required>
+                  <span id="error-vehicle-id" class="hide required-color error-message">Invalid Input</span>
+                  <span id="empty-vehicle-id" class="hide required-color error-message">Vehicle ID Cannot Be
+                    Empty</span>
 
-
-              <div >
-    <div>
-
-
-                <div class="fields">
-                  <div class="input-field">
-                    <label >Vehicle ID</label>
-                    <input name="id" >
-
-                    <label>Vehicle ID</label>
-                    <input type="text" name="id" id="vehicle-id" required>
-                    <span id="error-vehicle-id" class="hide required-color error-message">Invalid Input</span>
-                    <span id="empty-vehicle-id" class="hide required-color error-message">Vehicle ID Cannot Be Empty</span>
-
-                  </div>
-
-                  <div class="input-field">
-                    <label>Registartion No *</label>
-
-                    <input name="reg_no">
-
-
-                    <input name="reg_no">
-       <input name="reg_no" id="reg-no-id">
-                    <span id="error-reg-no-id" class="hide required-color error-message">Invalid Input</span>
-                    <span id="empty-reg-no-id" class="hide required-color error-message">Registration Number Cannot Be Empty</span>
-
-
-                  </div>
-
-
-                  <div class="input-field">
-                    <label>Model / Name *</label>
-
-                    <input name="model" >
-
-
-                    <input name="model" >
-
-                    <input name="model" id="name-id">
-                    <span id="error-name-id" class="hide required-color error-message">Invalid Input</span>
-                    <span id="empty-name-id" class="hide required-color error-message">Name Cannot Be Empty</span>
-                  </div>
-
-
-
-                  <div class="input-field">
-                    <label>Chassis No *</label>
-
-                    <input name="chassis_no" >
-
-
-                    <input name="chassis_no" >
-         <input name="chassis_no" id="chassi-no">
-                    <span id="error-chassi-no" class="hide required-color error-message">Invalid Input</span>
-                    <span id="empty-chassi-no" class="hide required-color error-message">Chassis Number Cannot Be Empty</span>
-
-                  </div>
-
-                  <div class="input-field">
-                    <label>Engine No *</label>
-
-                    <input name="engine_no">
-
-
-                    <input name="engine_no">
-
-                    <input name="engine_no" id="engine-no">
-                    <span id="error-engine-no" class="hide required-color error-message">Invalid Input</span>
-                    <span id="empty-engine-no" class="hide required-color error-message">Engine Number Cannot Be Empty</span>
-
-                  </div>
-
-                  <div class="input-field">
-                    <label>Manufactured Year </label>
-
-                    <input  type="date" name="mf_year">
-                  </div>
-
-                  <div class="input-field">
-                    <label >Vehicle Color *</label>
-                    <input name="color">
-                  </div>
-
-                  <div class="input-field">
-                    <label >Vehice Category *</label>
-                    <input name="category" >
-                    <?php
-                    if ($categories->num_rows > 0) {
-                        while ($row = $categories->fetch_assoc()) {
-                            $selected = isset($vehicle_category) && $vehicle_category == $row['vehicle_category_code'] ? "selected" :"" ;
-                            echo "<option value=\"".$row['vehicle_category_code']."\"".$selected.">".$row['name']."</option>" ;
-                        }
-                    }
-                    ?>
-                      
-                  </div>
-        
-                  <div class="input-field w-100" >
-                    <label >Upload Documents *</label>
-
-                    <div class="drag-area ">
-        
-                        <input type="file" id="myfile">
-                    </div>
-                  </div>
-              
                 </div>
-              </div><center>
-                <button class="subBtn">Add Vehicle</button>
+
+                <div class="input-field">
+                  <label>Registartion No *</label>
+                  <input name="reg_no" id="reg-no">
+                  <span id="error-reg-no-id" class="hide required-color error-message">Invalid Input</span>
+                  <span id="empty-reg-no-id" class="hide required-color error-message">Registration Number Cannot
+                    Be Empty</span>
+                </div>
+
+
+                <div class="input-field">
+                  <label>Model / Name *</label>
+                  <input name="model" id="model" type="text">
+                  <span id="error-name-id" class="hide required-color error-message">Invalid Input</span>
+                  <span id="empty-name-id" class="hide required-color error-message">Name Cannot Be Empty</span>
+                </div>
+
+
+
+                <div class="input-field">
+                  <label>Chassis No *</label>
+                  <input name="chassis_no" id="chassi_no" type="text">
+                  <span id="error-chassi-no" class="hide required-color error-message">Invalid Input</span>
+                  <span id="empty-chassi-no" class="hide required-color error-message">Chassis Number Cannot Be
+                    Empty</span>
+
+                </div>
+
+                <div class="input-field">
+                  <label>Engine No *</label>
+                  <input name="engine_no" id="engine_no" type="text">
+                  <span id="error-engine-no" class="hide required-color error-message">Invalid Input</span>
+                  <span id="empty-engine-no" class="hide required-color error-message">Engine Number Cannot Be
+                    Empty</span>
+
+                </div>
+
+                <div class="input-field">
+                  <label>Manufactured Year </label>
+                  <input type="date" name="mf_year" id="mf_year">
+                </div>
+
+                <div class="input-field">
+                  <label>Vehicle Color *</label>
+                  <input name="color" id="color" type="color">
+                </div>
+
+                <div class="input-field">
+                  <label>Vehice Category *</label>
+                  <input name="category" id="category">
+                </div>
+
+                <div class="input-field w-100">
+                  <label>Upload Documents *</label>
+
+                  <div class="drag-area ">
+                    <input type="file" name="documents" id="documents">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <center>
+              <button class="subBtn" id="submit-button">Add Vehicle</button>
               </button>
 
 
-                    <input type="date" name="mf_year">
-                  </div>
-
-                  <div class="input-field">
-                    <label>Vehicle Color *</label>                    
-                    <input name="color" id="color">
-                    <span id="error-color" class="hide required-color error-message">Invalid Input</span>
-                    <span id="empty-color" class="hide required-color error-message">Vehicle color Cannot Be Empty</span>
-                  </div>
-
-                  <div class="input-field">
-                    <label>Vehice Category *</label>
-                    <select name="category" id="category">
-                      <?php
-                      if ($categories->num_rows > 0) {
-                        while ($row = $categories->fetch_assoc()) {
-                          $selected = isset($vehicle_category) && $vehicle_category == $row['vehicle_category_code'] ? "selected" : "";
-                          echo "<option value=\"" . $row['vehicle_category_code'] . "\"" . $selected . ">" . $row['name'] . "</option>";
-                        }
-                      }
-                      ?>
-                    </select>
-                    <span id="error-category" class="hide required-color error-message">Invalid Input</span>
-                    <span id="empty-category" class="hide required-color error-message">Vehicle category Cannot Be Empty</span>
-
-                  </div>
-
-                  <div class="input-field w-100">
-                    <label>Upload Documents *</label>
-
-                    <div class="drag-area ">
-
-                      <input type="file" id="myfile">
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <center>
-                <button class="subBtn" id="submit-button">Add Vehicle</button>
-                </button>
-
-
-              </center>
-            </div>
-          </form>
-
-
-
+            </center>
         </div>
+
+        </form>
+
+
 
       </div>
 
 
 
+
+
+      <!--Card 2-->
       <div class="card">Vehicle List
-
         <div class="container">
-
           <table>
-            <thead>
-
-            <tr>
-              <th>Code</th>
-              <th>Name</th>
-              <th>Registartion_No</th>
-              <th></th>
-              <th></th>
-
-            </tr>
-            </thead>
-            <tbody>
-            <?php $i = 1; ?>
-            <?php foreach($rows as $row) : 
-              
-              ?>
-            
-            <tr>
-
-              <td><?php echo $row["id"]; ?></td>
-              <td><?php echo $row["model"]; ?></td>
-              <td><?php echo $row["reg_no"]; ?></td>
-              <td><a class="viewBtn" href="#view"  >View</a></td> 
-              <td><a class="delBtn" > Delete</a></td>
-
-            </tr>
-            <?php endforeach; ?>
 
 
-              <tr>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Registartion_No</th>
-                <th></th>
-                <th></th>
+            <?php
 
-              </tr>
-            </thead>
-            <tbody>
-              <?php $i = 1; ?>
-              <?php foreach ($rows as $row) :
+          $path = BASEURL;
 
-              ?>
+          echo "<table>";
+          echo "<tr>";
+          echo "<th> Code </th>";
+          echo "<th>Name</th>";
+          echo "<th>Category</th>";
+          echo "<th></th>";
+          echo "<th></th>";
+          while ($row = $data['result']->fetch_assoc()) {
 
-                <tr>
+            $wc = $row['id'];
 
-                  <td><?php echo $row["id"]; ?></td>
-                  <td><?php echo $row["model"]; ?></td>
-                  <td><?php echo $row["reg_no"]; ?></td>
-                  <td><a class="viewBtn" href="#view">View</a></td>
-                  <td><a class="delBtn"> Delete</a></td>
+            echo "<tr>";
+            echo "<td>" . $row["id"] . "</td>";
+            echo "<td>" . $row["reg_no"] . "</td>";
+            echo "<td>" . $row["category"] . "</td>";
+            echo "<td><a class='viewBtn' onclick='abc(\"$wc\")'  href='#view' >View</a></td>";
 
-                </tr>
-              <?php endforeach; ?>
+            echo "<td><a class='delBtn' href=" . BASEURL . "/fleetcenter/deleteVehicle/" . $row["id"] . "> Delete</a></td>";
+            echo "</tr>";
+          }
+          echo "</table>";
+          ?>
 
-
-
-            </tbody>
-          </table>
         </div>
       </div>
-
     </div>
-
 </div>
+</div>
+</div>
+
 
 <div class="overlay" id="view">
 
@@ -362,107 +221,7 @@ if (isset($_GET["vehicleId"])) {
 
     <div class="popup_card">
 
-<h3>Warehouse Details <a href="<?php echo BASEURL ?>/warehouse/createWarehouse">X</a></h3>
-    
-<form action="<?php echo BASEURL ?>/fleetcenter/addVehicle" method="POST">
-            <div>
-              <div>
-
-
-              <div class="popup_card_fields">
-
-                  <div class="popup_card_input">
-                    <label >Vehicle ID</label>
-                    <input name="id" name="id" value = <?php echo $row["id"]; ?>/>
-                  </div>
-
-                  <div class="popup_card_input">
-                    <label>Registartion No *</label>
-                    <input name="reg_no" value = <?php echo $row["reg_no"]; ?> />
-                  </div>
-
-
-                  <div class="popup_card_input">
-                    <label>Model / Name *</label>
-                    <input name="model" value = <?php echo $row["model"]; ?>>
-                  </div>
-
-
-
-                  <div class="popup_card_input">
-                    <label>Chassis No *</label>
-                    <input type="text" name="chassis_no" value = <?php echo $row["chassis_no"]; ?> >
-                  </div>
-
-                  <div class="popup_card_input">
-                    <label>Engine No *</label>
-                    <input name="engine_no" value = <?php echo $row["engine_no"]; ?>>
-                  </div>
-
-                  <div class="popup_card_input">
-                    <label>Manufactured Year </label>
-                    <input  type="date" name="mf_year" value = <?php echo $row["mf_year"]; ?>>
-                  </div>
-
-                  <div class="popup_card_input">
-                    <label >Vehicle Color *</label>
-                    <input name="color" value = <?php echo $row["color"]; ?>>
-                  </div>
-
-                  <div class="popup_card_input">
-                    <label >Vehice Category *</label>
-                    <input name="category" value = <?php echo $row["category"]; ?>>
-                    <?php
-                    if ($categories->num_rows > 0) {
-                        while ($row = $categories->fetch_assoc()) {
-                            $selected = isset($vehicle_category) && $vehicle_category == $row['vehicle_category_code'] ? "selected" :"" ;
-                            echo "<option value=\"".$row['vehicle_category_code']."\"".$selected.">".$row['name']."</option>" ;
-                        }
-                    }
-                    ?>
-                      
-                  </div>
-        
-                  <div class="popup_card_input">
-                    <label >Upload Documents *</label>
-
-                    <div class="drag-area">
-                        <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                        <input type="file" id="myfile">
-                    </div>
-                  </div>
-
-              <button class="deleteBtn" onclick="createWarehouse()">
-                <span class="btnText">Delete</span>
-              </button>
-              <button class="subBtn" onclick="createWarehouse()">
-                <span class="btnText">Update</span>
-              </button>
-      
-          
-        
-        <a class="closeBtn" href="<?php echo BASEURL ?>/fleetcenter/vehicle">Close</a>
-          </form>
-          
-        
-        
-
-        </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <h3>Vehicle Details <a href="<?php echo BASEURL ?>/fleetcenter/vehicle">X</a></h3>
+      <h3>Warehouse Details <a href="<?php echo BASEURL ?>/warehouse/createWarehouse">X</a></h3>
 
       <form action="<?php echo BASEURL ?>/fleetcenter/addVehicle" method="POST">
         <div>
@@ -473,53 +232,45 @@ if (isset($_GET["vehicleId"])) {
 
               <div class="popup_card_input">
                 <label>Vehicle ID</label>
-                <input name="id" name="id" value=<?php echo $row["id"]; ?>>
+                <input name="id" id="id" type="text">
               </div>
 
               <div class="popup_card_input">
                 <label>Registartion No *</label>
-                <input name="reg_no" value=<?php echo $row["reg_no"]; ?>>
+                <input name="reg_no" id="reg_no" type="text">
               </div>
 
 
               <div class="popup_card_input">
                 <label>Model / Name *</label>
-                <input name="model" value=<?php echo $row["model"]; ?>>
+                <input name="model" id="model" type="text">
               </div>
-
 
 
               <div class="popup_card_input">
                 <label>Chassis No *</label>
-                <input type="text" name="chassis_no" value=<?php echo $row["chassis_no"]; ?>>
+                <input name="chassis_no" id="chassis_no" type="text">
               </div>
 
               <div class="popup_card_input">
                 <label>Engine No *</label>
-                <input name="engine_no" value=<?php echo $row["engine_no"]; ?>>
+                <input name="engine_no" id="engine_no" type="text">
               </div>
 
               <div class="popup_card_input">
                 <label>Manufactured Year </label>
-                <input type="date" name="mf_year" value=<?php echo $row["mf_year"]; ?>>
+                <input type="date" name="mf_year" id="mf_year">
               </div>
 
               <div class="popup_card_input">
                 <label>Vehicle Color *</label>
-                <input name="color" value=<?php echo $row["color"]; ?>>
+                <input type="color" id="color" value="#0000ff">
               </div>
 
               <div class="popup_card_input">
                 <label>Vehice Category *</label>
-                <input name="category" value=<?php echo $row["category"]; ?>>
-                <?php
-                if ($categories->num_rows > 0) {
-                  while ($row = $categories->fetch_assoc()) {
-                    $selected = isset($vehicle_category) && $vehicle_category == $row['vehicle_category_code'] ? "selected" : "";
-                    echo "<option value=\"" . $row['vehicle_category_code'] . "\"" . $selected . ">" . $row['name'] . "</option>";
-                  }
-                }
-                ?>
+                <input name="category" id="category" type="text">
+
 
               </div>
 
@@ -532,10 +283,10 @@ if (isset($_GET["vehicleId"])) {
                 </div>
               </div>
 
-              <button class="deleteBtn" onclick="createFleetCenter()">
+              <button class="deleteBtn" onclick="createWarehouse()">
                 <span class="btnText">Delete</span>
               </button>
-              <button class="subBtn" onclick="createFleetCenter()">
+              <button class="subBtn" onclick="createWarehouse()">
                 <span class="btnText">Update</span>
               </button>
 
@@ -547,8 +298,83 @@ if (isset($_GET["vehicleId"])) {
 
 
 
+      </form>
+
+
+
+
+      <script>
+      function abc(id) {
+        var url = '<?php echo "$path/fleetcenter/getVehicle/" ?>' + id;
+        console.log(url);
+        fetch(url)
+          .then((response) => response.json())
+          .then((json) => {
+            console.log(json);
+            console.log(json[0].id);
+            document.getElementById("id").value = json[0].id;
+            document.getElementById("model").value = json[0].model;
+            document.getElementById("reg_no").value = json[0].reg_no;
+            document.getElementById("chassis_no").value = json[0].chassis_no;
+            document.getElementById("engine_no").value = json[0].engine_no;
+            document.getElementById("mf_year").value = json[0].mf_year;
+            document.getElementById("color").value = json[0].color;
+            document.getElementById("category").value = json[0].category;
+            document.getElementById("documents").value = json[0].documents;
+
+ 
+
+          })
+
+      };
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       </form>
       <!-- Script -->
       <script src="<?php echo BASEURL ?>/public/js/addVehicle.js"></script>
 
+      <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+          dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+              dropdownContent.style.display = "none";
+            } else {
+              dropdownContent.style.display = "block";
+            }
+          });
+        }
+      </script>

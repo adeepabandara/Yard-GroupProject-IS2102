@@ -1,0 +1,11 @@
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+
+.label {
+color: #0295A9;
+
+  margin-left: 25%;
+  border-radius: 10px;
+  border: #0295A9;
+  padding: 10%, 10%,10%, 10%;
+}

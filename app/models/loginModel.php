@@ -8,21 +8,6 @@ class loginModel extends Model
     {
         parent::__construct();
     }
-
-    public function login($username, $password,$usertype)
-
-    public function login($username, $password)
-
-    {
-
-        return $this->get('users',"username = '$username' AND password = '$password'");
-
-
-    
-    }
-
-   
-
     public function login($username, $password)
     {
 
@@ -33,6 +18,5 @@ class loginModel extends Model
     }
 
    
-
 
 }

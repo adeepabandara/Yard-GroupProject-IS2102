@@ -2,20 +2,12 @@
 
   session_start();
 
-class FleetCenter extends Controller
-{
-
+class FleetCenter extends Controller{
 
     public function index() 
     {
-        $this->view('dashboard/dashboard');
+        $this->view('fleet/dashboard');
     }  
-
-    public function vehicle() 
-    {
-        $this->view('fleet/addVehicle');
-    }  
-
 
     public function category() 
     {
@@ -32,6 +24,49 @@ class FleetCenter extends Controller
 
 
 
+    public function createFleetJob()
+    {
+      $this->view('fleet/createFleetJob');
+    }
+
+
+
+
+
+
+    public function vehicle()
+    {
+      $result=$this->model('viewModel')->viewVehicle();
+
+      $data = [
+        'inputValue' => "",
+        'result' => $result, ];
+
+        $this->view('fleet/addVehicle', $data);
+
+   
+    }
+
+    public function getVehicle($vid = null){
+        $result=$this->model('viewModel')->viewVehicle( $vid );
+        $json = array();
+        while($row = $result->fetch_assoc()){
+            $array['id'] = $row['product_code'];
+            $array['model'] = $row['name'];
+            $array['reg_no '] = $row['bar_code'];
+            $array['engine_no'] = $row['category'];
+            $array['opening_stock'] = $row['opening_stock'];
+            $array['mf_year'] = $row['reorder_level'];
+            $array['color'] = $row['purchase_price'];
+            $array['category'] = $row['category'];
+            $array['documents'] = $row['selling_price'];
+            array_push($json, $array);
+        }
+        $response = json_encode($json);
+       
+        echo $response;
+        
+    }
 
 
     public function addVehicle()
@@ -57,6 +92,41 @@ class FleetCenter extends Controller
             header("Location: " . BASEURL . "/fleetcenter/vehicle");
         }
     }
+
+
+
+    public function deleteVehicle($id)
+    {
+        if (isset($id)) {
+            $this->model('deleteModel')->deleteVehicle($id);
+            header("Location: " . BASEURL . "/fleetcenter/vehicle");
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function addCategory()
     {
@@ -87,19 +157,21 @@ class FleetCenter extends Controller
         }
     }
 
+}
+
     public function addDriver()
     {
         if (isset($_SESSION['username'])) {
-            $driverId = (int) $_POST['driverId'];
+            $driver_id = (int) $_POST['driver_id'];
             $name = $_POST['name'];
             $nic = (int) $_POST['nic'];
-            $contactNo = (int) $_POST['contactNo'];
+            $contact_no = (int) $_POST['contact_no'];
             $address = $_POST['address'];
-            $eAddress = (int) $_POST['eAddress'];
-            $uName = (int) $_POST['uName'];
+            $email_address = (int) $_POST['email_address'];
+            $username = (int) $_POST['username'];
             $password = (int) $_POST['password'];
 
-            $this->model('insertModel')->addDriver($driverId, $name, $nic, $contactNo, $address, $eAddress, $uName, $password);
+            $this->model('insertModel')->addDriver($driver_id, $name, $nic, $contact_no, $address, $email_address, $username, $password);
             header("Location: " . BASEURL . "/fleetcenter/driver");
 
 
@@ -131,6 +203,57 @@ class FleetCenter extends Controller
             // header("Location: " . BASEURL . "/welcome");
         }
     }
+
+    public function fleetJob()
+    {
+      $poList=$this->model('viewModel')->viewPoList();
+      $poListDetails=$this->model('viewModel')->viewPoListDetails();
+      $id=$this->model('viewModel')->viewId('fleet_job','fj_code');
+
+      $data = [
+        'inputValue' => "",
+        'poList' => $poList,
+        'id' => $id,
+        'poListDetails' => $poListDetails,
+
+      ];
+  
+  
+        $this->view('fleet/createFleetJob',$data);
+    }
+
+
+    public function viewFleetJob()
+    {
+        $result=$this->model('viewModel')->viewFleetJob();
+        
+
+        $data = [
+            'inputValue' => "",
+            'fleet_jobs' => $result,
+      
+          ];
+          $this->view('driver/fleetJobs',$data);
+    }
+
+
+
+    public function purchaseOrder()
+    {
+      
+      $result=$this->model('viewModel')->viewRequisitionProducts();
+      $result1=$this->model('viewModel')->viewRequisitionList();
+      $data = [
+        'inputValue' => "",
+        'requisitionproducts' => $result,
+        'requisitionList' => $result1,
+  
+      ];
+  
+      $this->view('commercial/createPO',$data);
+    }
+  
+  
 
 
 

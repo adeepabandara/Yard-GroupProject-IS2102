@@ -11,6 +11,8 @@ if (isset($_SESSION['username'])) {
 ?>
 
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/style.css">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/validate.css">
 <div class="grid-container">
 
   <header class="header">Dashboard<img src="<?php echo BASEURL ?>/images/img_avatar.png" class="avatar">
@@ -21,24 +23,49 @@ if (isset($_SESSION['username'])) {
 </header>
 
 
-  <aside class="sidenav">
-    <center><img src="<?php echo BASEURL ?>/images/b&wlogo.png" alt="logo" width="40%"> </center>
-    <ul class="sidenav__list">
+<div class="sidenav">
+    <div class="logo"><center><img src="<?php echo BASEURL ?>/images/b&wlogo.png" alt="logo" width="40%"></center></div>
+  <a class="link-on"  href="<?php echo BASEURL ?>/welcome/fleet"><i class='bx bxs-dashboard'></i>&nbsp Dashboard</a>
 
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/fleetcenter">Dashboard</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/fleetcenter/vehicle">Add Vehicle</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/fleetcenter/driver">Add driver</li>
-      <!-- <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/adminFunctions/commercial">Commercial & Finance</li> -->
+  <button class="dropdown-btn"><i class='bx bxs-store-alt'></i>&nbsp Vehicle
+    <i class="fa fa-caret-down"></i>
+  </button>
 
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/fleet">Dashboard</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/fleetcenter/vehicle">Add Vehicle</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/fleetcenter/category">Add Category</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/fleetcenter/driver">Add driver</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/fleetcenter/fuel">Add Fuel Station</li>
+  <div  class="dropdown-container">
+    <a class="link-drop" href="<?php echo BASEURL ?>/fleetcenter/vehicle">Add Vehicle</a>
+    <a class="link-drop" href="<?php echo BASEURL ?>/fleetcenter/category">Category</a>
 
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/signout">Sign Out</a></li>
-    </ul>
-  </aside>
+  </div>
+
+  <a class="link" href="<?php echo BASEURL ?>/fleetcenter/fleetJob"><i class='bx bxs-coin'></i>&nbsp Create Fleet Job</a>
+  <a class="link" href="<?php echo BASEURL ?>/fleetcenter/driver"><i class='bx bxs-truck'></i>&nbsp Drivers</a>
+  <a class="link" href="<?php echo BASEURL ?>/fleetcenter/fuel"><i class='bx bxs-coin'></i>&nbsp Fuel Station</a>
+  <button class="dropdown-btn"><i class='bx bxs-file' ></i>&nbsp Reports
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div  class="dropdown-container">
+    <a class="link-drop" href="#">Daily Sales Report</a>
+    <a class="link-drop" href="#">Link 2</a>
+    <a class="link-drop" href="#">Link 3</a>
+  </div>
+  <button class="dropdown-btn"><i class='bx bxs-file' ></i>&nbsp Reports
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div  class="dropdown-container">
+    <a class="link-drop" href="#">Link 1</a>
+    <a class="link-drop" href="#">Link 2</a>
+    <a class="link-drop" href="#">Link 3</a>
+  </div>
+  <button class="dropdown-btn"><i class='bx bxs-file' ></i>&nbsp Reports
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div  class="dropdown-container">
+    <a class="link-drop" href="#">Link 1</a>
+    <a class="link-drop" href="#">Link 2</a>
+    <a class="link-drop" href="#">Link 3</a>
+  </div>
+  <a class="link" href="<?php echo BASEURL ?>/home/signout"><i class='bx bxs-left-arrow-square'></i>&nbsp Signout</a>
+</div>
 
   <main class="main">
     <div class="main-header">
@@ -140,7 +167,23 @@ if (isset($_SESSION['username'])) {
 
 </div>
 
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
 
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
 
 
 

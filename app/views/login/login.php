@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/login.css">
 
 <body class="loginbody">
@@ -15,7 +16,11 @@
 			<label>Password</label>
 			<input type="password" id="password" name="password" placeholder="*********"><br>
 
-			<button type="submit" value="login">Login</button>
+			<button id="myBtn"  type="submit" value="login">Login</button>
+
+			
 		</form>
+	</div>
+
 	</div>
 </body>

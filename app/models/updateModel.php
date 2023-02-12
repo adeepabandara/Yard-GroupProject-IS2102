@@ -32,4 +32,37 @@ class updateModel extends Model
 
     }
 
+    public function updatePr($pr_code,$created_date,$requested_date,$warehouse_code,$product_code,$description,$quantity,$supplier_code)
+
+    {
+
+        $this->update('
+        purchase_requisition',
+
+            [   'pr_code' => $pr_code,
+                'created_date' => $created_date,
+                'requested_date' => $requested_date,
+                'warehouse_code' => $warehouse_code,
+                
+            ],"pr_code= '$pr_code'"
+
+        );
+
+        $this->update('
+        requisition_details',
+
+            [  
+                'pr_code' => $pr_code,
+                'product_code' => $product_code,
+                'description' => $description,
+                'quantity' => $quantity,
+                'supplier_code' => $supplier_code,
+            ],"pr_code= '$pr_code'"
+
+        );
+
+
+    }
+
+
 }

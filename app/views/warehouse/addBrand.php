@@ -9,28 +9,72 @@ if (isset($_SESSION['username'])) {
   echo '<br>You are not logged in';
 }
 
-$conn = mysqli_connect("localhost", "root", "", "yard");
-$rows = mysqli_query($conn, "SELECT * FROM brand");
 
 ?>
 
 <link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/style.css">
+<link rel="stylesheet" type="text/css" href="<?php echo BASEURL ?>/public/css/validate.css">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+
 <div class="grid-container">
   <header class="header"> Warehouse&nbsp&nbsp>&nbsp&nbspBrand </header>
 
-  <aside class="sidenav">
-    <center><img src="<?php echo BASEURL ?>/images/b&wlogo.png" alt="logo" width="40%"> </center>
-    <ul class="sidenav__list">
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/warehouse">Dashboard</a></li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/product">Product</a></li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/category">Category</a></li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/brand">Brand</a></li>
-      <li class="sidenav__list-item">Inventory</li>
-      <li class="sidenav__list-item">Stock Adjustment</li>
-      <li class="sidenav__list-item">Purchase Requisition</li>
-      <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/signout">Sign Out</a></li>
-    </ul>
-  </aside>
+
+
+  <div class="sidenav">
+    <div class="logo"><center><img src="<?php echo BASEURL ?>/images/b&wlogo.png" alt="logo" width="40%"></center></div>
+  <a class="link" class="active" href="<?php echo BASEURL ?>/welcome/warehouse"><i class='bx bxs-dashboard'></i>&nbsp Dashboard</a>
+
+  <button class="dropdown-btn"><i class='bx bxs-store-alt'></i>&nbsp Product
+    <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div  class="dropdown-container-on">
+    <a class="link-drop" href="<?php echo BASEURL ?>/warehouse/Product">Add Product</a>
+    <a class="link-drop" href="<?php echo BASEURL ?>/warehouse/category">Category</a>
+    <a class="link-drop-on" href="<?php echo BASEURL ?>/warehouse/brand">Brand</a>
+  </div>
+
+  <button class="dropdown-btn"><i class='bx bxs-store-alt'></i>&nbsp Purchase Requsition
+    <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div  class="dropdown-container">
+    <a class="link-drop" href="<?php echo BASEURL ?>/warehouse/createPr">Create PR</a>
+    <a class="link-drop" href="<?php echo BASEURL ?>/warehouse/prList">View PR</a>
+  </div>
+
+
+  <a class="link" href="<?php echo BASEURL ?>/warehouse/grn"><i class='bx bxs-truck'></i>&nbsp GRN</a>
+  <a class="link" href="#contact"><i class='bx bxs-coin'></i>&nbsp Requistions</a>
+  <button class="dropdown-btn"><i class='bx bxs-file' ></i>&nbsp Reports
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div  class="dropdown-container">
+    <a class="link-drop" href="#">Daily Sales Report</a>
+    <a class="link-drop" href="#">Link 2</a>
+    <a class="link-drop" href="#">Link 3</a>
+  </div>
+  <button class="dropdown-btn"><i class='bx bxs-file' ></i>&nbsp Reports
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div  class="dropdown-container">
+    <a class="link-drop" href="#">Link 1</a>
+    <a class="link-drop" href="#">Link 2</a>
+    <a class="link-drop" href="#">Link 3</a>
+  </div>
+  <button class="dropdown-btn"><i class='bx bxs-file' ></i>&nbsp Reports
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div  class="dropdown-container">
+    <a class="link-drop" href="#">Link 1</a>
+    <a class="link-drop" href="#">Link 2</a>
+    <a class="link-drop" href="#">Link 3</a>
+  </div>
+  <a class="link" href="<?php echo BASEURL ?>/home/signout"><i class='bx bxs-left-arrow-square'></i>&nbsp Signout</a>
+</div>
+
 
   <main class="main">
     <div class="main-header">
@@ -84,8 +128,7 @@ $rows = mysqli_query($conn, "SELECT * FROM brand");
 
 
     <div class="card">Brand List
-      <br><br>
-        <input type="text" id="myInput" class="card-searchbar" onkeyup="myFunction()" placeholder="Search for brands.." >
+
       
       <div class="container">
         
