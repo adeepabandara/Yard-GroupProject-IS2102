@@ -30,6 +30,7 @@ if (isset($_SESSION['username'])) {
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/category">Category</a></li>
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/brand">Brand</a></li>
 
+<<<<<<< Updated upstream
     <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/warehouse/warehouse">Dashboard</a></li>
       <li  class="sidenav__list-item" ><a href="<?php echo BASEURL ?>/warehouse/product">Product</a></li>
       <li class="sidenav__list-item">Category</li>
@@ -39,6 +40,52 @@ if (isset($_SESSION['username'])) {
       <li class="sidenav__list-item"><a href="<?php echo BASEURL ?>/welcome/signout">Sign Out</a></li>
     </ul>
   </aside>>
+=======
+  <div  class="dropdown-container">
+    <a class="link-drop" href="<?php echo BASEURL ?>/warehouse/product">Add Product</a>
+    <a class="link-drop" href="<?php echo BASEURL ?>/warehouse/category">Category</a>
+    <a class="link-drop" href="<?php echo BASEURL ?>/warehouse/brand">Brand</a>
+  </div>
+
+  <button class="dropdown-btn"><i class='bx bxs-store-alt'></i>&nbsp Purchase Requsition
+    <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div  class="dropdown-container">
+    <a class="link-drop" href="<?php echo BASEURL ?>/warehouse/purchaseRequisition">Create PR</a>
+    <a class="link-drop" href="<?php echo BASEURL ?>/warehouse/prList">View PR</a>
+  </div>
+
+
+  <a class="link" href="<?php echo BASEURL ?>/warehouse/grn"><i class='bx bxs-truck'></i>&nbsp GRN</a>
+  <a class="link" href="#contact"><i class='bx bxs-coin'></i>&nbsp Requistions</a>
+  <button class="dropdown-btn"><i class='bx bxs-file' ></i>&nbsp Reports
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div  class="dropdown-container">
+    <a class="link-drop" href="#">Daily Sales Report</a>
+    <a class="link-drop" href="#">Link 2</a>
+    <a class="link-drop" href="#">Link 3</a>
+  </div>
+  <button class="dropdown-btn"><i class='bx bxs-file' ></i>&nbsp Reports
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div  class="dropdown-container">
+    <a class="link-drop" href="#">Link 1</a>
+    <a class="link-drop" href="#">Link 2</a>
+    <a class="link-drop" href="#">Link 3</a>
+  </div>
+  <button class="dropdown-btn"><i class='bx bxs-file' ></i>&nbsp Reports
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div  class="dropdown-container">
+    <a class="link-drop" href="#">Link 1</a>
+    <a class="link-drop" href="#">Link 2</a>
+    <a class="link-drop" href="#">Link 3</a>
+  </div>
+  <a class="link" href="<?php echo BASEURL ?>/home/signout"><i class='bx bxs-left-arrow-square'></i>&nbsp Signout</a>
+</div>
+>>>>>>> Stashed changes
 
   <main class="main">
     <div class="main-header">

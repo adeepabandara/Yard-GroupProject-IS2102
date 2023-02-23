@@ -55,9 +55,18 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
                   <div class="input-field">
 
                     <label>Product Code *</label>
+<<<<<<< Updated upstream
                     <input type="text" id="code" name="product_code" placeholder="Type Here..." required>
                     <span id="code-error" class="hide required-color error-message" >Must be 4 numbers</span>
                     <span id="code-empty" class="hide required-color error-message" >Product Code Cannot Be Empty</span>
+=======
+
+                    
+
+                    <input type="text" id="pcode" name="product_code" placeholder="Type Here..." required>
+                    <span id="code-error" class="hide required-color error-message">Must be 4 numbers</span>
+                    <span id="code-empty" class="hide required-color error-message">Product Code Cannot Be Empty</span>
+>>>>>>> Stashed changes
                   </div>
 
                   <div class="input-field">
@@ -67,6 +76,7 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
 
                   <div class="input-field ">
                     <label>Product Name *</label>
+<<<<<<< Updated upstream
                     <input type="text" id="name" name="name" placeholder="Type Here..." required>
                     <span id="name-error" class="hide required-color error-message" >Invalid Input</span>
                     <span id="name-empty" class="hide required-color error-message" >Name Cannot Be Empty</span>
@@ -84,6 +94,11 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
                     <label>Product Name</label>
                     <input type="text" name="name" placeholder="Type Here..." required="required">
 
+=======
+                    <input type="text" id="pname1" name="name" placeholder="Type Here..." required>
+                    <span id="name-error" class="hide required-color error-message">Invalid Input</span>
+                    <span id="name-empty" class="hide required-color error-message">Name Cannot Be Empty</span>
+>>>>>>> Stashed changes
                   </div>
 
                   <div class="input-field">
@@ -172,6 +187,34 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
           </tr>
           <?php endforeach; ?>
 
+<<<<<<< Updated upstream
+=======
+          echo "<table>";
+          echo "<tr>";
+          echo "<th> Code </th>";
+          echo "<th>Name</th>";
+          echo "<th>Category</th>";
+          echo "<th></th>";
+          echo "<th></th>";
+          while ($row = $data['result']->fetch_assoc()) {
+
+            $wc = $row['product_code'];
+
+            echo "<tr>";
+            echo "<td>" . $row["product_code"] . "</td>";
+            echo "<td>" . $row["name"] . "</td>";
+            echo "<td>" . $row["category"] . "</td>";
+            echo "<td><a class='viewBtn' onclick='view(\"$wc\")'  href='#view' >View</a></td>";
+
+            echo "<td><a class='delBtn' href=" . BASEURL . "/warehouse/deleteProduct/" . $row["product_code"] . "> Delete</a></td>";
+            echo "</tr>";
+          }
+          echo "</table>";
+          ?>
+
+              </div>
+          </div>
+>>>>>>> Stashed changes
       </div>
     </div>
 </div>
@@ -198,13 +241,20 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
 
           <div class="popup_card_input">
             <label>Category ID </label>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
             <input type="text" id="code1" name="product_category_code" placeholder="Type Here..." required>
             <span id="code-error1" class="hide required-color error-message" >Must be 4 numbers</span>
             <span id="code-empty1" class="hide required-color error-message" >Category ID Cannot Be Empty</span>
 
+<<<<<<< Updated upstream
             <input type="text" name="product_category_code" placeholder="Type Here..." required="required">
 
+=======
+            
+>>>>>>> Stashed changes
           </div>
 
           <div class="popup_card_input">
@@ -215,6 +265,7 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
             <span id="name-empty1" class="hide required-color error-message" >Name Cannot Be Empty</span>
           </div>
 
+<<<<<<< Updated upstream
         <div class="popup_card_input">
 
             <input type="text" name="name" class="form-input" placeholder="Type Here..." required="required">
@@ -235,6 +286,18 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
 
 
     </div>
+=======
+          <div class="popup_card_input w-100 ">
+            <label>Description</label>
+            <input type="textarea" name="description" placeholder="Type Here...">
+          </div>
+
+
+          <button class="subBtn">Add Category</button>
+        </div>
+
+      </div>
+>>>>>>> Stashed changes
 
   </div>
 
@@ -361,6 +424,7 @@ $rows = mysqli_query($conn, "SELECT * FROM product");
 
 
 <script>
+<<<<<<< Updated upstream
 //ID
 let codeInput = document.getElementById("code");
 let codeError = document.getElementById("code-error");
@@ -380,6 +444,27 @@ let emptyNameError = document.getElementById("name-empty");
 let nameInput1 = document.getElementById("name1");
 let nameError1 = document.getElementById("name-error1");
 let emptyNameError1 = document.getElementById("name-empty1");
+=======
+  //ID
+  let codeInput = document.getElementById("pcode");
+  let codeError = document.getElementById("code-error");
+  let emptyCodeError = document.getElementById("code-empty");
+
+  //ID-category-pop
+  let codeInput1 = document.getElementById("pcode1");
+  let codeError1 = document.getElementById("code-error1");
+  let emptyCodeError1 = document.getElementById("code-empty1");
+
+  //Name
+  let nameInput = document.getElementById("pname");
+  let nameError = document.getElementById("name-error");
+  let emptyNameError = document.getElementById("name-empty");
+
+  //Name-category-pop
+  let nameInput1 = document.getElementById("pname1");
+  let nameError1 = document.getElementById("name-error1");
+  let emptyNameError1 = document.getElementById("name-empty1");
+>>>>>>> Stashed changes
 
 //Submit
 let submitButton = document.getElementById("submit-button");
@@ -391,11 +476,19 @@ let submitButton1 = document.getElementById("submit-button1");
 let validClasses = document.getElementsByClassName("valid");
 let invalidClasses = document.getElementsByClassName("error");
 
+<<<<<<< Updated upstream
 //Text verification (if input contains only text)
 const textVerify = (text) => {
   const regex = /^[a-zA-Z]{3,}$/;
   return regex.test(text);
 };
+=======
+  //Text verification (if input contains only text)
+  const textVerify = (text) => {
+    const regex = /^[a-zA-Z0-9\s-']+$/;
+    return regex.test(text);
+  };
+>>>>>>> Stashed changes
 
 //ID verification
 const codeVerify = (number) => {
@@ -506,7 +599,82 @@ submitButton1.addEventListener("click", () => {
 
 
 
+<<<<<<< Updated upstream
       </div>
+=======
+</div>
+</form>
+
+
+</div>
+
+
+</div>
+
+ <!--Pop-up Modal - View Product -->
+
+<div class="overlay" id="view">
+
+  <div class="popup-main-cards">
+
+
+    <div class="popup_card">
+      <h3>Product Details <a href="<?php echo BASEURL ?>/warehouse/product">X</a></h3>
+      <form action="<?php echo BASEURL ?>/warehouse/editProduct" method="POST">
+
+        <div class="popup_card_fields">
+          <div class="popup_card_input">
+            <label>Product Code </label>
+            <input id="product_code" name="product_code" type="text" ?>
+          </div>
+
+          <div class="popup_card_input">
+            <label>Bar Code</label>
+            <input name="bar_code" id="bar_code" type="text" ?>
+          </div>
+
+          <div class="popup_card_input">
+            <label>Product Name</label>
+            <input name="name" id="name" type="text" ?>
+          </div>
+
+          <div class="popup_card_input">
+            <label>Category</label>
+            <input name="category" id="category" type="text">
+          </div>
+
+          <div class="popup_card_input">
+            <label>Opening Stock</label>
+            <input name="opening_stock" id="opening_stock" type="text" ?>
+          </div>
+
+          <div class="popup_card_input">
+            <label>Re Order Level</label>
+            <input name="reorder_level" id="reorder_level" type="text" ?>
+          </div>
+
+          <div class="popup_card_input">
+            <label>Purchase Price</label>
+            <input name="purchase_price" id="purchase_price" type="text" ?>
+          </div>
+
+          <div class="popup_card_input">
+            <label>Selling Price</label>
+            <input name="selling_price" id="selling_price" type="text" ?>
+          </div>
+
+
+          <button class="deleteBtn" onclick="createProduct()">
+            <span class="btnText">Delete</span>
+          </button>
+          <button class="subBtn" onclick="createProduct()">
+            <span class="btnText">Update</span>
+          </button>
+
+
+          <a class="closeBtn" href="<?php echo BASEURL ?>/warehouse/product">Close</a>
+
+>>>>>>> Stashed changes
       </form>
 
 
@@ -584,12 +752,31 @@ submitButton1.addEventListener("click", () => {
 
 
 <script>
+<<<<<<< Updated upstream
 function showTime(){
 var date = new Date();
 var h = date.getHours(); // 0 - 23
 var m = date.getMinutes(); // 0 - 59
 var s = date.getSeconds(); // 0 - 59
 var session = "AM";
+=======
+      function view(product_code) {
+        var url = '<?php echo "$path/warehouse/getProduct/" ?>' + product_code;
+        console.log(url);
+        fetch(url)
+          .then((response) => response.json())
+          .then((json) => {
+            console.log(json);
+            console.log(json[0].product_code);
+            document.getElementById("product_code").value = json[0].product_code;
+            document.getElementById("name").value = json[0].name;
+            document.getElementById("bar_code").value = json[0].bar_code;
+            document.getElementById("category").value = json[0].category;
+            document.getElementById("opening_stock").value = json[0].opening_stock;
+            document.getElementById("Reoder_level").value = json[0].Reoder_level;
+            document.getElementById("purchase_price").value = json[0].purchase_price;
+            document.getElementById("selling_price").value = json[0].selling_price;
+>>>>>>> Stashed changes
 
 if(h == 0){
     h = 12;
